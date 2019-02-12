@@ -4,14 +4,26 @@ const data = require('../data/spell.json'),
     tools = require('./_tools.js');
 
 const spell = {
-    description: ({
+    init: ({
         intent,
         params,
         subject = data[params.spell[0]]
     }) => {
-        let output = `${tools.capitalize(subject.name)} is a level ${subject.level} spell`;
+        let output = tools.phrase({
+            phrase: intent.raw,
+            vars: {
+                "name": subject.name,
+                "level": subject.level,
+            }
+        });
         if (subject.damage) {
-            output +=` which does ${spell.tools.damage(subject)}.`;
+            output += tools.phrase({
+                phrase: intent.raw,
+                terminal: "damage",
+                vars: {
+                    "damage": spell.tools.damage(subject)
+                }
+            });
         }
 
         return output;
@@ -21,11 +33,16 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
-        let output = `${tools.capitalize(params.spell[0])} does no damage.`;
-        if (subject.damage) {
-            output = `${tools.capitalize(params.spell[0])} does ${spell.tools.damage(subject)}.`;
-        }
-        
+        let output = tools.phrase({
+            phrase: intent.raw,
+            vars: {
+                "name": subject.name,
+                "damage": subject.damage || tools.phrase({
+                    phrase: intent.raw,
+                    terminal: "none"
+                })
+            }
+        });
         return output;
     },
     tools: {

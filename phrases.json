@@ -1,0 +1,22 @@
+{
+    "get": {
+        "spell": {
+            "init": {
+                "base": [
+                    "<name> is a level <level> spell"
+                ],
+                "damage": [
+                    ", which does <damage>"
+                ]
+            },
+            "damage": {
+                "base": [
+                    "<name> does <damage>"
+                ],
+                "none": [
+                    "no damage"
+                ]
+            }
+        }
+    }
+}
