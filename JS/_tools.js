@@ -50,6 +50,18 @@ const tools = {
         }
         
         return str;
+    },
+    checkContext: ({params, contexts}) => {
+        if (contexts) {
+            for (const x of contexts) {
+                let name = x.name.split('/');
+                name = name[6];
+                if (!params[name]) {
+                    params[name] = x.parameters[name];
+                }
+            }
+        }
+        return params;
     }
 };
 

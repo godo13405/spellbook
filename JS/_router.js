@@ -1,6 +1,7 @@
 'use strict';
 
 const respond = require('./_respond.js');
+const tools = require('./_tools.js');
 
 const router = {
     ready: req => {
@@ -11,7 +12,10 @@ const router = {
                 entity: req.queryResult.action.split('.')[1],
                 function: req.queryResult.action.split('.')[2]
             },
-            params = req.queryResult.parameters,
+            params = tools.checkContext({
+                params: req.queryResult.parameters,
+                contexts: req.queryResult.outputContexts
+            }),
             fn = require(`./_${intent.entity}.js`);
 
         output = fn[intent.function]({
