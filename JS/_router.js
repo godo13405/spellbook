@@ -18,10 +18,10 @@ const router = {
             intent,
             params
         });
-        
+
         if (global.verbose) console.log('\x1b[32m', output, '\x1b[0m');
 
-        return respond(output);
+        return respond({data:output, req});
     }
 };
 

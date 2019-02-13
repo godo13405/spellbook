@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "clear && mocha",
     "start": "node index.js",
     "serve": "ssh -R spellbook:80:localhost:8080 serveo.net"
   },
