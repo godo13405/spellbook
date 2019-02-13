@@ -33,10 +33,14 @@ const tools = {
         });
 
         // choose a random phrase from the array
+        let key = 0;
         if (Array.isArray(str)) {
-            str = str[Math.floor(Math.random()*str.length)];
+            if (global.randomPhrase && str.length > 0) {
+                key = Math.floor(Math.random() * str.length);
+            }
         }
-
+        str = str[key];
+        
         // replace tags
         if (Object.keys(vars).length) {
             for (const i in vars) {
@@ -44,7 +48,7 @@ const tools = {
                 str = str.replace(r, vars[i]);
             }
         }
-
+        
         return str;
     }
 };

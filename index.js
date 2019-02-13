@@ -1,12 +1,14 @@
 'use strict';
 
-const router = require('./JS/_router.js');
+// Options
+global.verbose = true;
+global.randomPhrasing = true;
 
-const http = require('http');
+const router = require('./JS/_router.js'),
+    http = require('http'),
+    port = 8080,
+    server = http.createServer();
 
-const port = 8080;
-
-const server = http.createServer();
 server.on('request', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');

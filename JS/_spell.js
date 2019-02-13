@@ -17,13 +17,17 @@ const spell = {
             }
         });
         if (subject.damage) {
-            output += tools.phrase({
-                phrase: intent.raw,
-                terminal: "damage",
-                vars: {
-                    "damage": spell.tools.damage(subject)
+            let args = {
+                    phrase: intent.raw,
+                    terminal: "damage"
+                },
+                damage = spell.tools.damage(subject.damage);
+            if (damage) {
+                args.vars = {
+                    "damage": damage
                 }
-            });
+            }
+            output += tools.phrase(args);
         }
 
         return output;
@@ -37,7 +41,7 @@ const spell = {
             phrase: intent.raw,
             vars: {
                 "name": subject.name,
-                "damage": subject.damage || tools.phrase({
+                "damage": spell.tools.damage(subject.damage) || tools.phrase({
                     phrase: intent.raw,
                     terminal: "none"
                 })
@@ -46,12 +50,15 @@ const spell = {
         return output;
     },
     tools: {
-        damage: subject => {
-            let damage = [];
-            subject.damage.forEach(x => {
-                damage.push(`${x.amount}${x.dice} ${x.type} damage`);
-            });
-            damage = damage.join(', ');
+        damage: subjectDamage => {
+            let damage = false;
+            if (subjectDamage) {
+                damage = [];
+                subjectDamage.forEach(x => {
+                    damage.push(`${x.amount}${x.dice} ${x.type} damage`);
+                });
+                damage = damage.join(', ');
+            }
 
             return damage;
         }

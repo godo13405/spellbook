@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node index.js",
     "serve": "ssh -R spellbook:80:localhost:8080 serveo.net"
   },
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/godo13405/spellbook/issues"
   },
-  "homepage": "https://github.com/godo13405/spellbook#readme"
+  "homepage": "https://github.com/godo13405/spellbook#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
