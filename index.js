@@ -9,7 +9,7 @@ const options = require('./JS/_globalOptions.js');
 
 const router = require('./JS/_router.js'),
     http = require('http'),
-    port = 8080,
+    port = process.env.PORT || 8080,
     server = http.createServer();
 
 (async () => {
@@ -29,7 +29,7 @@ const router = require('./JS/_router.js'),
                 })
                 response.end();
             }
-        }).listen(3030);
+        }).listen(port);
     }
 })();
 
