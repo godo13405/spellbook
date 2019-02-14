@@ -55,6 +55,7 @@ module.exports = {
         "consistent-return": "off",
         "consistent-this": "error",
         "curly": "off",
+        "no-console": "warn",
         "default-case": "error",
         "dot-location": "error",
         "dot-notation": [
@@ -176,7 +177,7 @@ module.exports = {
         "no-param-reassign": "off",
         "no-path-concat": "error",
         "no-plusplus": "error",
-        "no-process-env": "error",
+        // "no-process-env": "error",
         "no-process-exit": "error",
         "no-proto": "error",
         "no-prototype-builtins": "error",
