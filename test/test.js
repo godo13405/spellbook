@@ -4,7 +4,8 @@
 /* global describe, it */
 
 const assert = require('assert'),
-    router = require('../JS/_router.js');
+    router = require('../JS/_router.js'),
+    testTools = require('./_test-tools.js');
 
 // Options
 global.verbose = false;
@@ -38,11 +39,19 @@ describe('Spell', () => {
             assert.strictEqual(output.fulfillmentText, "Fireball does 8d6 fire damage");
         });
         it('does no damage', () => {
-            let req = reqRaw;
+            let req = testTools.copy(reqRaw);
             req.queryResult.action = "get.spell.damage";
             req.queryResult.parameters.spell = ["bane"];
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Bane does no damage");
         });
-    })
+    });
+    describe('casting time', () => {
+        it('describe how long it takes to cast', () => {
+            let req = testTools.copy(reqRaw);
+            req.queryResult.action = "get.spell.castingTime";
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball takes 1 action to cast");
+        });
+    });
 });

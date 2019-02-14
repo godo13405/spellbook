@@ -26,7 +26,6 @@ const tools = {
                 vars
             });
 
-        console.log(line);
         if (implicitComfirmation) {
             confirm = tools.phrasing.build({
                 phrase,

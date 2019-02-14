@@ -1,9 +1,9 @@
 'use strict';
 
-const tools = {
+const testTools = {
     copy: src => {
         return JSON.parse(JSON.stringify(src));
     }
 };
 
-exports = module.exports = tools;
+exports = module.exports = testTools;
