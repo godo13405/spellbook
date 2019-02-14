@@ -19,7 +19,8 @@ const spell = {
         if (subject.damage) {
             let args = {
                     phrase: intent.raw,
-                    terminal: "damage"
+                    terminal: "damage",
+                    implicitComfirmation: false
                 },
                 damage = spell.tools.damage(subject.damage);
             if (damage) {
@@ -43,8 +44,30 @@ const spell = {
                 "name": subject.name,
                 "damage": spell.tools.damage(subject.damage) || tools.phrase({
                     phrase: intent.raw,
-                    terminal: "none"
+                    terminal: "none",
+                    implicitComfirmation: false
                 })
+            }
+        });
+        return output;
+    },
+    castingTime: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let cast = [];
+
+        subject.casting_time.forEach(x => {
+            cast.push(`${x.amount} ${x.unit}`);
+        });
+
+        cast = cast.join(', or');
+        let output = tools.phrase({
+            phrase: intent.raw,
+            vars: {
+                "name": subject.name,
+                "time": cast
             }
         });
         return output;

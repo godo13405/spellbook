@@ -2,19 +2,33 @@
     "get": {
         "spell": {
             "init": {
+                "implicitComfirmation": [
+                    "<name> is "
+                ],
                 "base": [
-                    "<name> is a level <level> spell"
+                    "a level <level> spell"
                 ],
                 "damage": [
                     ", which does <damage>"
                 ]
             },
             "damage": {
+                "implicitComfirmation": [
+                    "<name> does "
+                ],
                 "base": [
-                    "<name> does <damage>"
+                    "<damage>"
                 ],
                 "none": [
                     "no damage"
+                ]
+            },
+            "castingTime": {
+                "implicitComfirmation": [
+                    "<name> takes "
+                ],
+                "base": [
+                    "<cast> to cast"
                 ]
             }
         }

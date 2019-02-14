@@ -1,5 +1,8 @@
 'use strict';
 
+// Options
+const options = require('../JS/_globalOptions.js');
+
 const tools = {
     capitalize: txt => {
         if (typeof txt === 'string') {
@@ -12,46 +15,95 @@ const tools = {
     phrase: ({
         phrase,
         terminal = 'base',
-        lib = require('../phrases.json'),
-        vars = {}
+        vars = {},
+        implicitComfirmation = global.implicitComfirmation
     }) => {
-        phrase += `.${terminal}`;
+        let confirm = '',
+            line = tools.phrasing.build({
+                phrase,
+                terminal,
+                vars
+            });
 
-        // check if the phrase exists
-        let directions = phrase.split('.'),
-            str;
-
-        directions.forEach(x => {
-            if (str) {
-                str = str[x];
-            } else if (lib[x]) {
-                str = lib[x];
-            } else {
-                console.log(`${phrase} not found`);
-                return false;
-            }
-        });
-
-        // choose a random phrase from the array
-        let key = 0;
-        if (Array.isArray(str)) {
-            if (global.randomPhrase && str.length > 0) {
-                key = Math.floor(Math.random() * str.length);
-            }
+        console.log(line);
+        if (implicitComfirmation) {
+            confirm = tools.phrasing.build({
+                phrase,
+                terminal: 'implicitComfirmation',
+                vars
+            });
         }
-        str = str[key];
-        
-        // replace tags
-        if (Object.keys(vars).length) {
-            for (const i in vars) {
-                let r = new RegExp(`<${i}>`, "g");
-                str = str.replace(r, vars[i]);
-            }
-        }
-        
-        return str;
+
+        return confirm + line;
     },
-    checkContext: ({params, contexts}) => {
+    phrasing: {
+        build: ({
+            phrase,
+            terminal,
+            vars
+        }) => {
+            let str = tools.phrasing.find({
+                phrase: `${phrase}.${terminal}`
+            });
+            if (str) {
+                str = tools.phrasing.rand(str);
+                str = tools.phrasing.tags({
+                    str,
+                    vars
+                });
+            }
+
+            return str;
+        },
+        find: ({
+            phrase,
+            lib = require('../phrases.json'),
+        }) => {
+            // check if the phrase exists
+            let directions = phrase.split('.'),
+                str;
+
+            directions.forEach(x => {
+                if (str) {
+                    str = str[x];
+                } else if (lib[x]) {
+                    str = lib[x];
+                } else {
+                    return false;
+                }
+            });
+
+            return str;
+        },
+        rand: str => {
+            // choose a random phrase from the array
+            let key = 0;
+            if (Array.isArray(str)) {
+                if (global.randomPhrase && str.length > 0) {
+                    key = Math.floor(Math.random() * str.length);
+                }
+            }
+            return str[key];
+        },
+        tags: ({
+            str,
+            vars
+        }) => {
+            // replace tags
+            if (Object.keys(vars).length) {
+                for (const i in vars) {
+                    let r = new RegExp(`<${i}>`, "g");
+                    str = str.replace(r, vars[i]);
+                }
+            }
+
+            return str;
+        }
+    },
+    checkContext: ({
+        params,
+        contexts
+    }) => {
         if (contexts) {
             for (const x of contexts) {
                 let name = x.name.split('/');
