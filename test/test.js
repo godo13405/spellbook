@@ -54,4 +54,19 @@ describe('Spell', () => {
             assert.strictEqual(output.fulfillmentText, "Fireball takes 1 action to cast");
         });
     });
+    describe('ritual', () => {
+        it('check that it\'s not a ritual', () => {
+            let req = testTools.copy(reqRaw);
+            req.queryResult.action = "get.spell.isRitual";
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "No, Fireball can't be cast as a ritual");
+        });
+        it('check that it\'s a ritual', () => {
+            let req = testTools.copy(reqRaw);
+            req.queryResult.action = "get.spell.isRitual";
+            req.queryResult.parameters.spell = ["commune with nature"];
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Yes, Commune with Nature can be cast as a ritual");
+        });
+    });
 });

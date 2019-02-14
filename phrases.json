@@ -6,7 +6,7 @@
                     "<name> is "
                 ],
                 "base": [
-                    "a level <level> spell"
+                    "<confirm>a level <level> spell"
                 ],
                 "damage": [
                     ", which does <damage>"
@@ -17,10 +17,21 @@
                     "<name> does "
                 ],
                 "base": [
-                    "<damage>"
+                    "<confirm><damage>"
                 ],
                 "none": [
                     "no damage"
+                ]
+            },
+            "isRitual": {
+                "implicitComfirmation": [
+                    "<name>"
+                ],
+                "true": [
+                    "Yes, <confirm> can be cast as a ritual"
+                ],
+                "false": [
+                    "No, <confirm> can't be cast as a ritual"
                 ]
             },
             "castingTime": {
@@ -28,7 +39,7 @@
                     "<name> takes "
                 ],
                 "base": [
-                    "<time> to cast"
+                    "<confirm><time> to cast"
                 ]
             }
         }

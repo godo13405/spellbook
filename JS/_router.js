@@ -1,7 +1,13 @@
 'use strict';
 
+/* globals chalk*/
+
 const respond = require('./_respond.js');
 const tools = require('./_tools.js');
+let chalk;
+if (global.isDev) {
+    chalk = require('chalk');
+}
 
 const router = {
     ready: req => {
@@ -18,14 +24,29 @@ const router = {
             }),
             fn = require(`./_${intent.entity}.js`);
 
-        output = fn[intent.function]({
+        let functionToRun = intent.function;
+
+        if (!fn[functionToRun]) {
+            functionToRun = 'init';
+        }
+
+
+        output = fn[functionToRun]({
             intent,
             params
         });
 
-        if (global.verbose) console.log('\x1b[32m', output, '\x1b[0m');
+        if (global.isDev) {
+            // eslint-disable-next-line no-console
+            console.log(chalk.gray(req.queryResult.action));
+            // eslint-disable-next-line no-console
+            console.log(chalk.green(output));
+        }
 
-        return respond({data:output, req});
+        return respond({
+            data: output,
+            req
+        });
     }
 };
 

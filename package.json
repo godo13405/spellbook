@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "clear && mocha",
-    "start": "node index.js",
+    "start": "NODE_ENV=production node index.js",
+    "dev": "NODE_ENV=dev npx nodemon",
     "serve": "ssh -R spellbook:80:localhost:8080 serveo.net"
   },
   "repository": {
@@ -19,7 +20,9 @@
   },
   "homepage": "https://github.com/godo13405/spellbook#readme",
   "devDependencies": {
+    "chalk": "^2.4.2",
     "eslint": "^5.13.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10"
   }
 }

@@ -19,22 +19,24 @@ const tools = {
         vars = {},
         implicitComfirmation = global.implicitComfirmation
     }) => {
-        let confirm = '',
-            line = tools.phrasing.build({
-                phrase,
-                terminal,
-                vars
-            });
-
         if (implicitComfirmation) {
-            confirm = tools.phrasing.build({
+            let confirm = tools.phrasing.build({
                 phrase,
                 terminal: 'implicitComfirmation',
                 vars
             });
-        }
 
-        return confirm + line;
+            if (confirm) {
+                vars.confirm = confirm;
+            }
+        }
+        const output = tools.phrasing.build({
+            phrase,
+            terminal,
+            vars
+        });
+
+        return output;
     },
     phrasing: {
         build: ({
@@ -110,6 +112,9 @@ const tools = {
                 name = name[6];
                 if (!params[name]) {
                     params[name] = x.parameters[name];
+
+                    // If we're relying on a context, assume it's a follow up
+                    global.followUp = true;
                 }
             }
         }

@@ -72,6 +72,20 @@ const spell = {
         });
         return output;
     },
+    isRitual: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let output = tools.phrase({
+            phrase: intent.raw,
+            terminal: subject.ritual,
+            vars: {
+                "name": subject.name
+            }
+        });
+        return output;
+    },
     tools: {
         damage: subjectDamage => {
             let damage = false;
