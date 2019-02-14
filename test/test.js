@@ -1,5 +1,8 @@
 'use strict';
 
+/* eslint-disable no-unused-expressions */
+/* global describe, it */
+
 const assert = require('assert'),
     router = require('../JS/_router.js');
 
@@ -20,26 +23,26 @@ const reqRaw = {
 };
 
 
-describe('Spell', function () {
-    describe('init', function () {
-            it('short spell description', function () {
-                const output = JSON.parse(router.ready(reqRaw));
-                assert.strictEqual(output.fulfillmentText, "Fireball is a level 3 spell, which does 8d6 fire damage");
-            });
-        }),
-        describe('damage', function () {
-            it('describe the damage it does', function () {
-                let req = reqRaw;
-                req.queryResult.action = "get.spell.damage";
-                const output = JSON.parse(router.ready(req));
-                assert.strictEqual(output.fulfillmentText, "Fireball does 8d6 fire damage");
-            });
-            it('does no damage', function () {
-                let req = reqRaw;
-                req.queryResult.action = "get.spell.damage";
-                req.queryResult.parameters.spell = ["bane"];
-                const output = JSON.parse(router.ready(req));
-                assert.strictEqual(output.fulfillmentText, "Bane does no damage");
-            });
-        })
+describe('Spell', () => {
+    describe('init', () => {
+        it('short spell description', () => {
+            const output = JSON.parse(router.ready(reqRaw));
+            assert.strictEqual(output.fulfillmentText, "Fireball is a level 3 spell, which does 8d6 fire damage");
+        });
+    });
+    describe('damage', () => {
+        it('describe the damage it does', () => {
+            let req = reqRaw;
+            req.queryResult.action = "get.spell.damage";
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball does 8d6 fire damage");
+        });
+        it('does no damage', () => {
+            let req = reqRaw;
+            req.queryResult.action = "get.spell.damage";
+            req.queryResult.parameters.spell = ["bane"];
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Bane does no damage");
+        });
+    })
 });

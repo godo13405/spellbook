@@ -1,6 +1,7 @@
 'use strict';
 
 // Options
+// eslint-disable-next-line no-unused-vars
 const options = require('../JS/_globalOptions.js');
 
 const tools = {

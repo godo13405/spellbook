@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/godo13405/spellbook#readme",
   "devDependencies": {
+    "eslint": "^5.13.0",
     "mocha": "^5.2.0"
   }
 }
