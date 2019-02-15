@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals chalk*/
-
 const respond = require('./_respond.js');
 const tools = require('./_tools.js');
 let chalk;
@@ -37,10 +35,9 @@ const router = {
         });
 
         if (global.isDev) {
-            // eslint-disable-next-line no-console
             console.log(chalk.gray(req.queryResult.action));
-            // eslint-disable-next-line no-console
-            console.log(chalk.green(output));
+            console.log(chalk.green(output.data));
+            console.log(chalk.inverse(output.suggestions));
         }
 
         return respond({

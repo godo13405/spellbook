@@ -9,18 +9,21 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
-        let output = tools.phrase({
-            phrase: intent.raw,
-            vars: {
-                "name": subject.name,
-                "level": subject.level,
-            }
-        });
+        let output = {
+            "data": tools.phrase({
+                phrase: intent.raw,
+                vars: {
+                    "name": subject.name,
+                    "level": subject.level,
+                }
+            }),
+            "suggestions": []
+        };
         if (subject.damage) {
             let args = {
                     phrase: intent.raw,
                     terminal: "damage",
-                    implicitComfirmation: false
+                    implicitConfirmation: false
                 },
                 damage = spell.tools.damage(subject.damage);
             if (damage) {
@@ -28,7 +31,7 @@ const spell = {
                     "damage": damage
                 }
             }
-            output += tools.phrase(args);
+            output.data += tools.phrase(args);
         }
 
         return output;
@@ -38,17 +41,19 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
-        let output = tools.phrase({
-            phrase: intent.raw,
-            vars: {
-                "name": subject.name,
-                "damage": spell.tools.damage(subject.damage) || tools.phrase({
-                    phrase: intent.raw,
-                    terminal: "none",
-                    implicitComfirmation: false
-                })
-            }
-        });
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars: {
+                    "name": subject.name,
+                    "damage": spell.tools.damage(subject.damage) || tools.phrase({
+                        phrase: intent.raw,
+                        terminal: "none",
+                        implicitConfirmation: false
+                    })
+                }
+            })
+        };
         return output;
     },
     castingTime: ({
@@ -63,13 +68,15 @@ const spell = {
         });
 
         cast = cast.join(', or');
-        let output = tools.phrase({
-            phrase: intent.raw,
-            vars: {
-                "name": subject.name,
-                "time": cast
-            }
-        });
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars: {
+                    "name": subject.name,
+                    "time": cast
+                }
+            })
+        };
         return output;
     },
     isRitual: ({
@@ -77,13 +84,37 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
-        let output = tools.phrase({
-            phrase: intent.raw,
-            terminal: subject.ritual,
-            vars: {
-                "name": subject.name
-            }
-        });
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                terminal: subject.ritual,
+                vars: {
+                    "name": subject.name
+                }
+            })
+        };
+        return output;
+    },
+    duration: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let connector = tools.getPhrase(`${intent.raw}.connector.lasts`);
+        // Change the phrasing for instantaneous
+        if (subject.duration === 'instantaneous') {
+            connector = tools.getPhrase(`${intent.raw}.connector.instant`);
+        }
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars: {
+                    "name": subject.name,
+                    "connector": connector,
+                    "time": subject.duration
+                }
+            })
+        };
         return output;
     },
     tools: {

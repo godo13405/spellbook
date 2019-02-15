@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 'use strict';
 
 /* eslint-disable no-unused-expressions */
@@ -55,18 +56,29 @@ describe('Spell', () => {
         });
     });
     describe('ritual', () => {
+        let req = testTools.copy(reqRaw);
+        req.queryResult.action = "get.spell.isRitual";
         it('check that it\'s not a ritual', () => {
-            let req = testTools.copy(reqRaw);
-            req.queryResult.action = "get.spell.isRitual";
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "No, Fireball can't be cast as a ritual");
         });
         it('check that it\'s a ritual', () => {
-            let req = testTools.copy(reqRaw);
-            req.queryResult.action = "get.spell.isRitual";
             req.queryResult.parameters.spell = ["commune with nature"];
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Yes, Commune with Nature can be cast as a ritual");
+        });
+    });
+    describe('duration', () => {
+        let req = testTools.copy(reqRaw);
+        req.queryResult.action = "get.spell.duration";
+        it('instantaneous', () => {
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball is instantaneous");
+        });
+        it('describe the duration', () => {
+            req.queryResult.parameters.spell = ["feign death"];
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Feign Death lasts for 1 hour");
         });
     });
 });

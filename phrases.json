@@ -2,7 +2,7 @@
     "get": {
         "spell": {
             "init": {
-                "implicitComfirmation": [
+                "implicitConfirmation": [
                     "<name> is "
                 ],
                 "base": [
@@ -13,7 +13,7 @@
                 ]
             },
             "damage": {
-                "implicitComfirmation": [
+                "implicitConfirmation": [
                     "<name> does "
                 ],
                 "base": [
@@ -24,7 +24,7 @@
                 ]
             },
             "isRitual": {
-                "implicitComfirmation": [
+                "implicitConfirmation": [
                     "<name>"
                 ],
                 "true": [
@@ -35,13 +35,39 @@
                 ]
             },
             "castingTime": {
-                "implicitComfirmation": [
+                "implicitConfirmation": [
                     "<name> takes "
                 ],
                 "base": [
                     "<confirm><time> to cast"
                 ]
+            },
+            "duration": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "connector": {
+                    "instant": [
+                        "is"
+                    ],
+                    "lasts": [
+                        "lasts for"
+                    ]
+                },
+                "base": [
+                    "<confirm> <connector> <time>"
+                ]
             }
+        }
+    },
+    "default": {
+        "input": {
+            "welcome": [
+                "Hi! How are you doing?",
+                "Hello! How can I help you?",
+                "Good day! What can I do for you today?",
+                "Greetings! How can I assist?"
+            ]
         }
     }
 }

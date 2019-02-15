@@ -2,7 +2,9 @@
 
 // Options
 // eslint-disable-next-line no-unused-vars
-const options = require('../JS/_globalOptions.js');
+const options = require('./_globalOptions.js');
+
+const spells = require('../data/spell.json');
 
 const tools = {
     capitalize: txt => {
@@ -13,16 +15,20 @@ const tools = {
         }
         return txt;
     },
+    randSpell: (data = spells) => {
+        const keys = Object.keys(data);
+        return data[keys[Math.floor(Math.random() * keys.length)]].name;
+    },
     phrase: ({
         phrase,
         terminal = 'base',
         vars = {},
-        implicitComfirmation = global.implicitComfirmation
+        implicitConfirm = global.implicitConfirmation
     }) => {
-        if (implicitComfirmation) {
+        if (implicitConfirm) {
             let confirm = tools.phrasing.build({
                 phrase,
-                terminal: 'implicitComfirmation',
+                terminal: 'implicitConfirmation',
                 vars
             });
 
@@ -37,6 +43,11 @@ const tools = {
         });
 
         return output;
+    },
+    getPhrase: phrase => {
+        return tools.phrasing.rand(tools.phrasing.find({
+            phrase
+        }));
     },
     phrasing: {
         build: ({
@@ -108,6 +119,7 @@ const tools = {
     }) => {
         if (contexts) {
             for (const x of contexts) {
+                console.log(x);
                 let name = x.name.split('/');
                 name = name[6];
                 if (!params[name]) {
