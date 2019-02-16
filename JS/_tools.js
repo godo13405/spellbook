@@ -75,7 +75,6 @@ const tools = {
             // check if the phrase exists
             let directions = phrase.split('.'),
                 str;
-
             directions.forEach(x => {
                 if (str) {
                     str = str[x];

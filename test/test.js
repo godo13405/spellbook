@@ -27,19 +27,19 @@ const reqRaw = {
 
 describe('Spell', () => {
     describe('init', () => {
-        it('short spell description', () => {
+        it('describe', () => {
             const output = JSON.parse(router.ready(reqRaw));
             assert.strictEqual(output.fulfillmentText, "Fireball is a level 3 spell, which does 8d6 fire damage");
         });
     });
     describe('damage', () => {
-        it('describe the damage it does', () => {
+        it('yes', () => {
             let req = reqRaw;
             req.queryResult.action = "get.spell.damage";
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball does 8d6 fire damage");
         });
-        it('does no damage', () => {
+        it('no', () => {
             let req = testTools.copy(reqRaw);
             req.queryResult.action = "get.spell.damage";
             req.queryResult.parameters.spell = ["bane"];
@@ -48,7 +48,7 @@ describe('Spell', () => {
         });
     });
     describe('casting time', () => {
-        it('describe how long it takes to cast', () => {
+        it('describe', () => {
             let req = testTools.copy(reqRaw);
             req.queryResult.action = "get.spell.castingTime";
             const output = JSON.parse(router.ready(req));
@@ -57,12 +57,12 @@ describe('Spell', () => {
     });
     describe('ritual', () => {
         let req = testTools.copy(reqRaw);
-        req.queryResult.action = "get.spell.isRitual";
-        it('check that it\'s not a ritual', () => {
+        req.queryResult.action = "check.spell.ritual";
+        it('no', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "No, Fireball can't be cast as a ritual");
         });
-        it('check that it\'s a ritual', () => {
+        it('yes', () => {
             req.queryResult.parameters.spell = ["commune with nature"];
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Yes, Commune with Nature can be cast as a ritual");
@@ -75,10 +75,23 @@ describe('Spell', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball is instantaneous");
         });
-        it('describe the duration', () => {
+        it('describe', () => {
             req.queryResult.parameters.spell = ["feign death"];
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Feign Death lasts for 1 hour");
+        });
+    });
+    describe('concentration', () => {
+        let req = testTools.copy(reqRaw);
+        req.queryResult.action = "check.spell.concentration";
+        it('no', () => {
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball doesn't need concentration");
+        });
+        it('yes', () => {
+            req.queryResult.parameters.spell = ["delayed blast fireball"];
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Delayed Blast Fireball needs you fo concentrate on it");
         });
     });
 });

@@ -23,17 +23,6 @@
                     "no damage"
                 ]
             },
-            "isRitual": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
-                "true": [
-                    "Yes, <confirm> can be cast as a ritual"
-                ],
-                "false": [
-                    "No, <confirm> can't be cast as a ritual"
-                ]
-            },
             "castingTime": {
                 "implicitConfirmation": [
                     "<name> takes "
@@ -56,6 +45,32 @@
                 },
                 "base": [
                     "<confirm> <connector> <time>"
+                ]
+            }
+        }
+    },
+    "check": {
+        "spell": {
+            "ritual": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "true": [
+                    "Yes, <confirm> can be cast as a ritual"
+                ],
+                "false": [
+                    "No, <confirm> can't be cast as a ritual"
+                ]
+            },
+            "concentration": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "true": [
+                    "<confirm> needs you fo concentrate on it"
+                ],
+                "false": [
+                    "<confirm> doesn't need concentration"
                 ]
             }
         }

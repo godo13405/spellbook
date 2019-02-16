@@ -79,7 +79,7 @@ const spell = {
         };
         return output;
     },
-    isRitual: ({
+    ritual: ({
         intent,
         params,
         subject = data[params.spell[0]]
@@ -112,6 +112,22 @@ const spell = {
                     "name": subject.name,
                     "connector": connector,
                     "time": subject.duration
+                }
+            })
+        };
+        return output;
+    },
+    concentration: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                terminal: Boolean(subject.concentration),
+                vars: {
+                    "name": subject.name
                 }
             })
         };
