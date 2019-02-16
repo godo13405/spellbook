@@ -133,6 +133,40 @@ const spell = {
         };
         return output;
     },
+    components: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let vars = {
+            "name": subject.name,
+            "componentsPhrase": []
+        };
+        if (subject.components.includes('material')) {
+            vars.componentsPhrase.push(tools.getPhrase(`${intent.raw}.material`));
+        }
+        if (subject.components.includes('verbal')) {
+            vars.componentsPhrase.push(tools.getPhrase(`${intent.raw}.verbal`));
+        }
+        if (subject.components.includes('somatic')) {
+            vars.componentsPhrase.push(tools.getPhrase(`${intent.raw}.somatic`));
+        }
+        if (vars.componentsPhrase.length) {
+            vars.componentsPhrase = tools.listing({
+                str: vars.componentsPhrase
+            });
+        } else {
+            vars.pop();
+        }
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars
+            })
+        };
+
+        return output;
+    },
     tools: {
         damage: subjectDamage => {
             let damage = false;

@@ -35,6 +35,9 @@ const tools = {
             if (confirm) {
                 vars.confirm = confirm;
             }
+            if ((!vars.connector || !vars.connector.length) && tools.getPhrase(`${phrase}.connector`)) {
+                vars.connector = tools.getPhrase(`${phrase}.connector`);
+            }
         }
         const output = tools.phrasing.build({
             phrase,
@@ -81,7 +84,7 @@ const tools = {
                 } else if (lib[x]) {
                     str = lib[x];
                 } else {
-                    return false;
+                    str = false;
                 }
             });
 
@@ -89,13 +92,17 @@ const tools = {
         },
         rand: str => {
             // choose a random phrase from the array
-            let key = 0;
+            let key = 0,
+                output;
             if (Array.isArray(str)) {
                 if (global.randomPhrase && str.length > 0) {
                     key = Math.floor(Math.random() * str.length);
                 }
+                output = str[key];
+            } else {
+                output = false;
             }
-            return str[key];
+            return output;
         },
         tags: ({
             str,
@@ -111,6 +118,17 @@ const tools = {
 
             return str;
         }
+    },
+    listing: ({
+        str,
+        connector = 'and '
+    }) => {
+        let output = str[0];
+        if (str.length > 1) {
+            output = `${str.slice(0, -1).join(', ')}, ${connector}${str.slice(-1)}`;
+        }
+
+        return output;
     },
     checkContext: ({
         params,
