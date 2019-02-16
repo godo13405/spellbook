@@ -11,6 +11,7 @@ const tools = {
         if (typeof txt === 'string') {
             txt = txt.replace(/\b\w/g, l => l.toUpperCase());
         } else {
+            // eslint-disable-next-line no-console
             console.log('\x1b[31m', 'What you tried to capitalize isn\'t a string', '\x1b[0m');
         }
         return txt;
@@ -136,16 +137,20 @@ const tools = {
         params,
         contexts
     }) => {
+        const contextsMap = [
+            "spell"
+        ];
         if (contexts) {
             for (const x of contexts) {
-                console.log(x);
-                let name = x.name.split('/');
-                name = name[6];
-                if (!params[name]) {
-                    params[name] = x.parameters[name];
+                if (contextsMap.includes(x)) {
+                    let name = x.name.split('/');
+                    name = name[6];
+                    if (!params[name]) {
+                        params[name] = x.parameters[name];
 
-                    // If we're relying on a context, assume it's a follow up
-                    global.followUp = true;
+                        // If we're relying on a context, assume it's a follow up
+                        global.followUp = true;
+                    }
                 }
             }
         }

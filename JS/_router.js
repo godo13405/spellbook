@@ -35,6 +35,10 @@ const router = {
         });
 
         if (global.isDev) {
+            console.log({
+                intent,
+                params
+            });
             console.log(chalk.gray(req.queryResult.action));
             console.log(chalk.green(output.data));
             console.log(chalk.inverse(output.suggestions));
