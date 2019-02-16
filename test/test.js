@@ -14,7 +14,6 @@ global.randomPhrasing = false;
 
 const reqRaw = {
     "queryResult": {
-        "queryText": "what is fireball",
         "action": "get.spell.init",
         "parameters": {
             "spell": [
@@ -89,6 +88,19 @@ describe('Get spell', () => {
             req.queryResult.parameters.spell = ["mass healing word"];
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Mass Healing Word needs an incantation");
+        });
+    });
+    describe('materials', () => {
+        let req = testTools.copy(reqRaw);
+        req.queryResult.action = "get.spell.materials";
+        it('yes', () => {
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball requires a tiny ball of bat guano and sulfur");
+        });
+        it('no', () => {
+            req.queryResult.parameters.spell = ["dispel magic"];
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Dispel Magic doesn't require any materials");
         });
     });
 });

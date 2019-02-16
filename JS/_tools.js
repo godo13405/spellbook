@@ -39,11 +39,13 @@ const tools = {
                 vars.connector = tools.getPhrase(`${phrase}.connector`);
             }
         }
-        const output = tools.phrasing.build({
+
+        const args = {
             phrase,
             terminal,
             vars
-        });
+        };
+        const output = tools.phrasing.build(args);
 
         return output;
     },

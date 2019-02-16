@@ -167,6 +167,28 @@ const spell = {
 
         return output;
     },
+    materials: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let args = {
+            phrase: intent.raw,
+            vars: {
+                "name": subject.name
+            }
+        };
+        if (subject.materials) {
+            args.vars.materials = subject.materials;
+        } else {
+            args.terminal = "false";
+        }
+
+        let output = {
+            data: tools.phrase(args)
+        };
+        return output;
+    },
     tools: {
         damage: subjectDamage => {
             let damage = false;

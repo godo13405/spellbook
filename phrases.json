@@ -66,6 +66,20 @@
                 "base": [
                     "<confirm> <connector> <componentsPhrase>"
                 ]
+            },
+            "materials": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "connector": [
+                    "requires"
+                ],
+                "base": [
+                    "<confirm> <connector> <materials>"
+                ],
+                "false": [
+                    "<confirm> doesn't require any materials"
+                ]
             }
         }
     },
