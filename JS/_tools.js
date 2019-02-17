@@ -36,8 +36,11 @@ const tools = {
             if (confirm) {
                 vars.confirm = confirm;
             }
-            if ((!vars.connector || !vars.connector.length) && tools.getPhrase(`${phrase}.connector`)) {
-                vars.connector = tools.getPhrase(`${phrase}.connector`);
+
+            // If no connector has been defined, take the default
+            const connect = tools.getPhrase(`${phrase}.connector`);
+            if ((!vars.connector || !vars.connector.length) && connect) {
+                vars.connector = connect;
             }
         }
 
@@ -81,6 +84,7 @@ const tools = {
             // check if the phrase exists
             let directions = phrase.split('.'),
                 str;
+
             directions.forEach(x => {
                 if (str) {
                     str = str[x];

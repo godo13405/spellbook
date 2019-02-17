@@ -14,6 +14,7 @@ server.on('request', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let body = [];
     req.on('error', err => {
+        // eslint-disable-next-line no-console
         console.error(err);
     }).on('data', chunk => {
         body.push(chunk);
@@ -24,5 +25,6 @@ server.on('request', (req, res) => {
     });
 }).
 listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log(`Server running at port ${port}`);
 });

@@ -198,23 +198,32 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
-        let classes = [];
+        let classes = [],
+            connect = `${intent.raw}.connector`;
 
-        subject.class.forEach(x => {
-            classes.push(`${x}s`);
-        });
+        if (subject.class.length > 1) {
+            subject.class.forEach(x => {
+                classes.push(`${x}s`);
+            });
+            classes = tools.listing({
+                str: classes
+            })
+        } else {
+            classes = `${subject.class[0]}s`;
+            connect = `${intent.raw}.connectorSingle`;
+        }
 
         let output = {
             data: tools.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
-                    classes: tools.listing({
-                        str: classes
-                    })
+                    connector: tools.getPhrase(connect),
+                    classes
                 }
             })
         };
+
         return output;
     },
     tools: {

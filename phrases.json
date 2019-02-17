@@ -88,6 +88,9 @@
                 "connector": [
                     "can be cast by"
                 ],
+                "connectorSingle": [
+                    "can only be cast by"
+                ],
                 "base": [
                     "<confirm> <connector> <classes>"
                 ]
