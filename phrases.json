@@ -1,6 +1,6 @@
 {
-    "get": {
-        "spell": {
+    "spell": {
+        "get": {
             "init": {
                 "implicitConfirmation": [
                     "<name> is "
@@ -95,10 +95,8 @@
                     "<confirm> <connector> <classes>"
                 ]
             }
-        }
-    },
-    "check": {
-        "spell": {
+        },
+        "check": {
             "ritual": {
                 "implicitConfirmation": [
                     "<name>"

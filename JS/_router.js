@@ -10,11 +10,12 @@ if (global.isDev) {
 const router = {
     ready: req => {
         let output = 'Sorry, something went wrong';
-        const intent = {
+        const parts = req.queryResult.action.split('.'),
+            intent = {
                 raw: req.queryResult.action,
-                action: req.queryResult.action.split('.')[0],
-                entity: req.queryResult.action.split('.')[1],
-                function: req.queryResult.action.split('.')[2]
+                entity: parts[0],
+                action: parts[1],
+                function: parts[2]
             },
             params = tools.checkContext({
                 params: req.queryResult.parameters,
@@ -22,14 +23,7 @@ const router = {
             }),
             fn = require(`./_${intent.entity}.js`);
 
-        let functionToRun = intent.function;
-
-        if (!fn[functionToRun]) {
-            functionToRun = 'init';
-        }
-
-
-        output = fn[functionToRun]({
+        output = fn[intent.action][intent.function]({
             intent,
             params
         });

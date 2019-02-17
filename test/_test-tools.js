@@ -9,7 +9,7 @@ const testTools = {
         constructor(contexts) {
             this.request = {
                 "queryResult": {
-                    "action": "get.spell.init",
+                    "action": "spell.get.init",
                     "parameters": {
                         "spell": [
                             "fireball"
@@ -43,7 +43,7 @@ const testTools = {
     setRequest: req => {
         let output = {
             "queryResult": {
-                "action": "get.spell.init",
+                "action": "spell.get.init",
                 "parameters": {
                     "spell": [
                         "fireball"

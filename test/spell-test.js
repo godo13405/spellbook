@@ -30,14 +30,14 @@ describe('Get spell', () => {
     describe('damage', () => {
         it('yes', () => {
             const req = new testTools.Req().
-            action("get.spell.damage").
+            action("spell.get.damage").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball does 8d6 fire damage");
         });
         it('no', () => {
             const req = new testTools.Req().
-            action("get.spell.damage").
+            action("spell.get.damage").
             name('spell', 'bane').
             request;
             const output = JSON.parse(router.ready(req));
@@ -49,7 +49,7 @@ describe('Get spell', () => {
             request;
             const step = JSON.parse(router.ready(req1));
             const req2 = new testTools.Req(step.outputContexts).
-            action("get.spell.damage").
+            action("spell.get.damage").
             name('spell', '').
             request;
             const output = JSON.parse(router.ready(req2));
@@ -59,7 +59,7 @@ describe('Get spell', () => {
     describe('casting time', () => {
         it('describe', () => {
             const req = new testTools.Req().
-            action("get.spell.castingTime").
+            action("spell.get.castingTime").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball takes 1 action to cast");
@@ -68,14 +68,14 @@ describe('Get spell', () => {
     describe('duration', () => {
         it('instantaneous', () => {
             const req = new testTools.Req().
-            action("get.spell.duration").
+            action("spell.get.duration").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball is instantaneous");
         });
         it('describe', () => {
             const req = new testTools.Req().
-            action("get.spell.duration").
+            action("spell.get.duration").
             name("spell", "feign death").
             request;
             const output = JSON.parse(router.ready(req));
@@ -85,14 +85,14 @@ describe('Get spell', () => {
     describe('components', () => {
         it('describe M, S, V', () => {
             const req = new testTools.Req().
-            action("get.spell.components").
+            action("spell.get.components").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball needs some materials, an incantation, and gesturing");
         });
         it('describe S, V', () => {
             const req = new testTools.Req().
-            action("get.spell.components").
+            action("spell.get.components").
             name("spell", "dispel magic").
             request;
             const output = JSON.parse(router.ready(req));
@@ -100,7 +100,7 @@ describe('Get spell', () => {
         });
         it('describe M, S', () => {
             const req = new testTools.Req().
-            action("get.spell.components").
+            action("spell.get.components").
             name("spell", "hypnotic pattern").
             request;
             const output = JSON.parse(router.ready(req));
@@ -108,7 +108,7 @@ describe('Get spell', () => {
         });
         it('describe V', () => {
             const req = new testTools.Req().
-            action("get.spell.components").
+            action("spell.get.components").
             name("spell", "mass healing word").
             request;
             req.queryResult.parameters.spell = ["mass healing word"];
@@ -119,18 +119,35 @@ describe('Get spell', () => {
     describe('materials', () => {
         it('yes', () => {
             const req = new testTools.Req().
-            action("get.spell.materials").
+            action("spell.get.materials").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball requires a tiny ball of bat guano and sulfur");
         });
         it('no', () => {
             const req = new testTools.Req().
-            action("get.spell.materials").
+            action("spell.get.materials").
             name("spell", "dispel magic").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Dispel Magic doesn't require any materials");
+        });
+    });
+    describe('classes', () => {
+        it('list', () => {
+            const req = new testTools.Req().
+            action("spell.get.classes").
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball can be cast by sorcerers, and wizards");
+        });
+        it('single', () => {
+            const req = new testTools.Req().
+            action("spell.get.classes").
+            name('spell', 'elemental weapon').
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Elemental Weapon can only be cast by paladins");
         });
     });
 });
@@ -138,14 +155,14 @@ describe('Check spell', () => {
     describe('ritual', () => {
         it('no', () => {
             const req = new testTools.Req().
-            action("check.spell.ritual").
+            action("spell.check.ritual").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "No, Fireball can't be cast as a ritual");
         });
         it('yes', () => {
             const req = new testTools.Req().
-            action("check.spell.ritual").
+            action("spell.check.ritual").
             name("spell", "commune with nature").
             request;
             const output = JSON.parse(router.ready(req));
@@ -155,35 +172,27 @@ describe('Check spell', () => {
     describe('concentration', () => {
         it('no', () => {
             const req = new testTools.Req().
-            action("check.spell.concentration").
+            action("spell.check.concentration").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball doesn't need concentration");
         });
         it('yes', () => {
             const req = new testTools.Req().
-            action("check.spell.concentration").
+            action("spell.check.concentration").
             name("spell", "delayed blast fireball").
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Delayed Blast Fireball needs you fo concentrate on it");
         });
     });
-    describe('classes', () => {
-        it('list', () => {
-            const req = new testTools.Req().
-            action("get.spell.classes").
-            request;
-            const output = JSON.parse(router.ready(req));
-            assert.strictEqual(output.fulfillmentText, "Fireball can be cast by sorcerers, and wizards");
-        });
-        it('single', () => {
-            const req = new testTools.Req().
-            action("get.spell.classes").
-            name('spell', 'elemental weapon').
-            request;
-            const output = JSON.parse(router.ready(req));
-            assert.strictEqual(output.fulfillmentText, "Elemental Weapon can only be cast by paladins");
-        });
-    });
+    // describe('classes', () => {
+    //     it('yes', () => {
+    //         const req = new testTools.Req().
+    //         action("spell.check.classes").
+    //         request;
+    //         const output = JSON.parse(router.ready(req));
+    //         assert.strictEqual(output.fulfillmentText, "Yes, Fireball can cast by wizards");
+    //     });
+    // });
 });
