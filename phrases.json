@@ -80,6 +80,17 @@
                 "false": [
                     "<confirm> doesn't require any materials"
                 ]
+            },
+            "classes": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "connector": [
+                    "can be cast by"
+                ],
+                "base": [
+                    "<confirm> <connector> <classes>"
+                ]
             }
         }
     },

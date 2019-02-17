@@ -144,4 +144,13 @@ describe('Check spell', () => {
             assert.strictEqual(output.fulfillmentText, "Delayed Blast Fireball needs you fo concentrate on it");
         });
     });
+    describe('classes', () => {
+        let req = testTools.copy(reqRaw);
+        req.queryResult.action = "get.spell.classes";
+        req.queryResult.parameters.spell = ["fireball"];
+        it('list', () => {
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball can be cast by sorcerers, and wizards");
+        });
+    });
 });

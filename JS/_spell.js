@@ -193,6 +193,30 @@ const spell = {
         };
         return output;
     },
+    classes: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let classes = [];
+
+        subject.class.forEach(x => {
+            classes.push(`${x}s`);
+        });
+
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars: {
+                    "name": subject.name,
+                    classes: tools.listing({
+                        str: classes
+                    })
+                }
+            })
+        };
+        return output;
+    },
     tools: {
         damage: subjectDamage => {
             let damage = false;
