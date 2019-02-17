@@ -150,7 +150,18 @@ describe('Get spell', () => {
             assert.strictEqual(output.fulfillmentText, "Elemental Weapon can only be cast by Paladins");
         });
     });
+    describe('school', () => {
+        it('list', () => {
+            const req = new testTools.Req().
+            action("spell.get.school").
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball is an Evocation");
+        });
+    });
 });
+
+
 describe('Check spell', () => {
     describe('ritual', () => {
         it('no', () => {

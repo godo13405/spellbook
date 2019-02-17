@@ -195,6 +195,31 @@ const spell = {
             };
 
             return output;
+        },
+        school: ({
+            intent,
+            params,
+            subject = data[params.spell[0]]
+        }) => {
+            let output = {
+                data: tools.phrase({
+                    phrase: intent.raw,
+                    vars: {
+                        "name": subject.name,
+                        "school": tools.capitalize(subject.school)
+                    }
+                }),
+                suggestions: [
+                    tools.phrase({
+                        phrase: intent.raw,
+                        terminal: 'aboutSchool',
+                        vars: {
+                            "school": `${tools.preposition(subject.school)} ${tools.capitalize(subject.school)}`
+                        }
+                    }),
+                ]
+            };
+            return output;
         }
     },
     check: {

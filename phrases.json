@@ -94,6 +94,22 @@
                 "base": [
                     "<confirm> <connector> <classes>"
                 ]
+            },
+            "school": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "connector": [
+                    "is an",
+                    "belongs to the school of",
+                    "is part of the school of"
+                ],
+                "base": [
+                    "<confirm> <connector> <school>"
+                ],
+                "aboutSchool": [
+                    "What is <school>"
+                ]
             }
         },
         "check": {

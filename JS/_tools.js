@@ -16,6 +16,20 @@ const tools = {
         }
         return txt;
     },
+    preposition: txt => {
+        const anLetters = [
+            'a',
+            'e',
+            'i',
+            'o'
+        ];
+        let output = 'a';
+        if (anLetters.includes(txt.toLowerCase().substring(1))) {
+            output = 'an';
+        }
+
+        return output;
+    },
     randSpell: (data = spells) => {
         const keys = Object.keys(data);
         return data[keys[Math.floor(Math.random() * keys.length)]].name;
