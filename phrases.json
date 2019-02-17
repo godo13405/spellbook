@@ -6,7 +6,7 @@
                     "<name> is "
                 ],
                 "base": [
-                    "<confirm>a level <level> spell"
+                    "<confirm>a <level>"
                 ],
                 "damage": [
                     ", which does <damage>"

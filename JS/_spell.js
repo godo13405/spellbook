@@ -9,12 +9,16 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
+        let level = `level ${subject.level} spell`;
+        if (subject.level === '0') {
+            level = "cantrip";
+        }
         let output = {
             "data": tools.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
-                    "level": subject.level,
+                    level,
                 }
             }),
             "suggestions": []
@@ -41,7 +45,6 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
-        console.log('subject', subject);
         let output = {
             data: tools.phrase({
                 phrase: intent.raw,

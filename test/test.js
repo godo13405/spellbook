@@ -30,11 +30,18 @@ describe('Get spell', () => {
             const output = JSON.parse(router.ready(reqRaw));
             assert.strictEqual(output.fulfillmentText, "Fireball is a level 3 spell, which does 8d6 fire damage");
         });
+        it('cantrip', () => {
+            let req = reqRaw;
+            req.queryResult.parameters.spell = ["acid splash"];
+            const output = JSON.parse(router.ready(reqRaw));
+            assert.strictEqual(output.fulfillmentText, "Acid Splash is a cantrip, which does 1d6 acid damage");
+        });
     });
     describe('damage', () => {
         it('yes', () => {
             let req = reqRaw;
             req.queryResult.action = "get.spell.damage";
+            req.queryResult.parameters.spell = ["fireball"];
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball does 8d6 fire damage");
         });
@@ -50,6 +57,7 @@ describe('Get spell', () => {
         it('describe', () => {
             let req = testTools.copy(reqRaw);
             req.queryResult.action = "get.spell.castingTime";
+            req.queryResult.parameters.spell = ["fireball"];
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball takes 1 action to cast");
         });
@@ -57,6 +65,7 @@ describe('Get spell', () => {
     describe('duration', () => {
         let req = testTools.copy(reqRaw);
         req.queryResult.action = "get.spell.duration";
+        req.queryResult.parameters.spell = ["fireball"];
         it('instantaneous', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball is instantaneous");
@@ -70,6 +79,7 @@ describe('Get spell', () => {
     describe('components', () => {
         let req = testTools.copy(reqRaw);
         req.queryResult.action = "get.spell.components";
+        req.queryResult.parameters.spell = ["fireball"];
         it('describe M, S, V', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball needs some materials, an incantation, and gesturing");
@@ -93,6 +103,7 @@ describe('Get spell', () => {
     describe('materials', () => {
         let req = testTools.copy(reqRaw);
         req.queryResult.action = "get.spell.materials";
+        req.queryResult.parameters.spell = ["fireball"];
         it('yes', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball requires a tiny ball of bat guano and sulfur");
@@ -108,6 +119,7 @@ describe('Check spell', () => {
     describe('ritual', () => {
         let req = testTools.copy(reqRaw);
         req.queryResult.action = "check.spell.ritual";
+        req.queryResult.parameters.spell = ["fireball"];
         it('no', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "No, Fireball can't be cast as a ritual");
@@ -121,6 +133,7 @@ describe('Check spell', () => {
     describe('concentration', () => {
         let req = testTools.copy(reqRaw);
         req.queryResult.action = "check.spell.concentration";
+        req.queryResult.parameters.spell = ["fireball"];
         it('no', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Fireball doesn't need concentration");
