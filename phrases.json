@@ -132,7 +132,7 @@
             }
         }
     },
-    "default": {
+    "base": {
         "input": {
             "welcome": {
                 "base": [
