@@ -45,6 +45,7 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
+        // console.log('TCL: params', params);
         let output = {
             data: tools.phrase({
                 phrase: intent.raw,

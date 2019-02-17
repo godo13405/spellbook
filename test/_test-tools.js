@@ -6,7 +6,7 @@ const router = require('../JS/_router.js');
 
 const testTools = {
     Req: class {
-        constructor() {
+        constructor(contexts) {
             this.request = {
                 "queryResult": {
                     "action": "get.spell.init",
@@ -14,9 +14,11 @@ const testTools = {
                         "spell": [
                             "fireball"
                         ]
-                    }
+                    },
+                    "outputContexts": contexts
                 }
             };
+            this.contexts = contexts;
         }
 
         action(action) {

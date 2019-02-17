@@ -43,6 +43,18 @@ describe('Get spell', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Bane does no damage");
         });
+        it('follow-up', () => {
+            const req1 = new testTools.Req().
+            name('spell', 'bane').
+            request;
+            const step = JSON.parse(router.ready(req1));
+            const req2 = new testTools.Req(step.outputContexts).
+            action("get.spell.damage").
+            name('spell', '').
+            request;
+            const output = JSON.parse(router.ready(req2));
+            assert.strictEqual(output.fulfillmentText, "Bane does no damage");
+        });
     });
     describe('casting time', () => {
         it('describe', () => {

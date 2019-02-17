@@ -16,7 +16,6 @@ const router = {
                 entity: req.queryResult.action.split('.')[1],
                 function: req.queryResult.action.split('.')[2]
             },
-            // params = req.queryResult.parameters,
             params = tools.checkContext({
                 params: req.queryResult.parameters,
                 contexts: req.queryResult.outputContexts
