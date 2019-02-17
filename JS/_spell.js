@@ -41,6 +41,7 @@ const spell = {
         params,
         subject = data[params.spell[0]]
     }) => {
+        console.log('subject', subject);
         let output = {
             data: tools.phrase({
                 phrase: intent.raw,

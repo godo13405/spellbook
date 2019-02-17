@@ -9,7 +9,7 @@ const respondTools = {
   }) => {
     // Things to remember for this session
 
-    const contextFullName = `${req.session}/contexts/${contextName}`;
+    const contextFullName = `${req.session}/contexts/${contextName}_internal`;
 
     // Are there any contexts we should keep?
     if (!req.outputContexts) {
@@ -29,8 +29,7 @@ const respondTools = {
       "parameters": {}
     };
 
-    data.parameters[contextName] = context;
-
+    data.parameters[`${contextName}_internal`] = context;
     output.outputContexts.push(data);
 
     return output;
@@ -96,7 +95,6 @@ const respond = ({
     suggestions: data.suggestions,
     output
   });
-
 
   return JSON.stringify(output);
 };

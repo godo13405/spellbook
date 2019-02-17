@@ -16,6 +16,7 @@ const router = {
                 entity: req.queryResult.action.split('.')[1],
                 function: req.queryResult.action.split('.')[2]
             },
+            // params = req.queryResult.parameters,
             params = tools.checkContext({
                 params: req.queryResult.parameters,
                 contexts: req.queryResult.outputContexts
@@ -35,12 +36,11 @@ const router = {
         });
 
         if (global.isDev) {
-            console.log({
-                intent,
-                params
-            });
+            // eslint-disable-next-line no-console
             console.log(chalk.gray(req.queryResult.action));
+            // eslint-disable-next-line no-console
             console.log(chalk.green(output.data));
+            // eslint-disable-next-line no-console
             console.log(chalk.inverse(output.suggestions));
         }
 

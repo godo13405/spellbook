@@ -142,11 +142,12 @@ const tools = {
         ];
         if (contexts) {
             for (const x of contexts) {
-                if (contextsMap.includes(x)) {
-                    let name = x.name.split('/');
-                    name = name[6];
-                    if (!params[name]) {
-                        params[name] = x.parameters[name];
+                let name = x.name.split('/');
+                name = name[6];
+                name = name.substring(0, name.indexOf('_'));
+                if (contextsMap.includes(name)) {
+                    if (!params[name] || !params[name].length) {
+                        params[name] = x.parameters[`${name}_internal`];
 
                         // If we're relying on a context, assume it's a follow up
                         global.followUp = true;
@@ -155,7 +156,7 @@ const tools = {
             }
         }
         return params;
-    }
+    },
 };
 
 exports = module.exports = tools;
