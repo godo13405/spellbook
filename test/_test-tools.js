@@ -5,7 +5,7 @@
 const router = require('../JS/_router.js');
 
 const testTools = {
-    req: class {
+    Req: class {
         constructor() {
             this.request = {
                 "queryResult": {
