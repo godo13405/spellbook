@@ -90,8 +90,6 @@ const tools = {
                     str = str[x];
                 } else if (lib[x]) {
                     str = lib[x];
-                } else {
-                    str = false;
                 }
             });
 

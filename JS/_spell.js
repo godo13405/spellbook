@@ -173,13 +173,13 @@ const spell = {
 
             if (subject.class.length > 1) {
                 subject.class.forEach(x => {
-                    classes.push(`${x}s`);
+                    classes.push(`${tools.capitalize(x)}s`);
                 });
                 classes = tools.listing({
                     str: classes
                 })
             } else {
-                classes = `${subject.class[0]}s`;
+                classes = `${tools.capitalize(subject.class[0])}s`;
                 connect = `${intent.raw}.connectorSingle`;
             }
 
@@ -235,31 +235,17 @@ const spell = {
             params,
             subject = data[params.spell[0]]
         }) => {
-            let classes = [],
-                connect = `${intent.raw}.connector`;
-            if (subject.class.length > 1) {
-                subject.class.forEach(x => {
-                    classes.push(`${x}s`);
-                });
-                classes = tools.listing({
-                    str: classes
-                })
-            } else {
-                classes = `${subject.class[0]}s`;
-                connect = `${intent.raw}.connectorSingle`;
-            }
-
-            let output = {
-                data: tools.phrase({
-                    phrase: intent.raw,
-                    vars: {
-                        "name": subject.name,
-                        connector: tools.getPhrase(connect),
-                        classes
-                    }
-                })
-            };
-            console.log('TCL: output', output);
+            const terminal = subject.class.includes(params.class[0]),
+                output = {
+                    data: tools.phrase({
+                        phrase: intent.raw,
+                        terminal,
+                        vars: {
+                            "name": subject.name,
+                            "class": `${tools.capitalize(params.class[0])}s`
+                        }
+                    })
+                };
 
             return output;
         }

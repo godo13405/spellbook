@@ -139,7 +139,7 @@ describe('Get spell', () => {
             action("spell.get.classes").
             request;
             const output = JSON.parse(router.ready(req));
-            assert.strictEqual(output.fulfillmentText, "Fireball can be cast by sorcerers, and wizards");
+            assert.strictEqual(output.fulfillmentText, "Fireball can be cast by Sorcerers, and Wizards");
         });
         it('single', () => {
             const req = new testTools.Req().
@@ -147,7 +147,7 @@ describe('Get spell', () => {
             name('spell', 'elemental weapon').
             request;
             const output = JSON.parse(router.ready(req));
-            assert.strictEqual(output.fulfillmentText, "Elemental Weapon can only be cast by paladins");
+            assert.strictEqual(output.fulfillmentText, "Elemental Weapon can only be cast by Paladins");
         });
     });
 });
@@ -186,13 +186,22 @@ describe('Check spell', () => {
             assert.strictEqual(output.fulfillmentText, "Delayed Blast Fireball needs you fo concentrate on it");
         });
     });
-    // describe('classes', () => {
-    //     it('yes', () => {
-    //         const req = new testTools.Req().
-    //         action("spell.check.classes").
-    //         request;
-    //         const output = JSON.parse(router.ready(req));
-    //         assert.strictEqual(output.fulfillmentText, "Yes, Fireball can cast by wizards");
-    //     });
-    // });
+    describe('classes', () => {
+        it('yes', () => {
+            const req = new testTools.Req().
+            action("spell.check.classes").
+            name("class", "wizard").
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Yes, Fireball can cast by Wizards");
+        });
+        it('no', () => {
+            const req = new testTools.Req().
+            action("spell.check.classes").
+            name("class", "bard").
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "No, Bards can't cast Fireball");
+        });
+    });
 });

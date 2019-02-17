@@ -118,6 +118,17 @@
                 "false": [
                     "<confirm> doesn't need concentration"
                 ]
+            },
+            "classes": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "true": [
+                    "Yes, <confirm> can cast by <class>"
+                ],
+                "false": [
+                    "No, <class> can't cast <confirm>"
+                ]
             }
         }
     },
