@@ -177,6 +177,23 @@ describe('Get spell', () => {
             assert.strictEqual(output.fulfillmentText, "Fireball is level 3");
         });
     });
+    describe('healing', () => {
+        it('no', () => {
+            const req = new testTools.Req().
+            action("spell.get.healing").
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Fireball doesn't heal");
+        });
+        it('yes', () => {
+            const req = new testTools.Req().
+            action("spell.get.healing").
+            name('spell', 'mass healing word').
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Mass Healing Word heals for 1d4 plus your spellcasting anility modifier");
+        });
+    });
 });
 
 

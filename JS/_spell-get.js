@@ -48,7 +48,6 @@ const get = {
         params,
         subject = data[params.spell[0]]
     }) => {
-        // console.log('TCL: params', params);
         let output = {
             data: tools.phrase({
                 phrase: intent.raw,
@@ -256,6 +255,41 @@ const get = {
                 }
             }),
             suggestions: []
+        };
+        return output;
+    },
+    healing: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let vars = {
+            "name": subject.name,
+            "healing": tools.getPhrase(`${intent.raw}.${false}`)
+        };
+
+        if (subject.heal) {
+            vars.healing = `${subject.heal.amount}${subject.heal.dice}`;
+            if (subject.heal.extra) {
+                vars.healing = tools.phrase({
+                    phrase: intent.raw,
+                    terminal: 'healExtra',
+                    vars: {
+                        "heal": vars.healing,
+                        "extra": subject.heal.extra
+                    }
+                });
+            }
+        } else {
+            vars.connector = '';
+        }
+
+
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars
+            })
         };
         return output;
     }

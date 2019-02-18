@@ -31,7 +31,7 @@ const tools = {
         return output;
     },
     stripSsml: txt => {
-        return txt.replace(/<[a-zA-Z0-9\s\=\'\"\/]*>/g, '');
+        return txt.replace(/<[a-zA-Z0-9s='"/]*>/g, '');
     },
     randSpell: (data = spells) => {
         const keys = Object.keys(data);
@@ -56,7 +56,7 @@ const tools = {
 
             // If no connector has been defined, take the default
             const connect = tools.getPhrase(`${phrase}.connector`);
-            if ((!vars.connector || !vars.connector.length) && connect) {
+            if (vars.connector === undefined && connect) {
                 vars.connector = connect;
             }
         }

@@ -111,6 +111,20 @@
                 "base": [
                     "<confirm> <connector> <level>"
                 ]
+            },
+            "healing": {
+                "connector": [
+                    "heals for "
+                ],
+                "base": [
+                    "<confirm> <connector><healing>"
+                ],
+                "healExtra": [
+                    "<heal> plus <extra>"
+                ],
+                "false": [
+                    "doesn't heal"
+                ]
             }
         },
         "check": {
