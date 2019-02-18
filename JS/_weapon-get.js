@@ -9,7 +9,6 @@ const get = {
         params,
         subject = data[params.weapon[0]]
     }) => {
-        console.log('TCL: subject', subject);
         let vars = {
             "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`,
             "tier": subject.tier,
@@ -37,6 +36,45 @@ const get = {
                     dmg
                 }
             })
+        }
+
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars
+            })
+        };
+
+        return output;
+    },
+    damage: ({
+        intent,
+        params,
+        subject = data[params.weapon[0]]
+    }) => {
+        let vars = {
+            "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`
+        };
+
+        if (subject.damage) {
+            let dmg = [];
+
+            subject.damage.forEach(x => {
+                dmg.push(`${x.amount}${x.dice}`);
+            });
+
+            dmg = tools.listing({
+                str: dmg,
+                connector: 'or '
+            });
+
+            dmg += ` ${subject.damage[0].type}`;
+
+            vars.damage = dmg;
+
+            if (subject.damage.length > 1) {
+                vars.twoHanded = tools.getPhrase(`${intent.raw}.twoHanded`);
+            }
         }
 
         let output = {

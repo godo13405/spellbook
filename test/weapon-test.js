@@ -31,4 +31,22 @@ describe('Get weapon', () => {
             assert.strictEqual(output.fulfillmentText, "A trident is a martial melee weapon, which causes 1d6, or 1d8 piercing damage");
         });
     });
+    describe('damage', () => {
+        it('single damage', () => {
+            const req = new testTools.Req().
+            action('weapon.get.damage').
+            name('weapon', 'club').
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "A club causes 1d4 bludgeoning damage");
+        });
+        it('versatile', () => {
+            const req = new testTools.Req().
+            action('weapon.get.damage').
+            name('weapon', 'trident').
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "A trident causes 1d6, or 1d8 piercing damage, if 2 handed");
+        });
+    });
 });

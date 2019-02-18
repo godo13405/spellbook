@@ -178,6 +178,14 @@
                 "_damage": [
                     ", which causes <dmg> damage"
                 ]
+            },
+            "damage": {
+                "base": [
+                    "<confirm> causes <damage> damage<twoHanded>"
+                ],
+                "twoHanded": [
+                    ", if 2 handed"
+                ]
             }
         }
     }

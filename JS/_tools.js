@@ -145,6 +145,9 @@ const tools = {
                 }
             }
 
+            // remove unused tags
+            str = str.replace(/<[a-zA-Z0-9\s]*>/g, '');
+
             return str;
         }
     },
