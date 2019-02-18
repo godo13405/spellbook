@@ -164,7 +164,8 @@ const tools = {
         contexts
     }) => {
         const contextsMap = [
-            "spell"
+            "spell",
+            "weapon"
         ];
         if (contexts) {
             for (const x of contexts) {

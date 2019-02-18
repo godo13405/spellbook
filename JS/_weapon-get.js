@@ -9,6 +9,7 @@ const get = {
         params,
         subject = data[params.weapon[0]]
     }) => {
+        console.log('TCL: subject', subject);
         let vars = {
             "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`,
             "tier": subject.tier,
