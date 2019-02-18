@@ -49,4 +49,22 @@ describe('Get weapon', () => {
             assert.strictEqual(output.fulfillmentText, "A trident causes 1d6, or 1d8 piercing damage, if 2 handed");
         });
     });
+    describe('price', () => {
+        it('single coin', () => {
+            const req = new testTools.Req().
+            action('weapon.get.price').
+            name('weapon', 'club').
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "A club costs a silver coin");
+        });
+        it('multiple coins', () => {
+            const req = new testTools.Req().
+            action('weapon.get.price').
+            name('weapon', 'trident').
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "A trident costs 5 gold coins");
+        });
+    });
 });

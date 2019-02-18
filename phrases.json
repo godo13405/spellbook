@@ -186,6 +186,14 @@
                 "twoHanded": [
                     ", if 2 handed"
                 ]
+            },
+            "price": {
+                "base": [
+                    "<confirm> costs <price>"
+                ],
+                "price": [
+                    ", if 2 handed"
+                ]
             }
         }
     }

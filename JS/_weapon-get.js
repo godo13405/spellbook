@@ -86,6 +86,30 @@ const get = {
 
         return output;
     },
+    price: ({
+        intent,
+        params,
+        subject = data[params.weapon[0]]
+    }) => {
+        let vars = {
+            "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`
+        };
+
+        if (subject.cost.amount > 1) {
+            vars.price = `${subject.cost.amount} ${subject.cost.unit} coins`;
+        } else {
+            vars.price = `a ${subject.cost.unit} coin`
+        }
+
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars
+            })
+        };
+
+        return output;
+    },
 };
 
 

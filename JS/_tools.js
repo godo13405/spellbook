@@ -92,9 +92,8 @@ const tools = {
                 });
             } else if (terminal === 'implicitConfirmation') {
                 // default implicit confirmation
-                str = '<name>';
                 str = tools.phrasing.tags({
-                    str,
+                    str: '<name>',
                     vars
                 });
             }
@@ -123,13 +122,12 @@ const tools = {
             // choose a random phrase from the array
             let key = 0,
                 output;
+
             if (Array.isArray(str)) {
                 if (global.randomPhrase && str.length > 0) {
                     key = Math.floor(Math.random() * str.length);
                 }
                 output = str[key];
-            } else {
-                output = false;
             }
             return output;
         },
