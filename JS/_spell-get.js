@@ -241,6 +241,23 @@ const get = {
             suggestions: []
         };
         return output;
+    },
+    level: ({
+        intent,
+        params,
+        subject = data[params.spell[0]]
+    }) => {
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars: {
+                    "name": subject.name,
+                    "level": subject.level
+                }
+            }),
+            suggestions: []
+        };
+        return output;
     }
 };
 

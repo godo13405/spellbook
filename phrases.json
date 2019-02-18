@@ -32,9 +32,6 @@
                 ]
             },
             "duration": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "connector": {
                     "instant": [
                         "is"
@@ -48,9 +45,6 @@
                 ]
             },
             "components": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "connector": [
                     "needs"
                 ],
@@ -68,9 +62,6 @@
                 ]
             },
             "materials": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "connector": [
                     "requires"
                 ],
@@ -82,9 +73,6 @@
                 ]
             },
             "classes": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "connector": [
                     "can be cast by"
                 ],
@@ -96,9 +84,6 @@
                 ]
             },
             "school": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "connector": [
                     "is an",
                     "belongs to the school of",
@@ -112,22 +97,24 @@
                 ]
             },
             "description": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "connector": [
                     "When casting"
                 ],
                 "base": [
                     "<connector> <confirm>, <description>"
                 ]
+            },
+            "level": {
+                "connector": [
+                    "is level"
+                ],
+                "base": [
+                    "<confirm> <connector> <level>"
+                ]
             }
         },
         "check": {
             "ritual": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "true": [
                     "Yes, <confirm> can be cast as a ritual"
                 ],
@@ -136,9 +123,6 @@
                 ]
             },
             "concentration": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "true": [
                     "<confirm> needs you fo concentrate on it"
                 ],
@@ -147,9 +131,6 @@
                 ]
             },
             "classes": {
-                "implicitConfirmation": [
-                    "<name>"
-                ],
                 "true": [
                     "Yes, <confirm> can cast by <class>"
                 ],

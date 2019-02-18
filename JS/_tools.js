@@ -90,6 +90,13 @@ const tools = {
                     str,
                     vars
                 });
+            } else if (terminal === 'implicitConfirmation') {
+                // default implicit confirmation
+                str = '<name>';
+                str = tools.phrasing.tags({
+                    str,
+                    vars
+                });
             }
 
             return str;
