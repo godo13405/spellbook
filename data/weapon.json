@@ -1,37 +1,619 @@
-{"_id": "club", "name": "club", "cost": { "amount": 1, "unit": "silver" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d4", "type": "bludgeoning" }], "weight": 2, "properties": [ "light" ] }
-{"_id": "dagger", "name": "dagger", "cost": { "amount": 2, "unit": "gold" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d4", "type": "piercing" }], "weight": 1, "properties": [ "light", "finesse", "thrown" ], "range": [ 20, 60 ] }
-{"_id": "greatclub", "name": "greatclub", "cost": { "amount": 2, "unit": "silver" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d8", "type": "bludgeoning" }], "weight": 10, "properties": [ "two-handed" ] }
-{"_id": "handaxe", "name": "handaxe", "cost": { "amount": 5, "unit": "gold" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d6", "type": "slashing" }], "weight": 2, "properties": [ "light", "thrown" ], "range": [ 20, 60 ] }
-{"_id": "javelin", "name": "javelin", "cost": { "amount": 5, "unit": "silver" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d6", "type": "piercing" }], "weight": 2, "properties": [ "thrown" ], "range": [ 30, 120 ] }
-{"_id": "light hammer", "name": "light hammer", "cost": { "amount": 2, "unit": "gold" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d4", "type": "bludgeoning" }], "weight": 2, "properties": [ "light", "thrown" ], "range": [ 20, 60 ] }
-{"_id": "mace", "name": "mace", "cost": { "amount": 5, "unit": "gold" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d6", "type": "bludgeoning" }], "weight": 4 }
-{"_id": "quarterstaff", "name": "quarterstaff", "cost": { "amount": 2, "unit": "silver" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d6", "type": "bludgeoning" },{ "amount": 1, "dice": "d8", "type": "bludgeoning" }], "weight": 4, "properties": [ "versatile" ] }
-{"_id": "sickle", "name": "sickle", "cost": { "amount": 1, "unit": "gold" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d4", "type": "slashing" }], "weight": 2, "properties": [ "light" ] }
-{"_id": "spear", "name": "spear", "cost": { "amount": 1, "unit": "gold" }, "type": "melee", "tier": "simple", "damage": [{ "amount": 1, "dice": "d6", "type": "piercing" }], "weight": 3, "properties": [ "thrown", "versatile" ], "range": [ 20, 60 ] }
-{"_id": "light crossbow", "name": "light crossbow", "cost": { "amount": 25, "unit": "gold" },"type": "ranged", "tier": "simple", "damage": [{ "amount": 1, "dice": "d8", "type": "piercing" }], "weight": 5, "properties": [ "ammunition", "loading", "two-handed" ], "range": [ 80, 320 ] }
-{"_id": "dart", "name": "dart", "cost": { "amount": 5, "unit": "copper" },"type": "ranged", "tier": "simple", "damage": [{ "amount": 1, "dice": "d4", "type": "piercing" }], "weight": 0.25, "properties": [ "finesse", "thrown" ], "range": [ 20, 60 ] }
-{"_id": "shortbow", "name": "shortbow", "cost": { "amount": 25, "unit": "gold" },"type": "ranged", "tier": "simple", "damage": [{ "amount": 1, "dice": "d6", "type": "piercing" }], "weight": 2, "properties": [ "ammunition", "two-handed" ], "range": [ 80, 320 ] }
-{"_id": "sling", "name": "sling", "cost": { "amount": 1, "unit": "silver" },"type": "ranged", "tier": "simple", "damage": [{ "amount": 1, "dice": "d4", "type": "bludgeoning" }], "properties": [ "ammunition" ], "range": [ 30, 120 ] }
-{"_id": "battleaxe", "name": "battleaxe", "cost": { "amount": 10, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "slashing" },{ "amount": 1, "dice": "d10", "type": "slashing" }], "weight": 4, "properties": [ "versatile" ] }
-{"_id": "flail", "name": "flail", "cost": { "amount": 10, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "bludgeoning" }], "weight": 2 }
-{"_id": "glaive", "name": "glaive", "cost": { "amount": 20, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d10", "type": "slashing" }], "weight": 6, "properties": [ "heavy", "reach", "two-handed" ] }
-{"_id": "greataxe", "name": "greataxe", "cost": { "amount": 30, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d12", "type": "slashing" }], "weight": 7, "properties": [ "heavy", "two-handed" ] }
-{"_id": "greatsword", "name": "greatsword", "cost": { "amount": 50, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 2, "dice": "d6", "type": "slashing" }], "weight": 6, "properties": [ "heavy", "two-handed" ] }
-{"_id": "halberd", "name": "halberd", "cost": { "amount": 20, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d10", "type": "slashing" }], "weight": 6, "properties": [ "heavy", "reach", "two-handed" ] }
-{"_id": "lance", "name": "lance", "cost": { "amount": 10, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d12", "type": "slashing" }], "weight": 6, "properties": [ "reach", "special" ] }
-{"_id": "longsword", "name": "longsword", "cost": { "amount": 15, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "slashing" },{ "amount": 1, "dice": "d10", "type": "slashing" }], "weight": 3, "properties": [ "versatile" ] }
-{"_id": "maul", "name": "maul", "cost": { "amount": 10, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 2, "dice": "d6", "type": "bludgeoning" }], "weight": 10, "properties": [ "heavy", "two-handed" ] }
-{"_id": "morningstar", "name": "morningstar", "cost": { "amount": 15, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "piercing" }], "weight": 4 }
-{"_id": "pike", "name": "pike", "cost": { "amount": 5, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d10", "type": "piercing" }], "weight": 18, "properties": [ "heavy", "reach", "two-handed" ] }
-{"_id": "rapier", "name": "rapier", "cost": { "amount": 25, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "piercing" }], "weight": 2, "properties": [ "finesse" ] }
-{"_id": "scimitar", "name": "scimitar", "cost": { "amount": 25, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d6", "type": "slashing" }], "weight": 3, "properties": [ "light", "finesse" ] }
-{"_id": "shortsword", "name": "shortsword", "cost": { "amount": 10, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d6", "type": "piercing" }], "weight": 2, "properties": [ "light", "finesse" ] }
-{"_id": "trident", "name": "trident", "cost": { "amount": 5, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d6", "type": "piercing" }, { "amount": 1, "dice": "d8", "type": "piercing" }], "weight": 4, "properties": [ "versatile", "thrown" ], "range": [ 20, 60 ] }
-{"_id": "war pick", "name": "war pick", "cost": { "amount": 5, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "piercing" }], "weight": 2 }
-{"_id": "warhammer", "name": "warhammer", "cost": { "amount": 15, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "bludgeoning" }, { "amount": 1, "dice": "d10", "type": "bludgeoning" }], "weight": 2, "properties": [ "versatile" ], "range": [ 20, 60 ] }
-{"_id": "whip", "name": "whip", "cost": { "amount": 2, "unit": "gold" }, "type": "melee", "tier": "martial", "damage": [{ "amount": 1, "dice": "d4", "type": "slashing" }], "weight": 3, "properties": [ "reach", "finesse" ] }
-{"_id": "blowgun", "name": "blowgun", "cost": { "amount": 10, "unit": "gold" }, "type": "ranged", "tier": "martial", "damage": [{ "amount": 1, "type": "piercing" }], "weight": 1, "properties": [ "ammunition", "loading" ], "range": [ 25, 100 ] }
-{"_id": "hand crossbow", "name": "hand crossbow", "cost": { "amount": 75, "unit": "gold" }, "type": "ranged", "tier": "martial", "damage": [{ "amount": 1, "dice": "d6", "type": "piercing" }], "weight": 3, "properties": [ "ammunition", "loading", "light" ], "range": [ 30, 120 ] }
-{"_id": "heavy crossbow", "name": "heavy crossbow", "cost": { "amount": 50, "unit": "gold" }, "type": "ranged", "tier": "martial", "damage": [{ "amount": 1, "dice": "d10", "type": "piercing" }], "weight": 18, "properties": [ "ammunition", "heavy", "loading", "two-handed" ], "range": [ 100, 400 ] }
-{"_id": "longbow", "name": "longbow", "cost": { "amount": 50, "unit": "gold" }, "type": "ranged", "tier": "martial", "damage": [{ "amount": 1, "dice": "d8", "type": "piercing" }], "weight": 2, "properties": [ "ammunition", "heavy", "two-handed" ], "range": [ 150, 600 ] }
-{"_id": "net", "name": "net", "cost": { "amount": 1, "unit": "gold" }, "type": "ranged", "tier": "martial", "weight": 3, "properties": [ "special", "thrown" ], "range": [ 5, 15 ] }
+{
+    "club": {
+        "name": "club",
+        "cost": {
+            "amount": 1,
+            "unit": "silver"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d4",
+            "type": "bludgeoning"
+        }],
+        "weight": 2,
+        "properties": ["light"]
+    },
+    "dagger": {
+        "name": "dagger",
+        "cost": {
+            "amount": 2,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d4",
+            "type": "piercing"
+        }],
+        "weight": 1,
+        "properties": ["light", "finesse", "thrown"],
+        "range": [20, 60]
+    },
+    "greatclub": {
+        "name": "greatclub",
+        "cost": {
+            "amount": 2,
+            "unit": "silver"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "bludgeoning"
+        }],
+        "weight": 10,
+        "properties": ["two-handed"]
+    },
+    "handaxe": {
+        "name": "handaxe",
+        "cost": {
+            "amount": 5,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "slashing"
+        }],
+        "weight": 2,
+        "properties": ["light", "thrown"],
+        "range": [20, 60]
+    },
+    "javelin": {
+        "name": "javelin",
+        "cost": {
+            "amount": 5,
+            "unit": "silver"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "piercing"
+        }],
+        "weight": 2,
+        "properties": ["thrown"],
+        "range": [30, 120]
+    },
+    "light hammer": {
+        "name": "light hammer",
+        "cost": {
+            "amount": 2,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d4",
+            "type": "bludgeoning"
+        }],
+        "weight": 2,
+        "properties": ["light", "thrown"],
+        "range": [20, 60]
+    },
+    "mace": {
+        "name": "mace",
+        "cost": {
+            "amount": 5,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "bludgeoning"
+        }],
+        "weight": 4
+    },
+    "quarterstaff": {
+        "name": "quarterstaff",
+        "cost": {
+            "amount": 2,
+            "unit": "silver"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "bludgeoning"
+        }, {
+            "amount": 1,
+            "dice": "d8",
+            "type": "bludgeoning"
+        }],
+        "weight": 4,
+        "properties": ["versatile"]
+    },
+    "sickle": {
+        "name": "sickle",
+        "cost": {
+            "amount": 1,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d4",
+            "type": "slashing"
+        }],
+        "weight": 2,
+        "properties": ["light"]
+    },
+    "spear": {
+        "name": "spear",
+        "cost": {
+            "amount": 1,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "piercing"
+        }],
+        "weight": 3,
+        "properties": ["thrown", "versatile"],
+        "range": [20, 60]
+    },
+    "light crossbow": {
+        "name": "light crossbow",
+        "cost": {
+            "amount": 25,
+            "unit": "gold"
+        },
+        "type": "ranged",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "piercing"
+        }],
+        "weight": 5,
+        "properties": ["ammunition", "loading", "two-handed"],
+        "range": [80, 320]
+    },
+    "dart": {
+        "name": "dart",
+        "cost": {
+            "amount": 5,
+            "unit": "copper"
+        },
+        "type": "ranged",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d4",
+            "type": "piercing"
+        }],
+        "weight": 0.25,
+        "properties": ["finesse", "thrown"],
+        "range": [20, 60]
+    },
+    "shortbow": {
+        "name": "shortbow",
+        "cost": {
+            "amount": 25,
+            "unit": "gold"
+        },
+        "type": "ranged",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "piercing"
+        }],
+        "weight": 2,
+        "properties": ["ammunition", "two-handed"],
+        "range": [80, 320]
+    },
+    "sling": {
+        "name": "sling",
+        "cost": {
+            "amount": 1,
+            "unit": "silver"
+        },
+        "type": "ranged",
+        "tier": "simple",
+        "damage": [{
+            "amount": 1,
+            "dice": "d4",
+            "type": "bludgeoning"
+        }],
+        "properties": ["ammunition"],
+        "range": [30, 120]
+    },
+    "battleaxe": {
+        "name": "battleaxe",
+        "cost": {
+            "amount": 10,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "slashing"
+        }, {
+            "amount": 1,
+            "dice": "d10",
+            "type": "slashing"
+        }],
+        "weight": 4,
+        "properties": ["versatile"]
+    },
+    "flail": {
+        "name": "flail",
+        "cost": {
+            "amount": 10,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "bludgeoning"
+        }],
+        "weight": 2
+    },
+    "glaive": {
+        "name": "glaive",
+        "cost": {
+            "amount": 20,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d10",
+            "type": "slashing"
+        }],
+        "weight": 6,
+        "properties": ["heavy", "reach", "two-handed"]
+    },
+    "greataxe": {
+        "name": "greataxe",
+        "cost": {
+            "amount": 30,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d12",
+            "type": "slashing"
+        }],
+        "weight": 7,
+        "properties": ["heavy", "two-handed"]
+    },
+    "greatsword": {
+        "name": "greatsword",
+        "cost": {
+            "amount": 50,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 2,
+            "dice": "d6",
+            "type": "slashing"
+        }],
+        "weight": 6,
+        "properties": ["heavy", "two-handed"]
+    },
+    "halberd": {
+        "name": "halberd",
+        "cost": {
+            "amount": 20,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d10",
+            "type": "slashing"
+        }],
+        "weight": 6,
+        "properties": ["heavy", "reach", "two-handed"]
+    },
+    "lance": {
+        "name": "lance",
+        "cost": {
+            "amount": 10,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d12",
+            "type": "slashing"
+        }],
+        "weight": 6,
+        "properties": ["reach", "special"]
+    },
+    "longsword": {
+        "name": "longsword",
+        "cost": {
+            "amount": 15,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "slashing"
+        }, {
+            "amount": 1,
+            "dice": "d10",
+            "type": "slashing"
+        }],
+        "weight": 3,
+        "properties": ["versatile"]
+    },
+    "maul": {
+        "name": "maul",
+        "cost": {
+            "amount": 10,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 2,
+            "dice": "d6",
+            "type": "bludgeoning"
+        }],
+        "weight": 10,
+        "properties": ["heavy", "two-handed"]
+    },
+    "morningstar": {
+        "name": "morningstar",
+        "cost": {
+            "amount": 15,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "piercing"
+        }],
+        "weight": 4
+    },
+    "pike": {
+        "name": "pike",
+        "cost": {
+            "amount": 5,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d10",
+            "type": "piercing"
+        }],
+        "weight": 18,
+        "properties": ["heavy", "reach", "two-handed"]
+    },
+    "rapier": {
+        "name": "rapier",
+        "cost": {
+            "amount": 25,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "piercing"
+        }],
+        "weight": 2,
+        "properties": ["finesse"]
+    },
+    "scimitar": {
+        "name": "scimitar",
+        "cost": {
+            "amount": 25,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "slashing"
+        }],
+        "weight": 3,
+        "properties": ["light", "finesse"]
+    },
+    "shortsword": {
+        "name": "shortsword",
+        "cost": {
+            "amount": 10,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "piercing"
+        }],
+        "weight": 2,
+        "properties": ["light", "finesse"]
+    },
+    "trident": {
+        "name": "trident",
+        "cost": {
+            "amount": 5,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "piercing"
+        }, {
+            "amount": 1,
+            "dice": "d8",
+            "type": "piercing"
+        }],
+        "weight": 4,
+        "properties": ["versatile", "thrown"],
+        "range": [20, 60]
+    },
+    "war pick": {
+        "name": "war pick",
+        "cost": {
+            "amount": 5,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "piercing"
+        }],
+        "weight": 2
+    },
+    "warhammer": {
+        "name": "warhammer",
+        "cost": {
+            "amount": 15,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "bludgeoning"
+        }, {
+            "amount": 1,
+            "dice": "d10",
+            "type": "bludgeoning"
+        }],
+        "weight": 2,
+        "properties": ["versatile"],
+        "range": [20, 60]
+    },
+    "whip": {
+        "name": "whip",
+        "cost": {
+            "amount": 2,
+            "unit": "gold"
+        },
+        "type": "melee",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d4",
+            "type": "slashing"
+        }],
+        "weight": 3,
+        "properties": ["reach", "finesse"]
+    },
+    "blowgun": {
+        "name": "blowgun",
+        "cost": {
+            "amount": 10,
+            "unit": "gold"
+        },
+        "type": "ranged",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "type": "piercing"
+        }],
+        "weight": 1,
+        "properties": ["ammunition", "loading"],
+        "range": [25, 100]
+    },
+    "hand crossbow": {
+        "name": "hand crossbow",
+        "cost": {
+            "amount": 75,
+            "unit": "gold"
+        },
+        "type": "ranged",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "piercing"
+        }],
+        "weight": 3,
+        "properties": ["ammunition", "loading", "light"],
+        "range": [30, 120]
+    },
+    "heavy crossbow": {
+        "name": "heavy crossbow",
+        "cost": {
+            "amount": 50,
+            "unit": "gold"
+        },
+        "type": "ranged",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d10",
+            "type": "piercing"
+        }],
+        "weight": 18,
+        "properties": ["ammunition", "heavy", "loading", "two-handed"],
+        "range": [100, 400]
+    },
+    "longbow": {
+        "name": "longbow",
+        "cost": {
+            "amount": 50,
+            "unit": "gold"
+        },
+        "type": "ranged",
+        "tier": "martial",
+        "damage": [{
+            "amount": 1,
+            "dice": "d8",
+            "type": "piercing"
+        }],
+        "weight": 2,
+        "properties": ["ammunition", "heavy", "two-handed"],
+        "range": [150, 600]
+    },
+    "net": {
+        "name": "net",
+        "cost": {
+            "amount": 1,
+            "unit": "gold"
+        },
+        "type": "ranged",
+        "tier": "martial",
+        "weight": 3,
+        "properties": ["special", "thrown"],
+        "range": [5, 15]
+    }
+}

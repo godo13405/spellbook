@@ -165,5 +165,20 @@
                 ]
             }
         }
+    },
+    "weapon": {
+        "get": {
+            "init": {
+                "implicitConfirmation": [
+                    "<name> is"
+                ],
+                "base": [
+                    "<confirm> a <tier> <type> weapon<damage>"
+                ],
+                "_damage": [
+                    ", which causes <dmg> damage"
+                ]
+            }
+        }
     }
 }
