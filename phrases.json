@@ -3,10 +3,10 @@
         "get": {
             "init": {
                 "implicitConfirmation": [
-                    "<name> is "
+                    "<name> is"
                 ],
                 "base": [
-                    "<confirm>a <level>"
+                    "<confirm> <level>"
                 ],
                 "damage": [
                     ", which does <damage>"
@@ -109,6 +109,17 @@
                 ],
                 "aboutSchool": [
                     "What is <school>"
+                ]
+            },
+            "description": {
+                "implicitConfirmation": [
+                    "<name>"
+                ],
+                "connector": [
+                    "When casting"
+                ],
+                "base": [
+                    "<connector> <confirm>, <description>"
                 ]
             }
         },
