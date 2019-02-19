@@ -7,8 +7,10 @@ const options = require('./_globalOptions.js');
 const spells = require('../data/spell.json');
 
 const tools = {
-    capitalize: txt => {
-        if (typeof txt === 'string') {
+    capitalize: (txt, first) => {
+        if (first) {
+            txt = txt.charAt(0).toUpperCase() + txt.slice(1);
+        } else if (typeof txt === 'string') {
             txt = txt.replace(/\b\w/g, l => l.toUpperCase());
         } else {
             // eslint-disable-next-line no-console
@@ -17,15 +19,20 @@ const tools = {
         return txt;
     },
     preposition: txt => {
-        const anLetters = [
-            'a',
-            'e',
-            'i',
-            'o'
-        ];
         let output = 'a';
-        if (anLetters.includes(txt.toLowerCase().substring(1))) {
-            output = 'an';
+        if (typeof txt === 'string') {
+            const anLetters = [
+                'a',
+                'e',
+                'i',
+                'o'
+            ];
+            if (anLetters.includes(txt.toLowerCase().substring(1))) {
+                output = 'an';
+            }
+        } else {
+            // eslint-disable-next-line no-console
+            console.log('tools.prepositioon Error: expected txt to be a string, got ', typeof txt);
         }
 
         return output;
@@ -68,12 +75,33 @@ const tools = {
         };
         const output = tools.phrasing.build(args);
 
-        return output;
+        return output.trim();
     },
     getPhrase: phrase => {
+        // takes full path to phrase
         return tools.phrasing.rand(tools.phrasing.find({
             phrase
         }));
+    },
+    getAll: ({
+        subject,
+        target,
+        connector = ' or ',
+        phrase
+    }) => {
+        let output = tools.phrasing.find({
+            phrase: target,
+            lib: subject
+        });
+
+        output = tools.listing({
+            str: output,
+            connector
+        });
+
+        output = phrase + output;
+
+        return output;
     },
     phrasing: {
         build: ({
@@ -153,11 +181,13 @@ const tools = {
         str,
         connector = 'and '
     }) => {
-        let output = str[0];
-        if (str.length > 1) {
-            output = `${str.slice(0, -1).join(', ')}, ${connector}${str.slice(-1)}`;
+        let output = str;
+        if (Array.isArray(str)) {
+            output = str[0];
+            if (str.length > 1) {
+                output = `${str.slice(0, -1).join(', ')}, ${connector}${str.slice(-1)}`;
+            }
         }
-
         return output;
     },
     checkContext: ({
@@ -185,6 +215,57 @@ const tools = {
         }
         return params;
     },
+    targetRespond: params => {
+        let target,
+            targetMap = {
+                'me': 'you',
+                'you': 'I'
+            };
+
+        if (!params.target && !params.monster) {
+            params.target = 'me';
+        }
+
+        if (params.target) {
+            target = targetMap[params.target];
+        } else if (params.monster) {
+            target = `${tools.preposition(params.monster)} ${params.monster}`;
+        }
+
+        return target;
+    },
+    getMods: ({
+        mods,
+        target = 'you'
+    }) => {
+        let output = [];
+        if (mods.againstTarget) {
+            if (mods.againstTarget.advantage) {
+                output.push(`${mods.againstTarget.advantage} rolls have advantage against ${target}`);
+
+            }
+            if (mods.againstTarget.disadvantage) {
+                output.push(`${mods.againstTarget.disadvantage} rolls have disadvantage against ${target}`);
+
+            }
+        }
+        if (mods.byTarget) {
+            if (mods.byTarget.advantage) {
+                output.push(`${target} have advantage on ${mods.byTarget.advantage} rolls `);
+
+            }
+            if (mods.byTarget.disadvantage) {
+                output.push(`${target} have disadvantage on ${mods.byTarget.disadvantage} rolls `);
+
+            }
+        }
+
+        output = tools.listing({
+            str: output
+        });
+
+        return output;
+    }
 };
 
 exports = module.exports = tools;

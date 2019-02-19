@@ -196,5 +196,17 @@
                 ]
             }
         }
+    },
+    "condition": {
+        "get": {
+            "init": {
+                "implicitConfirmation": [
+                    "When <name>"
+                ],
+                "base": [
+                    "<confirm>, <target> <cant> <autoFail>. <mods>"
+                ]
+            }
+        }
     }
 }
