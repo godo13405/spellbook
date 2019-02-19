@@ -1,6 +1,4 @@
 steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['info']
-  timeout: 500s
-options:
- diskSizeMb: 200
+  timeout: 500ss
