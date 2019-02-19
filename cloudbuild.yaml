@@ -3,4 +3,4 @@ steps:
   args: ['info']
   timeout: 500s
 options:
- diskSizeGb: .2
+ diskSizeGb: 0.2
