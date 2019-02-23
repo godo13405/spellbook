@@ -1,12 +1,31 @@
 <html>
 
 <head>
-
+    <link rel="stylesheet" type="text/css" href="https://github.githubassets.com/assets/github-38162889e1878fa3b887aa360e70ab6c.css">
+    <style>
+        .markdown-body {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
-<body>
+<body class="markdown-body">
 
-    <script src="https://cdn.jsdelivr.net/npm/showdown@<version tag>/dist/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.0/dist/showdown.min.js"></script>
+    <script defer>
+        const url = 'https://raw.githubusercontent.com/godo13405/dragon-tome/master/README.md';
+        const converter = new showdown.Converter();
+
+        fetch(url)
+            .then((resp) => {
+                return resp.text();
+            })
+            .then((data) => {
+                document.querySelector('body').innerHTML = (converter.makeHtml(data));
+            });
+    </script>
 </body>
 
 </html>
