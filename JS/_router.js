@@ -9,31 +9,42 @@ if (global.isDev) {
 
 const router = {
     ready: req => {
-        let output = 'Sorry, something went wrong';
-        const params = tools.checkContext({
-                params: req.queryResult.parameters,
-                contexts: req.queryResult.outputContexts
-            }),
-            intent = tools.intent(req.queryResult.action);
+        // Don't listen to all events on Slack, only DMs and direct mentions
+        if (!req.originalDetectIntentRequest || req.originalDetectIntentRequest.source !== 'slack' ||
+            (req.originalDetectIntentRequest.payload.data.event.channel_type === 'im' ||
+                (req.originalDetectIntentRequest.payload.data.event.channel_type !== 'im' && req.originalDetectIntentRequest.payload.data.event.text.includes(`<@${req.originalDetectIntentRequest.payload.data.authed_users[0]}>`))
+            )
+        ) {
+            let output = 'Sorry, something went wrong';
+            const params = tools.checkContext({
+                    params: req.queryResult.parameters,
+                    contexts: req.queryResult.outputContexts
+                }),
+                intent = tools.intent(req.queryResult.action);
 
-        output = intent.fn[intent.action][intent.function]({
-            intent,
-            params
-        });
+            output = intent.fn[intent.action][intent.function]({
+                intent,
+                params
+            });
 
-        if (global.isDev) {
+            if (global.isDev) {
+                // eslint-disable-next-line no-console
+                console.log(chalk.gray(req.queryResult.action));
+                // eslint-disable-next-line no-console
+                console.log(chalk.green(output.data));
+                // eslint-disable-next-line no-console
+                console.log(chalk.inverse(output.suggestions));
+            }
+
+            return respond({
+                data: output,
+                req
+            });
+            // eslint-disable-next-line no-else-return
+        } else {
             // eslint-disable-next-line no-console
-            console.log(chalk.gray(req.queryResult.action));
-            // eslint-disable-next-line no-console
-            console.log(chalk.green(output.data));
-            // eslint-disable-next-line no-console
-            console.log(chalk.inverse(output.suggestions));
+            console.log(chalk.red('not listening for this'), req.originalDetectIntentRequest.payload.data.authed_users[0]);
         }
-
-        return respond({
-            data: output,
-            req
-        });
     }
 };
 
