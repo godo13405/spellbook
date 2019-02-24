@@ -265,6 +265,18 @@ const tools = {
         });
 
         return output;
+    },
+    intent: action => {
+        let parts = action.split('.'),
+            intent = {
+                raw: action,
+                entity: parts[0],
+                action: parts[1],
+                function: parts[2],
+            };
+        intent.fn = require(`./_${intent.entity}.js`);
+
+        return intent;
     }
 };
 

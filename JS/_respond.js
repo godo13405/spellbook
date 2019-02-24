@@ -3,6 +3,7 @@
 const respondTools = require('./_respond-tools.js'),
   tools = require('./_tools.js');
 
+// eslint-disable-next-line max-lines-per-function
 const respond = ({
   data,
   req
@@ -39,12 +40,12 @@ const respond = ({
     });
   }
 
+
   // Suggestions
   output = respondTools.suggestions({
     suggestions: data.suggestions,
     output
   });
-
   return JSON.stringify(output);
 };
 

@@ -1,6 +1,8 @@
 'use strict';
 
-const tools = {
+const tools = require('./_tools.js');
+
+const respondTools = {
     context: ({
         output,
         req,
@@ -56,4 +58,4 @@ const tools = {
     }
 };
 
-exports = module.exports = tools;
+exports = module.exports = respondTools;
