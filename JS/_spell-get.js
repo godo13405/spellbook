@@ -225,8 +225,9 @@ const get = {
     description: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
+        console.log(params.spell);
         let description = subject.description;
         description = description.charAt(0).toLowerCase() + description.substr(1, description.length);
         let output = {

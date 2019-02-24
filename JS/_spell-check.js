@@ -7,7 +7,7 @@ const get = {
     ritual: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let output = {
             data: tools.phrase({

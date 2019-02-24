@@ -89,7 +89,7 @@ const get = {
     price: ({
         intent,
         params,
-        subject = data[params.weapon[0]]
+        subject = data[params.weapon]
     }) => {
         let vars = {
             "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`
