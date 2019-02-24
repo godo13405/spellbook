@@ -1,4 +1,4 @@
-runtime: nodejs10 # For Node.js 8, use runtime: nodejs8
+runtime: nodejs10
 
 instance_class: F2
 
@@ -6,5 +6,5 @@ env_variables:
   NODE_ENV: "production"
   PORT: 8080
 
- manual_scaling:
-      instances: 1
+manual_scaling:
+  instances: 1
