@@ -8,12 +8,6 @@ You can ask it about a lot of things. It even understands the context from one q
 
 Here are some samples of what you can ask and the responses you should get. Bear in mind these are just examples, as some of the phrases are randomised.
 
--  [Spells](https://github.com/godo13405/dragon-spellbook/wiki/Spells)
--  [Weapons](https://github.com/godo13405/dragon-spellbook/wiki/Weapons)
-
--  [Platforms](https://github.com/godo13405/dragon-spellbook/wiki/Platforms)
-
-
 ## Spells
 ### What
 - **what is fireball**
@@ -42,3 +36,8 @@ Here are some samples of what you can ask and the responses you should get. Bear
   > Longbow does 1d8 piercing damage
 - **how much for a whip**
   > A Whip costs 2 gold pieces
+  
+  
+  
+  ----
+  [Privacy Policy](https://godo13405.github.io/dragon-tome/privacy-policy.html)
