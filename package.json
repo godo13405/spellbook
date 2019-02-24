@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "clear && mocha",
+    "prestart": "npm run slack",
     "start": "node index.js",
     "dev": "NODE_ENV=dev npx nodemon",
-    "serve": "ssh -R spellbook:80:localhost:8080 serveo.net"
+    "serve": "ssh -R spellbook:80:localhost:8080 serveo.net",
+    "slack": "docker run -d --name slack_bot  -e accesstoken=\"76a83b56dea94025ab23e4aac73c3e4f\"  -e slackkey=\"xoxb-90038760739-560250226871-CEFSJuuhFtzHdiJEaug5Cw9G\"  speaktoit/api-ai-slack-bot && docker start slack_bot"
   },
   "repository": {
     "type": "git",
