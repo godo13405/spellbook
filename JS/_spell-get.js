@@ -8,7 +8,7 @@ const get = {
     init: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let level;
         if (subject.level === '0') {
@@ -46,7 +46,7 @@ const get = {
     damage: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let output = {
             data: tools.phrase({
@@ -66,7 +66,7 @@ const get = {
     castingTime: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let cast = [];
 
@@ -89,7 +89,7 @@ const get = {
     duration: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let connector = tools.getPhrase(`${intent.raw}.connector.lasts`);
         // Change the phrasing for instantaneous
@@ -111,7 +111,7 @@ const get = {
     components: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let vars = {
             "name": subject.name,
@@ -145,7 +145,7 @@ const get = {
     materials: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let args = {
             phrase: intent.raw,
@@ -167,7 +167,7 @@ const get = {
     classes: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let classes = [],
             connect = `${intent.raw}.connector`;
@@ -200,7 +200,7 @@ const get = {
     school: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let output = {
             data: tools.phrase({
@@ -244,7 +244,7 @@ const get = {
     level: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let output = {
             data: tools.phrase({
@@ -261,7 +261,7 @@ const get = {
     healing: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let vars = {
             "name": subject.name,
