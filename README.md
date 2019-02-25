@@ -1,5 +1,3 @@
-
-
 # Dragon Spellbook
 ![banner](https://godo13405.github.io/dragon-tome/src/banner%20text.svg?sanitize=true)
 This is a hook for a chatbot built on Dialogflow that looks up information about D&D 5e.
