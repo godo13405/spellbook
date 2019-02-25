@@ -2,29 +2,22 @@
 
 // Options
 // eslint-disable-next-line no-unused-vars
-const options = require('./JS/_globalOptions.js');
-
-const router = require('./JS/_router.js'),
+const options = require('./JS/_globalOptions.js'),
+    serve = require('./JS/_serve.js'),
     http = require('http'),
     port = process.env.PORT || 8080,
     server = http.createServer();
 
 server.on('request', (req, res) => {
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    let body = [];
-    req.on('error', err => {
-        // eslint-disable-next-line no-console
-        console.error(err);
-    }).on('data', chunk => {
-        body.push(chunk);
-    }).
-    on('end', () => {
-        body = JSON.parse(Buffer.concat(body).toString());
-        res.end(router.ready(body));
-    });
-}).
-listen(port, () => {
+    // API call
+    if (req.method === 'POST' && req.headers.auth === ')6@9npt?Fwgp={V') {
+        serve.api(req, res);
+        // Demo
+    } else if (req.method === 'GET') {
+        serve.static(req, res);
+    }
+}).listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`Server running at port ${port}`);
 });

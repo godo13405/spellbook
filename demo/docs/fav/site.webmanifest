@@ -1,0 +1,20 @@
+{
+    "name": "Dragon Book",
+    "short_name": "Dragon Book",
+    "icons": [
+        {
+            "src": "/fav/android-chrome-192x192.png?v=ngknXweWKd",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/fav/android-chrome-256x256.png?v=ngknXweWKd",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#bd2624",
+    "background_color": "#bd2624",
+    "start_url": "https://dragon-book.eu-gb.mybluemix.net/",
+    "display": "standalone"
+}

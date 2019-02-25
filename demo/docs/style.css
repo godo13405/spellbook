@@ -1,0 +1,315 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Helvetice Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  background: #efefef;
+  font-size: 16px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  z-index: -1;
+}
+
+body::before {
+  top: 0;
+  height: 40vh;
+  background: url(./dragon-logo.svg) -4vw 2vh #BD2624 no-repeat;
+  background-size: auto 50vh;
+  mask: url(./bg.svg);
+  mask-position: center bottom;
+  -webkit-mask: url(./bg.svg);
+  -webkit-mask-position: center bottom;
+}
+
+.widget-container {
+  width: 100%;
+  height: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (max-height: 905px) {
+  .widget-container {
+    max-height: 100%;
+  }
+}
+
+@media all and (min-height: 905px) {
+  .widget-container {
+    border-bottom: 10vh solid transparent;
+  }
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.footer {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: .75rem 0;
+  height: 2.5em;
+  background-color: rgba(239, 239, 239, .85);
+  border-bottom: 1px solid rgb(245, 245, 245);
+  text-align: center;
+}
+
+@media all and (max-height: 905px) {
+  .footer {
+    bottom: auto;
+    top: 0;
+    max-width: 450px;
+    left: 50%;
+    margin-left: -225px;
+  }
+}
+
+.footer li {
+  display: inline;
+  padding: 0 1em;
+}
+
+.footer li:not(:last-child) {
+  border-right: 1px solid rgba(50, 50, 50, .25);
+}
+
+.footer li a {
+  text-decoration: none;
+  color: rgba(50, 50, 50, .6);
+}
+
+.user-input-container {
+  height: 3em;
+}
+
+.user-input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: .6em 2.5rem;
+  border: 0;
+  border-bottom: 1px solid rgba(50, 50, 50, .4);
+  font-size: 1rem;
+  background: transparent;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+}
+
+.card,
+.speech-bubble {
+  background: #fff;
+  min-width: 280px;
+  padding: .8em;
+  border-radius: .4em;
+  text-align: left;
+  position: relative;
+  margin: .6em;
+  box-shadow: 0 1px 2px rgba(50, 50, 50, .2);
+  animation: bubble-in .4s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.speech-bubble {
+  width: 60%;
+  max-width: 350px;
+}
+
+.card {
+  width: 70%;
+  max-width: 450px;
+  animation-duration: 1.2s;
+}
+
+.speech-bubble:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: calc(100% - 4px);
+  border: 7px solid transparent;
+  border-color: transparent transparent #fff #fff;
+  box-shadow: 1px 1px 2px rgba(50, 50, 50, .2);
+}
+
+.speech-bubble.user-said {
+  align-self: flex-end;
+}
+
+.speech-bubble.bot-said {
+  background: #a4201e;
+  color: #fff;
+  mix-blend-mode: screen;
+}
+
+.speech-bubble.bot-said:after {
+  left: auto;
+  right: calc(100% - 4px);
+  border-color: transparent #a4201e #a4201e transparent;
+  box-shadow: -1px 1px 2px rgba(50, 50, 50, .2);
+}
+
+.speech-bubble:empty {
+  color: #666;
+  background: #ddd;
+  border: 1px solid #666;
+  box-shadow: none;
+}
+
+.speech-bubble:empty:after {
+  display: none;
+}
+
+.speech-bubble:empty:before {
+  content: "Sorry, something broke :-(";
+}
+
+@keyframes bubble-in {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.card h2 {
+  border-bottom: 1px solid #a4201e;
+  margin: 0;
+  padding: 0 0 .2em;
+  color: #a4201e;
+  font-family: "Georgia", serif;
+  font-weight: 400;
+}
+
+.card p {
+  color: #666;
+}
+
+.user-mic,
+.bot-mute {
+  width: 3em;
+  border: .6em solid transparent;
+  position: absolute;
+  bottom: 0;
+  height: 3em;
+  cursor: pointer;
+}
+
+.user-mic {
+  background: url(./mic.svg) center no-repeat transparent;
+  left: 0;
+}
+
+.bot-mute {
+  right: 0;
+}
+
+.bot-mute span:before,
+.bot-mute span:after {
+  content: "";
+  width: 45%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+}
+
+.bot-mute span:before {
+  background: url(./speaker.svg) center no-repeat transparent;
+  margin-right: 10%;
+}
+
+.bot-mute span:after {
+  background: url(./sound-waves.svg) center no-repeat transparent;
+  transition: opacity .2s ease-out;
+}
+
+.bot-mute input:not(:checked)~span:after {
+  opacity: 0;
+}
+
+.listening {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-image: url(./mic.svg), url(./pulse.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center center, 49.6% 45%;
+  background-color: rgba(255, 255, 255, .7);
+  background-size: 100px, 300px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease-out;
+}
+
+body.listening .listening {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.suggestions-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.suggestion {
+  display: inline-block;
+  padding: .6em 1em;
+  border: 1px solid rgba(50, 50, 50, .2);
+  border-radius: 1.5em;
+  margin-right: 1em;
+  cursor: pointer;
+  animation: bubble-in .4s ease-out;
+  animation-fill-mode: forwards;
+}
