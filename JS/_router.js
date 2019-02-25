@@ -41,7 +41,7 @@ const router = {
                 req
             });
             // eslint-disable-next-line no-else-return
-        } else {
+        } else if (global.isDev) {
             // eslint-disable-next-line no-console
             console.log(chalk.red('not listening for this'), req.originalDetectIntentRequest.payload.data.authed_users[0]);
         }

@@ -1,8 +1,11 @@
 'use strict';
 
 const router = require('./_router.js'),
-    chalk = require('chalk'),
     fs = require('fs');
+let chalk;
+if (global.isDev) {
+    chalk = require('chalk');
+}
 
 const serve = {
     api: (req, res) => {
@@ -10,7 +13,7 @@ const serve = {
         let body = [];
         req.on('error', err => {
             // eslint-disable-next-line no-console
-            console.error(chalk.red(err));
+            if (global.isDev) console.error(chalk.red(err));
         }).on('data', chunk => {
             body.push(chunk);
         }).
@@ -29,7 +32,7 @@ const serve = {
         fs.readFile(filePath, (error, content) => {
             if (error) {
                 // eslint-disable-next-line no-console
-                console.log(chalk.red('invalid URL'), chalk.blue(filePath));
+                if (global.isDev) console.log(chalk.red('invalid URL'), chalk.blue(filePath));
             }
             res.setHeader('Content-Type', serve.getContentType(req.url));
             res.end(content, 'utf-8');
@@ -72,8 +75,6 @@ const serve = {
         sessionId = 'quickstart-session-id',
         languageCode = 'en',
         res,
-        // let's decrypt the keys
-        auth = require('./config'),
         dialogflow = require('dialogflow')
     }) => {
 
@@ -108,6 +109,7 @@ const serve = {
             return res.json(response[0].queryResult);
         }).
         catch(err => {
+            // eslint-disable-next-line no-console
             console.error('ERROR:', err);
         });
     }
