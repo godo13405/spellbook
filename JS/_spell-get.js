@@ -11,7 +11,7 @@ const get = {
         subject = data[params.spell]
     }) => {
         let level;
-        if (subject.level === '0') {
+        if (!subject.level) {
             level = `${tools.preposition(subject.school)} ${tools.capitalize(subject.school)} cantrip`;
         } else {
             level = `a level ${subject.level} ${tools.capitalize(subject.school)} spell`;
@@ -284,6 +284,41 @@ const get = {
             vars.connector = '';
         }
 
+
+        let output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                vars
+            })
+        };
+        return output;
+    },
+    higherLevelDamage: ({
+        intent,
+        params,
+        subject = data[params.spell]
+    }) => {
+        let vars = {
+            "name": subject.name,
+            "level": params.level,
+            "higherLevelDamage": tools.getPhrase(`${intent.raw}.${false}`)
+        };
+        if (subject.higherLevelDamage) {
+            // calculate the extra damage
+            const levelDifference = params.level - subject.level;
+            for (let index = 0; index < levelDifference; index++) {
+                subject.damage.forEach(x => {
+                    subject.higherLevelDamage.forEach(y => {
+                        if (x.dice === y.dice && x.type === y.type) {
+                            x.amount += y.amount * levelDifference;
+                        }
+                    });
+                });
+            }
+
+
+            vars.higherLevelDamage = spellTools.damage(subject.damage);
+        }
 
         let output = {
             data: tools.phrase({

@@ -125,6 +125,17 @@
                 "false": [
                     "doesn't heal"
                 ]
+            },
+            "higherLevelDamage": {
+                "connector": [
+                    "does"
+                ],
+                "base": [
+                    "At level <level>, <confirm> <connector> <higherLevelDamage>"
+                ],
+                "false": [
+                    "can't be cast at a higher level"
+                ]
             }
         },
         "check": {

@@ -194,6 +194,16 @@ describe('Get spell', () => {
             assert.strictEqual(output.fulfillmentText, "Mass Healing Word heals for 1d4 plus your spellcasting anility modifier");
         });
     });
+    describe('higher levels', () => {
+        it('fireball at level 4', () => {
+            const req = new testTools.Req().
+            action("spell.get.higherLevelDamage").
+            name('level', 4).
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "At level 4, Fireball does 9d6 fire damage");
+        });
+    });
 });
 
 

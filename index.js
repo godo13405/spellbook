@@ -5,7 +5,7 @@
 const options = require('./JS/_globalOptions.js'),
     serve = require('./JS/_serve.js'),
     http = require('http'),
-    port = process.env.PORT || 8080,
+    port = 8080,
     server = http.createServer();
 
 server.on('request', (req, res) => {
