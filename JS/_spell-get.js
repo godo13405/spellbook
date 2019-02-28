@@ -26,8 +26,11 @@ const get = {
                     level,
                 }
             }),
-            "suggestions": []
+            "suggestions": [],
         };
+        if (subject.audio) {
+            output.audio = subject.audio;
+        }
         if (subject.damage) {
             let args = {
                     phrase: intent.raw,

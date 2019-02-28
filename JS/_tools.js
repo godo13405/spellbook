@@ -280,6 +280,28 @@ const tools = {
     },
     clone: obj => {
         return JSON.parse(JSON.stringify(obj));
+    },
+    sound: (input, audio) => {
+        let output = input;
+        if (audio) {
+            if (Array.isArray(audio)) {
+                audio = audio[Math.floor(Math.random() * audio.length)];
+            }
+
+            output += `<audio src="${audio}"/>`;
+            if (audio.offset) {
+                output = `<par>
+                    <media xml:id="response" begin="0">
+                        <speak>${input}</speak>
+                    </media>
+                    <media xml:id="sfx" begin="response.end${audio.offset}s">
+                        <audio src="${audio.url}" />
+                    </media>
+                </par>`;
+            }
+        }
+
+        return output;
     }
 };
 

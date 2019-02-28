@@ -8,14 +8,16 @@ const respond = ({
   data,
   req
 }) => {
-  const txt = tools.stripSsml(data.data || data.speech);
+  const txt = tools.stripSsml(data.data || data.speech),
+    speech = tools.sound(data.speech || data.data, data.audio);
   let output = {
     "fulfillmentText": data.data,
     "fulfillmentMessages": [{
         "platform": "ACTIONS_ON_GOOGLE",
         "simpleResponses": {
           "simpleResponses": [{
-            "textToSpeech": data.speech || data.data,
+            // "textToSpeech": speech,
+            "ssml": `<speak>${speech}</speak>`,
             "displayText": txt
           }]
         }
