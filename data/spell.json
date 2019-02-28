@@ -11,6 +11,10 @@
         "duration": "up to 1 minute",
         "concentration": true,
         "higher_levels": "using a spell slot of **2nd level** or higher, you can target one additional creature for each slot level above 1st.",
+        "higherLevelTarget": {
+            "amount": 1,
+            "target": "creatures"
+        },
         "level": 1,
         "name": "Bane",
         "range": 30,
@@ -33,6 +37,10 @@
         },
         "duration": "24 hours",
         "higher_levels": "using a spell slot of **2nd level** or higher, you can affect one additional beast for each slot level above 1st.",
+        "higherLevelTarget": {
+            "amount": 1,
+            "target": "beasts"
+        },
         "level": 1,
         "name": "Animal Friendship",
         "range": 30,
@@ -48,7 +56,7 @@
         }],
         "class": ["bard", "sorcerer", "warlock", "wizard"],
         "components": ["somatic", "verbal"],
-        "description": "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, an**d slashing damage** dealt by weapon attacks.",
+        "description": "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.",
         "duration": "1 round",
         "level": 0,
         "name": "Blade Ward",
@@ -90,6 +98,12 @@
         },
         "duration": "1 hour",
         "higher_levels": "using a spell slot of **2nd level** or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+        "higherLevelTarget": {
+            "amount": 1,
+            "target": "creatures",
+            "separated": 30,
+            "unit": "ft"
+        },
         "level": 1,
         "name": "Charm Person",
         "range": 30,
@@ -119,6 +133,11 @@
         },
         "duration": "instantaneous",
         "higher_levels": "using a spell slot of **2nd level** or higher, the damage increases by **1d6** for each slot level above 1st.",
+        "higherLevelDamage": [{
+            "amount": 1,
+            "dice": "d6",
+            "type": "fire"
+        }],
         "level": 1,
         "name": "Burning Hands",
         "range": 15,
@@ -163,7 +182,7 @@
         "damage_type": {
             "necrotic": true
         },
-        "higher_levels": "Tdamage increases by **1d8** when you reach levels 5, 11 and 17",
+        "higher_levels": "damage increases by **1d8** when you reach levels 5, 11 and 17",
         "level": 0,
         "name": "Chill Touch",
         "range": 120,
@@ -667,6 +686,14 @@
             "fire": true
         },
         "higher_levels": "This spell’s damage increases by **1d10** when you reach **5th level** (2d10), **11th level** (3d10), and **17th level** (4d10).",
+        "higherLevelTiers": [
+            5, 11, 17
+        ],
+        "higherLevelDamage": [{
+            "amount": 1,
+            "dice": "d10",
+            "type": "fire"
+        }],
         "duration": "instantaneous",
         "level": 0,
         "name": "Fire Bolt",

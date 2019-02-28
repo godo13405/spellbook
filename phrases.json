@@ -126,15 +126,21 @@
                     "doesn't heal"
                 ]
             },
-            "higherLevelDamage": {
-                "connector": [
-                    "does"
-                ],
-                "base": [
-                    "At level <level>, <confirm> <connector> <higherLevelDamage>"
+            "higherLevel": {
+                "damage": [
+                    "At level <level>, <confirm> does <higherLevel>"
                 ],
                 "false": [
-                    "can't be cast at a higher level"
+                    "<confirm> can't be cast at a higher level"
+                ],
+                "target": [
+                    "A level <level> <confirm> can target <higherLevel>"
+                ],
+                "targetSeparated": [
+                    "within <separated><unit> of each other"
+                ],
+                "cantrip": [
+                    "When you're level <level>, <confirm> does <higherLevel>"
                 ]
             }
         },

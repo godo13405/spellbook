@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "clear && mocha",
+    "test": "clear && NODE_ENV=dev mocha",
     "start": "node index.js",
     "dev": "NODE_ENV=dev npx nodemon",
     "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net"

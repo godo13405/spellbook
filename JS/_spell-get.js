@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+
 'use strict';
 
 const data = require('../data/spell.json'),
@@ -293,36 +295,70 @@ const get = {
         };
         return output;
     },
-    higherLevelDamage: ({
+    higherLevel: ({
         intent,
         params,
         subject = data[params.spell]
     }) => {
         let vars = {
-            "name": subject.name,
-            "level": params.level,
-            "higherLevelDamage": tools.getPhrase(`${intent.raw}.${false}`)
-        };
-        if (subject.higherLevelDamage) {
-            // calculate the extra damage
-            const levelDifference = params.level - subject.level;
-            for (let index = 0; index < levelDifference; index++) {
-                subject.damage.forEach(x => {
-                    subject.higherLevelDamage.forEach(y => {
-                        if (x.dice === y.dice && x.type === y.type) {
-                            x.amount += y.amount * levelDifference;
+                "name": subject.name,
+                "level": parseInt(params.level, 10)
+            },
+            terminal = false;
+        const levelDifference = params.level - subject.level;
+        if (subject.higher_levels) {
+            terminal = 'base';
+
+            if (subject.higherLevelDamage) {
+                if (subject.level) {
+                    // calculate the extra damage
+                    // eslint-disable-next-line no-plusplus
+                    for (let index = 0; index < levelDifference; index++) {
+                        subject.damage.forEach(x => {
+                            subject.higherLevelDamage.forEach(y => {
+                                if (x.dice === y.dice && x.type === y.type) {
+                                    x.amount += y.amount * levelDifference;
+                                }
+                            });
+                        });
+                    }
+
+                    terminal = 'damage';
+                } else {
+                    let timesUpgraded = 0;
+                    // check which tier level to look at
+                    subject.higherLevelTiers.forEach(x => {
+                        if (x <= params.level) {
+                            timesUpgraded += 1;
                         }
                     });
-                });
+
+                    subject.damage.forEach(x => {
+                        x.amount += timesUpgraded;
+                    });
+
+                    terminal = 'cantrip';
+                }
+                vars.higherLevel = spellTools.damage(subject.damage);
+            } else if (subject.higherLevelTarget) {
+                const targetNumber = subject.higherLevelTarget.amount * (subject.level + 1);
+                vars.higherLevel = `${targetNumber} ${subject.higherLevelTarget.target}`;
+                terminal = 'target';
+
+                if (subject.higherLevelTarget.separated) {
+                    vars.higherLevel += ` ${tools.phrase({
+                        phrase: intent.raw,
+                        terminal: 'targetSeparated',
+                        vars: subject.higherLevelTarget
+                    })}`;
+                }
             }
-
-
-            vars.higherLevelDamage = spellTools.damage(subject.damage);
         }
 
         let output = {
             data: tools.phrase({
                 phrase: intent.raw,
+                terminal,
                 vars
             })
         };

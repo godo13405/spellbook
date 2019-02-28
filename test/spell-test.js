@@ -195,13 +195,51 @@ describe('Get spell', () => {
         });
     });
     describe('higher levels', () => {
-        it('fireball at level 4', () => {
+        it('damage', () => {
             const req = new testTools.Req().
-            action("spell.get.higherLevelDamage").
+            action("spell.get.higherLevel").
             name('level', 4).
             request;
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "At level 4, Fireball does 9d6 fire damage");
+        });
+        it('targets', () => {
+            const req = new testTools.Req().
+            action("spell.get.higherLevel").
+            name('spell', 'animal friendship').
+            name('level', 4).
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "A level 4 Animal Friendship can target 2 beasts");
+        });
+        describe('cantrip', () => {
+            it('level 5', () => {
+                const req = new testTools.Req().
+                action("spell.get.higherLevel").
+                name('spell', 'fire bolt').
+                name('level', 6).
+                request;
+                const output = JSON.parse(router.ready(req));
+                assert.strictEqual(output.fulfillmentText, "When you're level 6, Fire Bolt does 2d10 fire damage");
+            });
+            it('level 11', () => {
+                const req = new testTools.Req().
+                action("spell.get.higherLevel").
+                name('spell', 'fire bolt').
+                name('level', 13).
+                request;
+                const output = JSON.parse(router.ready(req));
+                assert.strictEqual(output.fulfillmentText, "When you're level 13, Fire Bolt does 3d10 fire damage");
+            });
+        });
+        it('no', () => {
+            const req = new testTools.Req().
+            action("spell.get.higherLevel").
+            name('spell', 'bless').
+            name('level', 4).
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Bless can't be cast at a higher level");
         });
     });
 });
