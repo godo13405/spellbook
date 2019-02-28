@@ -300,6 +300,7 @@ const get = {
         params,
         subject = data[params.spell]
     }) => {
+        console.log(subject.name, subject.damage);
         let vars = {
                 "name": subject.name,
                 "level": parseInt(params.level, 10)
@@ -310,11 +311,12 @@ const get = {
             terminal = 'base';
 
             if (subject.higherLevelDamage) {
+                let damage = tools.clone(subject.damage);
                 if (subject.level) {
                     // calculate the extra damage
                     // eslint-disable-next-line no-plusplus
                     for (let index = 0; index < levelDifference; index++) {
-                        subject.damage.forEach(x => {
+                        damage.forEach(x => {
                             subject.higherLevelDamage.forEach(y => {
                                 if (x.dice === y.dice && x.type === y.type) {
                                     x.amount += y.amount * levelDifference;
@@ -332,14 +334,15 @@ const get = {
                             timesUpgraded += 1;
                         }
                     });
+                    console.log('timesUpgraded:', timesUpgraded);
 
-                    subject.damage.forEach(x => {
+                    damage.forEach(x => {
                         x.amount += timesUpgraded;
                     });
 
                     terminal = 'cantrip';
                 }
-                vars.higherLevel = spellTools.damage(subject.damage);
+                vars.higherLevel = spellTools.damage(damage);
             } else if (subject.higherLevelTarget) {
                 const targetNumber = subject.higherLevelTarget.amount * (subject.level + 1);
                 vars.higherLevel = `${targetNumber} ${subject.higherLevelTarget.target}`;

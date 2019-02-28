@@ -277,6 +277,9 @@ const tools = {
         intent.fn = require(`./_${intent.entity}.js`);
 
         return intent;
+    },
+    clone: obj => {
+        return JSON.parse(JSON.stringify(obj));
     }
 };
 
