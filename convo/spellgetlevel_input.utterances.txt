@@ -1,0 +1,3 @@
+spellgetlevel_input
+what's fireball's level
+what level is fireball

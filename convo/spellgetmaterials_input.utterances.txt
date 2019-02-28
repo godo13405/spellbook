@@ -1,0 +1,2 @@
+spellgetmaterials_input
+what materials do I need for fireball

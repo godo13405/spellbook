@@ -82,7 +82,7 @@ const fn = {
     fetch(`https://api.dialogflow.com/v1/query?query=${input}&lang=en&v=20150910&sessionId=${fn.getId()}`, {
       method: 'GET',
       headers: {
-        "Authorization": "Bearer 76a83b56dea94025ab23e4aac73c3e4f"
+        "Authorization": "Bearer 0d4b7dfb0d104d94abb64ce45d2054f7"
       }
     }).then(x => x.json()).
     then(data => {

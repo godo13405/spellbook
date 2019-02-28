@@ -1,0 +1,4 @@
+spellgetclasses_input
+who can cast fireball
+fireball can be cast by which classes
+which classes can cast fireball

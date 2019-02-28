@@ -38,7 +38,7 @@ const tools = {
         return output;
     },
     stripSsml: txt => {
-        return txt.replace(/<[a-zA-Z0-9s='"\s\/]*>/g, '');
+        return txt.replace(/<[a-zA-Z0-9s='"\s/]*>/g, '');
     },
     randSpell: (data = spells) => {
         const keys = Object.keys(data);

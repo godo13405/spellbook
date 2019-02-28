@@ -1,0 +1,4 @@
+spellgetdescription_input
+what is fireball's description
+what does fear do
+describe fireball

@@ -1,0 +1,7 @@
+condition.get.init
+
+#me
+conditiongetinit_input
+
+#bot
+!INCOMPREHENSION

@@ -1,8 +1,10 @@
-'use strict';
-
+/* eslint-disable max-lines */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable no-unused-expressions */
 /* global describe, it */
+
+'use strict';
+
 
 const assert = require('assert'),
     router = require('../JS/_router.js'),
