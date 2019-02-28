@@ -290,14 +290,7 @@ const tools = {
 
             output += `<audio src="${audio}"/>`;
             if (audio.offset) {
-                output = `<par>
-                    <media xml:id="response" begin="0">
-                        <speak>${input}</speak>
-                    </media>
-                    <media xml:id="sfx" begin="response.end${audio.offset}s">
-                        <audio src="${audio.url}" />
-                    </media>
-                </par>`;
+                output = `<par><media xml:id="response" begin="0"><speak>${input}</speak></media><media xml:id="sfx" begin="response.end${audio.offset}s"><audio src="${audio.url}" /></media></par>`;
             }
         }
 

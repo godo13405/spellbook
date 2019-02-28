@@ -28,6 +28,13 @@ describe('Get spell', () => {
             const output = JSON.parse(router.ready(req));
             assert.strictEqual(output.fulfillmentText, "Acid Splash is a Conjuration cantrip, which does 1d6 acid damage");
         });
+        it('audio', () => {
+            const req = new testTools.Req().
+            name('spell', 'charm person').
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentMessages[0].simpleResponses.simpleResponses[0].ssml, "<speak><par><media xml:id=\"response\" begin=\"0\"><speak>Charm Person is a level 1 Enchantment spell</speak></media><media xml:id=\"sfx\" begin=\"response.end-1.6s\"><audio src=\"https://freesound.org/data/previews/221/221683_1015240-lq.mp3\" /></media></par></speak>");
+        });
     });
     describe('damage', () => {
         it('yes', () => {
