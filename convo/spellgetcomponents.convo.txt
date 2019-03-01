@@ -1,7 +1,0 @@
-spell.get.components
-
-#me
-spellgetcomponents_input
-
-#bot
-!INCOMPREHENSION

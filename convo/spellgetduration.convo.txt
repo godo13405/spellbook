@@ -1,7 +1,0 @@
-spell.get.duration
-
-#me
-spellgetduration_input
-
-#bot
-!INCOMPREHENSION

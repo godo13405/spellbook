@@ -1,0 +1,7 @@
+weapon.get.init
+
+#me
+weapongetinit_input
+
+#bot
+!INCOMPREHENSION

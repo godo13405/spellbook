@@ -1,0 +1,7 @@
+spell.get.classes
+
+#me
+spellgetclasses_input
+
+#bot
+!INCOMPREHENSION

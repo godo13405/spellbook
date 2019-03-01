@@ -1,0 +1,7 @@
+spell.get.higherLevel
+
+#me
+spellgethigherLevel_input
+
+#bot
+!INCOMPREHENSION

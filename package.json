@@ -7,7 +7,8 @@
     "test": "NODE_ENV=test mocha",
     "start": "node index.js",
     "dev": "NODE_ENV=dev npx nodemon",
-    "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net"
+    "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net",
+    "mocha": "mocha spec"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,16 @@
     "chalk": "^2.4.2",
     "eslint": "^5.13.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "botium-bindings": "latest",
+    "botium-connector-echo": "latest"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "botium": {
+    "convodirs": [
+      "spec/convo"
+    ],
+    "expandConvos": true,
+    "expandUtterancesToConvos": false
+  }
 }

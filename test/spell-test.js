@@ -307,4 +307,21 @@ describe('Check spell', () => {
             assert.strictEqual(output.fulfillmentText, "No, Bards can't cast Fireball");
         });
     });
+    describe('higher level', () => {
+        it('yes', () => {
+            const req = new testTools.Req().
+            action("spell.check.higherLevel").
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "Yes, Fireball can be cast at higher levels");
+        });
+        it('no', () => {
+            const req = new testTools.Req().
+            action("spell.check.higherLevel").
+            name("spell", "compelled duel").
+            request;
+            const output = JSON.parse(router.ready(req));
+            assert.strictEqual(output.fulfillmentText, "No, Compelled Duel can't be cast at higher levels");
+        });
+    });
 });

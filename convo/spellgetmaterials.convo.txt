@@ -1,7 +1,0 @@
-spell.get.materials
-
-#me
-spellgetmaterials_input
-
-#bot
-!INCOMPREHENSION

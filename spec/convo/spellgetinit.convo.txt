@@ -1,0 +1,7 @@
+spell.get.init
+
+#me
+spellgetinit_input
+
+#bot
+!INCOMPREHENSION

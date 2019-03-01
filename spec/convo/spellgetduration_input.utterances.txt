@@ -1,0 +1,3 @@
+spellgetduration_input
+whats the duration of fireball
+how long does feign death last

@@ -168,6 +168,14 @@
                 "false": [
                     "No, <class> can't cast <confirm>"
                 ]
+            },
+            "higherLevel": {
+                "true": [
+                    "Yes, <confirm> can be cast at higher levels"
+                ],
+                "false": [
+                    "No, <confirm> can't be cast at higher levels"
+                ]
             }
         }
     },

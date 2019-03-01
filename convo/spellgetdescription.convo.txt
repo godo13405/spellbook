@@ -1,7 +1,0 @@
-spell.get.description
-
-#me
-spellgetdescription_input
-
-#bot
-!INCOMPREHENSION

@@ -1,0 +1,7 @@
+base.input.welcome
+
+#me
+baseinputwelcome_input
+
+#bot
+baseinputwelcome_output_0

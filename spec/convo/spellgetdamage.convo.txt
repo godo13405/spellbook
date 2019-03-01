@@ -1,0 +1,7 @@
+spell.get.damage
+
+#me
+spellgetdamage_input
+
+#bot
+!INCOMPREHENSION

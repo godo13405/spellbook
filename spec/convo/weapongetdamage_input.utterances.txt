@@ -1,0 +1,3 @@
+weapongetdamage_input
+what damage does a club cause
+what damage does a club do

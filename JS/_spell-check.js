@@ -23,7 +23,7 @@ const get = {
     concentration: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         let output = {
             data: tools.phrase({
@@ -39,7 +39,7 @@ const get = {
     classes: ({
         intent,
         params,
-        subject = data[params.spell[0]]
+        subject = data[params.spell]
     }) => {
         const terminal = subject.class.includes(params.class[0]),
             output = {
@@ -52,6 +52,23 @@ const get = {
                     }
                 })
             };
+
+        return output;
+    },
+    higherLevel: ({
+        intent,
+        params,
+        subject = data[params.spell]
+    }) => {
+        const output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                terminal: Boolean(subject.higher_levels),
+                vars: {
+                    "name": subject.name,
+                }
+            })
+        };
 
         return output;
     }

@@ -1,0 +1,7 @@
+weapon.get.damage
+
+#me
+weapongetdamage_input
+
+#bot
+!INCOMPREHENSION
