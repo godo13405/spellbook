@@ -343,7 +343,7 @@ const get = {
                 }
                 vars.higherLevel = spellTools.damage(damage);
             } else if (subject.higherLevelTarget) {
-                const targetNumber = (subject.higherLevelTarget.amount * levelDifference) + subject.targets;
+                const targetNumber = subject.higherLevelTarget.amount * levelDifference + subject.targets;
                 vars.higherLevel = `${targetNumber} ${subject.higherLevelTarget.target}`;
                 terminal = 'target';
 
