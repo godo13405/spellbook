@@ -36,22 +36,23 @@ const get = {
         };
         return output;
     },
-    classes: ({
+    class: ({
         intent,
         params,
         subject = data[params.spell]
     }) => {
-        const terminal = subject.class.includes(params.class[0]),
-            output = {
-                data: tools.phrase({
-                    phrase: intent.raw,
-                    terminal,
-                    vars: {
-                        "name": subject.name,
-                        "class": `${tools.capitalize(params.class[0])}s`
-                    }
-                })
-            };
+        const terminal = subject.class.includes(params.class.toLowerCase());
+
+        const output = {
+            data: tools.phrase({
+                phrase: intent.raw,
+                terminal,
+                vars: {
+                    "name": subject.name,
+                    "class": `${tools.capitalize(params.class)}s`
+                }
+            })
+        };
 
         return output;
     },

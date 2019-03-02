@@ -1,0 +1,7 @@
+spell.get.duration.default
+
+#me
+spell.get.duration.default_UTT
+
+#bot
+Feign Death lasts for 1 hour

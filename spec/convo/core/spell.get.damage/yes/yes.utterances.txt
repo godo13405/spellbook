@@ -1,0 +1,3 @@
+spell.get.damage.yes_UTT
+what's fireball's damage
+what damage does fireball do

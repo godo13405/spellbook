@@ -1,0 +1,7 @@
+spell.check.class.yes
+
+#me
+spell.check.class.yes_UTT
+
+#bot
+Yes, Fireball can cast by Wizards

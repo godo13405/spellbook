@@ -161,7 +161,7 @@
                     "<confirm> doesn't need concentration"
                 ]
             },
-            "classes": {
+            "class": {
                 "true": [
                     "Yes, <confirm> can cast by <class>"
                 ],

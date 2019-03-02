@@ -1,0 +1,7 @@
+spell.get.castingTime
+
+#me
+spell.get.castingTime_UTT
+
+#bot
+Fireball takes 1 action to cast

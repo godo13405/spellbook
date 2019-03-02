@@ -1,0 +1,7 @@
+spell.get.duration.ms
+
+#me
+spell.get.duration.ms_UTT
+
+#bot
+Hypnotic Pattern needs some materials, and gesturing

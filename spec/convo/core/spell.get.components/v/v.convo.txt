@@ -1,0 +1,7 @@
+spell.get.duration.v
+
+#me
+spell.get.duration.v_UTT
+
+#bot
+Mass Healing Word needs an incantation

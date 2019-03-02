@@ -1,0 +1,7 @@
+spell.get.duration.msv
+
+#me
+spell.get.duration.msv_UTT
+
+#bot
+Fireball needs some materials, an incantation, and gesturing

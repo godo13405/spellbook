@@ -1,0 +1,3 @@
+spell.get.damage.no_UTT
+what's bane's damage
+what damage does bane do

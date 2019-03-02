@@ -1,4 +1,4 @@
-spell.get.init.what_is_fireball
+spell.get.init
 
 #me
 what is fireball

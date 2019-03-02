@@ -1,0 +1,3 @@
+spell.get.duration.instantaneous_UTT
+whats the duration of fireball
+how long does fireball last

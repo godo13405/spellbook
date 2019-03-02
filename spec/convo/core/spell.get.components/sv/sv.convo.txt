@@ -1,0 +1,7 @@
+spell.get.duration.sv
+
+#me
+spell.get.duration.sv_UTT
+
+#bot
+Dispel Magic needs an incantation, and gesturing

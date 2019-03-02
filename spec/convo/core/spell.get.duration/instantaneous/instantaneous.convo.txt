@@ -1,0 +1,7 @@
+spell.get.duration.instantaneous
+
+#me
+spell.get.duration.instantaneous_UTT
+
+#bot
+Fireball is instantaneous

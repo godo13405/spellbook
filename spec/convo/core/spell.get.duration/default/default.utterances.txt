@@ -1,0 +1,3 @@
+spell.get.duration.default_UTT
+whats the duration of feign death
+how long does feign death last

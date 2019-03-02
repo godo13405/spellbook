@@ -1,4 +1,4 @@
-spell.get.init.acid_splash
+spell.get.init.cantrip
 
 #me
 acid splash

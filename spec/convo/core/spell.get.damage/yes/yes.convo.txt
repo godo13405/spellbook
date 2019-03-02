@@ -1,0 +1,7 @@
+spell.get.damage.yes
+
+#me
+spell.get.damage.yes_UTT
+
+#bot
+Fireball does 8d6 fire damage

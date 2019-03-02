@@ -1,0 +1,7 @@
+spell.get.damage.no
+
+#me
+spell.get.damage.no_UTT
+
+#bot
+Bane does no damage

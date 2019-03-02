@@ -31,9 +31,11 @@ const router = {
                 // eslint-disable-next-line no-console
                 console.log(chalk.gray(req.queryResult.action));
                 // eslint-disable-next-line no-console
-                console.log(chalk.green(output.data));
+                console.log(chalk.blue('\u{1F914}', req.queryResult.queryText));
                 // eslint-disable-next-line no-console
-                console.log(chalk.inverse(output.suggestions));
+                console.log('\u{1F916}', chalk.green(output.data));
+                // eslint-disable-next-line no-console
+                if (output.suggestions) console.log(chalk.inverse(output.suggestions));
             }
 
             return respond({

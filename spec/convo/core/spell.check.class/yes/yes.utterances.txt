@@ -1,0 +1,4 @@
+spell.check.class.yes_UTT
+can wizards cast fireballs
+can fireball be cast by a wizard
+can a wizard cast fireball

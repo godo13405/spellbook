@@ -9,9 +9,10 @@
     "dev": "NODE_ENV=dev npx nodemon",
     "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net",
     "mocha": "mocha spec",
-    "botium": "botium-cli run --convos ./spec/convo --config ./botium.json",
-    "emulator": "botium-cli emulator console --convos ./spec/convo --config ./botium.json",
-    "emulatorBrowser": "botium-cli emulator browser --convos ./spec/convo --config ./botium.json"
+    "botium-all": "botium-cli run --convos ./spec/convo/core --config ./botium.json",
+    "botium": "botium-cli run --config ./botium.json --convos ./spec/convo/core",
+    "emulator": "botium-cli emulator console --convos ./spec/convo/core --config ./botium.json",
+    "emulator-browser": "botium-cli emulator browser --convos ./spec/convo/core --config ./botium.json"
   },
   "repository": {
     "type": "git",

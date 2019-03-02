@@ -1,0 +1,7 @@
+spell.check.class.no
+
+#me
+spell.check.class.no_UTT
+
+#bot
+No, Bards can't cast Fireball

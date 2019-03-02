@@ -1,0 +1,4 @@
+spell.check.class.no_UTT
+can bards cast fireballs
+can fireball be cast by a bard
+can a bard cast fireball
