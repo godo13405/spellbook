@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha",
     "start": "node index.js",
     "dev": "NODE_ENV=dev npx nodemon",
     "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net",
     "mocha": "mocha spec",
-    "botium-all": "botium-cli run --convos ./spec/convo/core --config ./botium.json",
+    "test": "botium-cli run --convos ./spec/convo/core --config ./botium.json",
     "botium": "botium-cli run --config ./botium.json --convos ./spec/convo/core",
     "emulator": "botium-cli emulator console --convos ./spec/convo/core --config ./botium.json",
     "emulator-browser": "botium-cli emulator browser --convos ./spec/convo/core --config ./botium.json"
@@ -29,7 +28,7 @@
     "eslint": "^5.13.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10",
-    "botium-cli": "latest",
+    "botium-cli": "0.0.45",
     "botium-bindings": "latest",
     "botium-connector-echo": "latest"
   },
