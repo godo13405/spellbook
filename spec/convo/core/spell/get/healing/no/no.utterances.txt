@@ -1,0 +1,4 @@
+spell.get.healing.no_UTT
+how many hit points do I get with fireball
+how much can i heal with fireball
+how much does  fireball heal

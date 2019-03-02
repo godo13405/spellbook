@@ -1,0 +1,4 @@
+spell.check.ritual.no_UTT
+can fireball be cast as a ritual
+is fireball a ritual
+can i cast fireball as a ritual

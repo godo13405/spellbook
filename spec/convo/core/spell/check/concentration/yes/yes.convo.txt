@@ -1,0 +1,7 @@
+spell.check.concentration.yes
+
+#me
+spell.check.concentration.yes_UTT
+
+#bot
+Delayed Blast Fireball needs you fo concentrate on it

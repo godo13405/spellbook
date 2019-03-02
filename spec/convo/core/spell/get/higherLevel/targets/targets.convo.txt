@@ -1,0 +1,7 @@
+spell.get.higherLevel.targets
+
+#me
+spell.get.higherLevel.targets_UTT
+
+#bot
+A level 4 Animal Friendship can target 2 beasts

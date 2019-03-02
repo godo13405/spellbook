@@ -1,0 +1,7 @@
+spell.check.ritual.no
+
+#me
+spell.check.ritual.no_UTT
+
+#bot
+No, Fireball can't be cast as a ritual

@@ -1,0 +1,4 @@
+spell.get.higherLevel.no_UTT
+what damage does bless do at level 5
+level 6 bless
+bless at level 4

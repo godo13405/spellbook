@@ -1,0 +1,7 @@
+spell.get.higherLevel.5
+
+#me
+spell.get.higherLevel.5_UTT
+
+#bot
+When you're level 6, Fire Bolt does 2d10 fire damage

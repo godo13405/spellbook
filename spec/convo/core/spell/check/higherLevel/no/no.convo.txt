@@ -1,0 +1,7 @@
+spell.check.higherLevel.no
+
+#me
+spell.check.higherLevel.no_UTT
+
+#bot
+No, Compelled Duel can't be cast at higher levels

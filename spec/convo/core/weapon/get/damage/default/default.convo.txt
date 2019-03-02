@@ -1,0 +1,7 @@
+weapon.get.damage.default
+
+#me
+weapon.get.damage.default_UTT
+
+#bot
+A club causes 1d4 bludgeoning damage

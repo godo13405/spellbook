@@ -1,0 +1,7 @@
+weapon.get.init.versatile
+
+#me
+weapon.get.init.versatile_UTT
+
+#bot
+A trident is a martial melee weapon, which causes 1d6, or 1d8 piercing damage

@@ -1,0 +1,7 @@
+spell.get.healing.no
+
+#me
+spell.get.healing.no_UTT
+
+#bot
+Fireball doesn't heal

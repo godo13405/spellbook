@@ -1,0 +1,7 @@
+weapon.get.init.default
+
+#me
+weapon.get.init.default_UTT
+
+#bot
+A club is a simple melee weapon, which causes 1d4 bludgeoning damage

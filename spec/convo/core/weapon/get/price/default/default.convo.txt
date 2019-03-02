@@ -1,0 +1,7 @@
+weapon.get.price.default
+
+#me
+weapon.get.price.default_UTT
+
+#bot
+A club costs a silver coin

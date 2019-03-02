@@ -1,0 +1,5 @@
+weapon.get.price.plural_UTT
+what's a trident's price
+what's the price for a trident
+how much does a trident cost
+how much for a trident

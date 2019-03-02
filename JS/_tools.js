@@ -274,6 +274,7 @@ const tools = {
                 action: parts[1],
                 function: parts[2],
             };
+        console.log(intent);
         intent.fn = require(`./_${intent.entity}.js`);
 
         return intent;

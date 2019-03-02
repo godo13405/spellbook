@@ -1,0 +1,3 @@
+spell.check.higherLevel.no_UTT
+can compelled duel  be cast at higher levels
+can i cast compelled duel at a higher level

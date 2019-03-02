@@ -1,0 +1,3 @@
+weapon.get.damage.default_UTT
+what damage does a club cause
+what damage does a club do

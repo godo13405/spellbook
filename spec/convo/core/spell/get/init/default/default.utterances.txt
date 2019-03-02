@@ -1,0 +1,3 @@
+spell.get.init.default_UTT
+fireball
+what is fireball

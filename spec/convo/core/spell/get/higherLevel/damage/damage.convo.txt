@@ -1,0 +1,7 @@
+spell.get.higherLevel.damage
+
+#me
+spell.get.higherLevel.damage_UTT
+
+#bot
+At level 4, Fireball does 9d6 fire damage

@@ -1,0 +1,7 @@
+spell.get.higherLevel.11
+
+#me
+spell.get.higherLevel.11_UTT
+
+#bot
+When you're level 13, Fire Bolt does 3d10 fire damage

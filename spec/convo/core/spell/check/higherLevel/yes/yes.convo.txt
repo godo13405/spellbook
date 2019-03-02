@@ -1,0 +1,7 @@
+spell.check.higherLevel.yes
+
+#me
+spell.check.higherLevel.yes_UTT
+
+#bot
+Yes, Fireball can be cast at higher levels

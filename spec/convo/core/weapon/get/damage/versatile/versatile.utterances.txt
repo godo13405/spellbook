@@ -1,0 +1,4 @@
+weapon.get.damage.versatile_UTT
+tell me about tridents
+what's a trident
+what is a trident

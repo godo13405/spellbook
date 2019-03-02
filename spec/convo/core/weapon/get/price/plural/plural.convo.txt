@@ -1,0 +1,7 @@
+weapon.get.price.plural
+
+#me
+weapon.get.price.plural_UTT
+
+#bot
+A trident costs 5 gold coins

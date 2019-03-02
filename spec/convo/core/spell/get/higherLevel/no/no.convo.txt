@@ -1,0 +1,7 @@
+spell.get.higherLevel.no
+
+#me
+spell.get.higherLevel.no_UTT
+
+#bot
+Bless can't be cast at a higher level

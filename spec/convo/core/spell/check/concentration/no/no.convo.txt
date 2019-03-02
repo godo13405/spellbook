@@ -1,0 +1,7 @@
+spell.check.concentration.no
+
+#me
+spell.check.concentration.no_UTT
+
+#bot
+Fireball doesn't need concentration

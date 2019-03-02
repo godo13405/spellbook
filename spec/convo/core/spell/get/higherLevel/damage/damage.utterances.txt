@@ -1,0 +1,4 @@
+spell.get.higherLevel.damage_UTT
+what damage does fireball do at level 5
+level 6 fireball
+fireball at level 4

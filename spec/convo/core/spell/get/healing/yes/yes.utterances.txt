@@ -1,0 +1,4 @@
+spell.get.healing.yes_UTT
+how many hit points do I get with mass healing word
+how much can i heal with mass healing word
+how much does  mass healing word heal

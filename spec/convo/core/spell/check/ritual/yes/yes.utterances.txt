@@ -1,0 +1,4 @@
+spell.check.ritual.yes_UTT
+can commune with nature be cast as a ritual
+is commune with nature a ritual
+can i cast commune with nature as a ritual

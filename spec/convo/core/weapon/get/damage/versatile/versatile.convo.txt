@@ -1,0 +1,7 @@
+weapon.get.damage.versatile
+
+#me
+weapon.get.damage.versatile_UTT
+
+#bot
+A trident causes 1d6, or 1d8 piercing damage, if 2 handed

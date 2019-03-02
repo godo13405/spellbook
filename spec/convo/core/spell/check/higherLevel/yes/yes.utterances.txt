@@ -1,0 +1,3 @@
+spell.check.higherLevel.yes_UTT
+can fireball  be cast at higher levels
+can i cast fireball at a higher level

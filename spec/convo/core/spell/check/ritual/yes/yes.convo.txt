@@ -1,0 +1,7 @@
+spell.check.ritual.yes
+
+#me
+spell.check.ritual.yes_UTT
+
+#bot
+Yes, Commune with Nature can be cast as a ritual
