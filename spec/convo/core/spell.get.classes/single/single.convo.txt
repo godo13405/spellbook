@@ -1,0 +1,7 @@
+spell.get.classes.single
+
+#me
+spell.get.classes.single_UTT
+
+#bot
+Elemental Weapon can only be cast by Paladins

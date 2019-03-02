@@ -1,0 +1,7 @@
+spell.get.school.default
+
+#me
+spell.get.school.default_UTT
+
+#bot
+Fireball is an Evocation

@@ -1,0 +1,7 @@
+spell.get.level.default
+
+#me
+spell.get.level.default_UTT
+
+#bot
+Fireball is level 3

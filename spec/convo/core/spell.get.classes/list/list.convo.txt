@@ -1,0 +1,7 @@
+spell.get.classes.list
+
+#me
+spell.get.classes.list_UTT
+
+#bot
+Fireball can be cast by Sorcerers, and Wizards

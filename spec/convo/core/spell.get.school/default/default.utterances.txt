@@ -1,0 +1,3 @@
+spell.get.school.default_UTT
+what school does fireball belong to
+what school is fireball

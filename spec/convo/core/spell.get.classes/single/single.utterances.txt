@@ -1,0 +1,4 @@
+spell.get.classes.single_UTT
+who can cast elemental weapon
+elemental weapon can be cast by which classes
+which classes can cast elemental weapon

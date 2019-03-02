@@ -1,0 +1,7 @@
+spell.get.materials.no
+
+#me
+spell.get.materials.no_UTT
+
+#bot
+Dispel Magic doesn't require any materials

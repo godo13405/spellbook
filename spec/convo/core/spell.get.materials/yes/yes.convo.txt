@@ -1,0 +1,7 @@
+spell.get.materials.yes
+
+#me
+spell.get.materials.yes_UTT
+
+#bot
+Fireball requires a tiny ball of bat guano and sulfur

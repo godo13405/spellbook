@@ -1,0 +1,2 @@
+spell.get.materials.no_UTT
+what materials do I need for dispel magic
