@@ -1,4 +1,4 @@
 spell.get.description.default_UTT
 what is fireball's description
-what does fear do
+what does fireball do
 describe fireball

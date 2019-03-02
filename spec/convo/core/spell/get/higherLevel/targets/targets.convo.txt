@@ -4,4 +4,4 @@ spell.get.higherLevel.targets
 spell.get.higherLevel.targets_UTT
 
 #bot
-A level 4 Animal Friendship can target 2 beasts
+A level 5 Animal Friendship can target 5 beasts

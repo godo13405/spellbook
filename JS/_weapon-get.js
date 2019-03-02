@@ -7,7 +7,7 @@ const get = {
     init: ({
         intent,
         params,
-        subject = data[params.weapon[0]]
+        subject = data[params.weapon]
     }) => {
         let vars = {
             "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`,
@@ -16,25 +16,27 @@ const get = {
         };
 
         if (subject.damage) {
-            let dmg = [];
+            vars.dmg = [];
 
             subject.damage.forEach(x => {
-                dmg.push(`${x.amount}${x.dice}`);
+                vars.dmg.push(`${x.amount}${x.dice}`);
             });
 
-            dmg = tools.listing({
-                str: dmg,
+            vars.dmg = tools.listing({
+                str: vars.dmg,
                 connector: 'or '
             });
 
-            dmg += ` ${subject.damage[0].type}`;
+            vars.dmg += ` ${subject.damage[0].type}`;
+
+            if (subject.damage.length > 1) {
+                vars.twoHanded = tools.getPhrase(`${intent.raw}.twoHanded`);
+            }
 
             vars.damage = tools.phrase({
                 phrase: intent.raw,
                 terminal: '_damage',
-                vars: {
-                    dmg
-                }
+                vars
             })
         }
 
@@ -50,7 +52,7 @@ const get = {
     damage: ({
         intent,
         params,
-        subject = data[params.weapon[0]]
+        subject = data[params.weapon]
     }) => {
         let vars = {
             "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`

@@ -33,14 +33,14 @@ const respond = ({
   };
 
   // Contexts
-  for (const x in req.queryResult.parameters) {
-    output = respondTools.context({
-      output,
-      req,
-      contextName: x,
-      context: req.queryResult.parameters[x]
-    });
-  }
+  // for (const x in req.queryResult.parameters) {
+  //   output = respondTools.context({
+  //     output,
+  //     req,
+  //     contextName: x,
+  //     context: req.queryResult.parameters[x]
+  //   });
+  // }
 
 
   // Suggestions

@@ -198,10 +198,13 @@
                     "<name> is"
                 ],
                 "base": [
-                    "<confirm> a <tier> <type> weapon<damage>"
+                    "<confirm> a <tier> <type> weapon<damage><twoHanded>"
                 ],
                 "_damage": [
                     ", which causes <dmg> damage"
+                ],
+                "twoHanded": [
+                    ", if 2 handed"
                 ]
             },
             "damage": {
@@ -215,9 +218,6 @@
             "price": {
                 "base": [
                     "<confirm> costs <price>"
-                ],
-                "price": [
-                    ", if 2 handed"
                 ]
             }
         }

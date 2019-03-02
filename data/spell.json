@@ -54,6 +54,7 @@
         "saving_throw": {
             "Wisdom": true
         },
+        "targets": 1,
         "duration": "24 hours",
         "higher_levels": "using a spell slot of **2nd level** or higher, you can affect one additional beast for each slot level above 1st.",
         "higherLevelTarget": {

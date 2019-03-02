@@ -4,4 +4,4 @@ spell.get.higherLevel.damage
 spell.get.higherLevel.damage_UTT
 
 #bot
-At level 4, Fireball does 9d6 fire damage
+At level 5, Fireball does 10d6 fire damage

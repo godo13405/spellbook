@@ -303,7 +303,6 @@ const get = {
         params,
         subject = data[params.spell]
     }) => {
-        console.log(subject.name, subject.damage);
         let vars = {
                 "name": subject.name,
                 "level": parseInt(params.level, 10)
@@ -318,15 +317,13 @@ const get = {
                 if (subject.level) {
                     // calculate the extra damage
                     // eslint-disable-next-line no-plusplus
-                    for (let index = 0; index < levelDifference; index++) {
-                        damage.forEach(x => {
-                            subject.higherLevelDamage.forEach(y => {
-                                if (x.dice === y.dice && x.type === y.type) {
-                                    x.amount += y.amount * levelDifference;
-                                }
-                            });
+                    damage.forEach(x => {
+                        subject.higherLevelDamage.forEach(y => {
+                            if (x.dice === y.dice && x.type === y.type) {
+                                x.amount += y.amount * levelDifference;
+                            }
                         });
-                    }
+                    });
 
                     terminal = 'damage';
                 } else {
@@ -337,7 +334,6 @@ const get = {
                             timesUpgraded += 1;
                         }
                     });
-                    console.log('timesUpgraded:', timesUpgraded);
 
                     damage.forEach(x => {
                         x.amount += timesUpgraded;
@@ -347,8 +343,9 @@ const get = {
                 }
                 vars.higherLevel = spellTools.damage(damage);
             } else if (subject.higherLevelTarget) {
-                const targetNumber = subject.higherLevelTarget.amount * (subject.level + 1);
+                const targetNumber = (subject.higherLevelTarget.amount * levelDifference) + subject.targets;
                 vars.higherLevel = `${targetNumber} ${subject.higherLevelTarget.target}`;
+                console.log('vars.higherLevel:', vars.higherLevel);
                 terminal = 'target';
 
                 if (subject.higherLevelTarget.separated) {
