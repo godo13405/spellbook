@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=dev npx nodemon",
     "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net",
     "mocha": "mocha spec",
-    "test": "botium-cli run --convos ./spec/convo/core --config ./botium.json",
+    "test": "botium-cli run --config ./botium.json --convos ./spec/convo/core",
     "botium": "botium-cli run --config ./botium.json --convos ./spec/convo/core",
     "emulator": "botium-cli emulator console --convos ./spec/convo/core --config ./botium.json",
     "emulator-browser": "botium-cli emulator browser --convos ./spec/convo/core --config ./botium.json"
