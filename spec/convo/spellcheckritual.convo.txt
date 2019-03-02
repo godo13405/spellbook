@@ -1,7 +1,0 @@
-spell.check.ritual
-
-#me
-spellcheckritual_input
-
-#bot
-!INCOMPREHENSION

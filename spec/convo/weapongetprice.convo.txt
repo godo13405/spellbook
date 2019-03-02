@@ -1,7 +1,0 @@
-weapon.get.price
-
-#me
-weapongetprice_input
-
-#bot
-!INCOMPREHENSION

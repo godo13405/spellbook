@@ -1,7 +1,0 @@
-spell.get.school
-
-#me
-spellgetschool_input
-
-#bot
-!INCOMPREHENSION

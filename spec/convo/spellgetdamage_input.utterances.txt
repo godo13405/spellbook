@@ -1,3 +1,0 @@
-spellgetdamage_input
-what's fireball's damage
-what damage does fireball do

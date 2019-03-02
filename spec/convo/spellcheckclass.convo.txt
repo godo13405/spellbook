@@ -1,7 +1,0 @@
-spell.check.class
-
-#me
-spellcheckclass_input
-
-#bot
-!INCOMPREHENSION

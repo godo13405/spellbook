@@ -1,7 +1,0 @@
-spell.check.concentration
-
-#me
-spellcheckconcentration_input
-
-#bot
-!INCOMPREHENSION

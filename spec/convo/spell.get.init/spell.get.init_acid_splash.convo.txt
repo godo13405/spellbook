@@ -1,0 +1,7 @@
+spell.get.init.acid_splash
+
+#me
+acid splash
+
+#bot
+Acid Splash is a Conjuration cantrip, which does 1d6 acid damage

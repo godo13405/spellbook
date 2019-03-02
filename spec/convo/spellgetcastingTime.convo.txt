@@ -1,7 +1,0 @@
-spell.get.castingTime
-
-#me
-spellgetcastingTime_input
-
-#bot
-!INCOMPREHENSION

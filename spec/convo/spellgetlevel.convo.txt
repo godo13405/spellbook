@@ -1,7 +1,0 @@
-spell.get.level
-
-#me
-spellgetlevel_input
-
-#bot
-!INCOMPREHENSION

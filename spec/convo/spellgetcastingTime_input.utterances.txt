@@ -1,3 +1,0 @@
-spellgetcastingTime_input
-how long does fireball take to cast?
-how long to cast fireball
