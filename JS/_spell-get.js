@@ -345,7 +345,6 @@ const get = {
             } else if (subject.higherLevelTarget) {
                 const targetNumber = (subject.higherLevelTarget.amount * levelDifference) + subject.targets;
                 vars.higherLevel = `${targetNumber} ${subject.higherLevelTarget.target}`;
-                console.log('vars.higherLevel:', vars.higherLevel);
                 terminal = 'target';
 
                 if (subject.higherLevelTarget.separated) {

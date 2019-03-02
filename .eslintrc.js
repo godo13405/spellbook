@@ -158,7 +158,7 @@ module.exports = {
         "no-loop-func": "error",
         "no-magic-numbers": "off",
         "no-misleading-character-class": "error",
-        "no-mixed-operators": "error",
+        // "no-mixed-operators": "error",
         "no-mixed-requires": "off",
         "no-multi-assign": "off",
         "no-multi-spaces": "error",

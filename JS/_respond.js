@@ -5,8 +5,7 @@ const respondTools = require('./_respond-tools.js'),
 
 // eslint-disable-next-line max-lines-per-function
 const respond = ({
-  data,
-  req
+  data
 }) => {
   const txt = tools.stripSsml(data.data || data.speech),
     speech = tools.sound(data.speech || data.data, data.audio);
@@ -32,15 +31,17 @@ const respond = ({
     ]
   };
 
-  // Contexts
-  // for (const x in req.queryResult.parameters) {
-  //   output = respondTools.context({
-  //     output,
-  //     req,
-  //     contextName: x,
-  //     context: req.queryResult.parameters[x]
-  //   });
-  // }
+  /*
+   * Contexts
+   * for (const x in req.queryResult.parameters) {
+   *   output = respondTools.context({
+   *     output,
+   *     req,
+   *     contextName: x,
+   *     context: req.queryResult.parameters[x]
+   *   });
+   * }
+   */
 
 
   // Suggestions
