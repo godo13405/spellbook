@@ -6,6 +6,8 @@ deploy:
   keyfile: client-secret.json.enc
   project: spellbook-7ccae
   no_promote: true
+  tags:true
+  deploy.clean_up: false
   on:
     all_branches: true
 before_install:
