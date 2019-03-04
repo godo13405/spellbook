@@ -1,8 +1,8 @@
 # Dragon Spellbook
-![banner](https://godo13405.github.io/dragon-tome/src/banner%20text.svg?sanitize=true)
+![banner](https://godo13405.github.io/spellbook/src/banner%20text.svg?sanitize=true)
 This is a hook for a chatbot built on Dialogflow that looks up information about D&D 5e.
 
-[Web demo](https://console.dialogflow.com/api-client/demo/embedded/dragon-tome)
+[Web demo](/demo)
 
 [![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](https://slack.com/oauth/authorize?client_id=90038760739.556811379829&scope=bot,chat:write:bot) &nbsp;&nbsp;&nbsp;&nbsp;[![Google Assistant](https://i1.wp.com/goncaloandrade.com/wp-content/uploads/2019/02/download-2.png?zoom=2&fit=128%2C40)](https://assistant.google.com/services/a/uid/000000755159150f?hl=en) &nbsp;&nbsp;&nbsp;&nbsp;[![Add to Skype](https://i1.wp.com/goncaloandrade.com/wp-content/uploads/2019/02/download-3.png?zoom=2&fit=91%2C40)](https://join.skype.com/bot/d7b298ee-74da-436f-a4cc-64223ce82120)
 
@@ -45,4 +45,4 @@ Here are some samples of what you can ask and the responses you should get. Bear
   
   
   ----
-  [Privacy Policy](https://godo13405.github.io/dragon-tome/privacy-policy.html)
+  [Privacy Policy](/privacy-policy.html)
