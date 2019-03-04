@@ -92,7 +92,7 @@ const serve = {
                 'auth': ')6@9npt?Fwgp={V',
                 'Authorization': 'Bearer 0d4b7dfb0d104d94abb64ce45d2054f7',
                 'Accept': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             }
         }
     }) => {
