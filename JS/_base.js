@@ -1,6 +1,6 @@
 'use strict';
 
-const tools = require('./_tools.js');
+const tools = require('./tools/_tools.js/index.js');
 
 const base = {
     input: {
@@ -8,12 +8,12 @@ const base = {
             intent
         }) => {
             let output = {
-                data: tools.phrase({
+                data: tools.text.phrase({
                     phrase: intent.raw,
                 }),
                 "suggestions": [
-                    `What is ${tools.randSpell()}`,
-                    `How long to cast ${tools.randSpell()}`
+                    `What is ${tools.function.randSpell()}`,
+                    `Who can cast ${tools.function.randSpell()}`
                 ]
             };
             return output;

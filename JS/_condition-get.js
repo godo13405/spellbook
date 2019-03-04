@@ -11,30 +11,30 @@ const get = {
     }) => {
         let vars = {
             "name": `${subject.name}`,
-            "target": tools.targetRespond(params),
+            "target": tools.text.targetRespond(params),
         };
 
-        vars.cant = tools.getAll({
+        vars.cant = tools.text.getAll({
             subject,
             target: 'cant',
             phrase: 'can\'t '
         });
 
-        vars.autoFail = tools.getAll({
+        vars.autoFail = tools.text.getAll({
             subject,
             target: 'autoFail',
             phrase: 'and automatically fail '
         });
 
         if (subject.roll) {
-            vars.mods = tools.capitalize(tools.getMods({
+            vars.mods = tools.text.capitalize(tools.text.getMods({
                 mods: subject.roll,
                 target: vars.target
             }), true);
         }
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars
             })
@@ -49,30 +49,30 @@ const get = {
     }) => {
         let vars = {
             "name": `${subject.name}`,
-            "target": tools.targetRespond(params),
+            "target": tools.text.targetRespond(params),
         };
 
-        vars.cant = tools.getAll({
+        vars.cant = tools.text.getAll({
             subject,
             target: 'cant',
             phrase: 'can\'t '
         });
 
-        vars.autoFail = tools.getAll({
+        vars.autoFail = tools.text.getAll({
             subject,
             target: 'autoFail',
             phrase: 'and automatically fail '
         });
 
         if (subject.roll) {
-            vars.mods = tools.capitalize(tools.getMods({
+            vars.mods = tools.text.capitalize(tools.text.getMods({
                 mods: subject.roll,
                 target: vars.target
             }), true);
         }
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars
             })

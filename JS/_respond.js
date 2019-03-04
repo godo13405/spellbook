@@ -1,14 +1,13 @@
 'use strict';
 
-const respondTools = require('./_respond-tools.js'),
-  tools = require('./_tools.js');
+const tools = require('./tools/_tools.js');
 
 // eslint-disable-next-line max-lines-per-function
 const respond = ({
   data
 }) => {
-  const txt = tools.stripSsml(data.data || data.speech),
-    speech = tools.sound(data.speech || data.data, data.audio);
+  const txt = tools.text.stripSsml(data.data || data.speech),
+    speech = tools.text.sound(data.speech || data.data, data.audio);
   let output = {
     "fulfillmentText": data.data,
     "fulfillmentMessages": [{
@@ -34,7 +33,7 @@ const respond = ({
   /*
    * Contexts
    * for (const x in req.queryResult.parameters) {
-   *   output = respondTools.context({
+   *   output = tools.respond.context({
    *     output,
    *     req,
    *     contextName: x,
@@ -45,7 +44,7 @@ const respond = ({
 
 
   // Suggestions
-  output = respondTools.suggestions({
+  output = tools.respond.suggestions({
     suggestions: data.suggestions,
     output
   });

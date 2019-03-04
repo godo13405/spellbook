@@ -1,7 +1,7 @@
 'use strict';
 
 const respond = require('./_respond.js');
-const tools = require('./_tools.js');
+const tools = require('./tools/_tools.js');
 let chalk;
 if (global.isDev) {
     chalk = require('chalk');
@@ -16,11 +16,11 @@ const router = {
             )
         ) {
             let output = 'Sorry, something went wrong';
-            const params = tools.checkContext({
+            const params = tools.fn.checkContext({
                     params: req.queryResult.parameters,
                     contexts: req.queryResult.outputContexts
                 }),
-                intent = tools.intent(req.queryResult.action);
+                intent = tools.fn.intent(req.queryResult.action);
 
             output = intent.fn[intent.action][intent.function]({
                 intent,

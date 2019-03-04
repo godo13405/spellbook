@@ -3,8 +3,7 @@
 'use strict';
 
 const data = require('../data/spell.json'),
-    spellTools = require('./_spell-tools.js'),
-    tools = require('./_tools.js');
+    tools = require('./tools/_tools.js');
 
 const get = {
     init: ({
@@ -14,12 +13,12 @@ const get = {
     }) => {
         let level;
         if (!subject.level) {
-            level = `${tools.preposition(subject.school)} ${tools.capitalize(subject.school)} cantrip`;
+            level = `${tools.text.preposition(subject.school)} ${tools.text.capitalize(subject.school)} cantrip`;
         } else {
-            level = `a level ${subject.level} ${tools.capitalize(subject.school)} spell`;
+            level = `a level ${subject.level} ${tools.text.capitalize(subject.school)} spell`;
         }
         let output = {
-            "data": tools.phrase({
+            "data": tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
@@ -37,13 +36,13 @@ const get = {
                     terminal: "damage",
                     implicitConfirmation: false
                 },
-                damage = spellTools.damage(subject.damage);
+                damage = tools.spell.damage(subject.damage);
             if (damage) {
                 args.vars = {
                     "damage": damage
                 }
             }
-            output.data += tools.phrase(args);
+            output.data += tools.text.phrase(args);
         }
 
         return output;
@@ -54,11 +53,11 @@ const get = {
         subject = data[params.spell]
     }) => {
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
-                    "damage": spellTools.damage(subject.damage) || tools.phrase({
+                    "damage": tools.spell.damage(subject.damage) || tools.text.phrase({
                         phrase: intent.raw,
                         terminal: "none",
                         implicitConfirmation: false
@@ -81,7 +80,7 @@ const get = {
 
         cast = cast.join(', or');
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
@@ -96,13 +95,13 @@ const get = {
         params,
         subject = data[params.spell]
     }) => {
-        let connector = tools.getPhrase(`${intent.raw}.connector.lasts`);
+        let connector = tools.text.getPhrase(`${intent.raw}.connector.lasts`);
         // Change the phrasing for instantaneous
         if (subject.duration === 'instantaneous') {
-            connector = tools.getPhrase(`${intent.raw}.connector.instant`);
+            connector = tools.text.getPhrase(`${intent.raw}.connector.instant`);
         }
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
@@ -123,13 +122,13 @@ const get = {
             "componentsPhrase": []
         };
         if (subject.components.includes('material')) {
-            vars.componentsPhrase.push(tools.getPhrase(`${intent.raw}.material`));
+            vars.componentsPhrase.push(tools.text.getPhrase(`${intent.raw}.material`));
         }
         if (subject.components.includes('verbal')) {
-            vars.componentsPhrase.push(tools.getPhrase(`${intent.raw}.verbal`));
+            vars.componentsPhrase.push(tools.text.getPhrase(`${intent.raw}.verbal`));
         }
         if (subject.components.includes('somatic')) {
-            vars.componentsPhrase.push(tools.getPhrase(`${intent.raw}.somatic`));
+            vars.componentsPhrase.push(tools.text.getPhrase(`${intent.raw}.somatic`));
         }
         if (vars.componentsPhrase.length) {
             vars.componentsPhrase = tools.listing({
@@ -139,7 +138,7 @@ const get = {
             vars.pop();
         }
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars
             })
@@ -165,7 +164,7 @@ const get = {
         }
 
         let output = {
-            data: tools.phrase(args)
+            data: tools.text.phrase(args)
         };
         return output;
     },
@@ -179,22 +178,22 @@ const get = {
 
         if (subject.class.length > 1) {
             subject.class.forEach(x => {
-                classes.push(`${tools.capitalize(x)}s`);
+                classes.push(`${tools.text.capitalize(x)}s`);
             });
-            classes = tools.listing({
+            classes = tools.text.listing({
                 str: classes
             })
         } else {
-            classes = `${tools.capitalize(subject.class[0])}s`;
+            classes = `${tools.text.capitalize(subject.class[0])}s`;
             connect = `${intent.raw}.connectorSingle`;
         }
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
-                    connector: tools.getPhrase(connect),
+                    connector: tools.text.getPhrase(connect),
                     classes
                 }
             })
@@ -208,19 +207,19 @@ const get = {
         subject = data[params.spell]
     }) => {
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
-                    "school": tools.capitalize(subject.school)
+                    "school": tools.text.capitalize(subject.school)
                 }
             }),
             suggestions: [
-                tools.phrase({
+                tools.text.phrase({
                     phrase: intent.raw,
                     terminal: 'aboutSchool',
                     vars: {
-                        "school": `${tools.preposition(subject.school)} ${tools.capitalize(subject.school)}`
+                        "school": `${tools.text.preposition(subject.school)} ${tools.text.capitalize(subject.school)}`
                     }
                 }),
             ]
@@ -235,7 +234,7 @@ const get = {
         let description = subject.description;
         description = description.charAt(0).toLowerCase() + description.substr(1, description.length);
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
@@ -252,7 +251,7 @@ const get = {
         subject = data[params.spell]
     }) => {
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
@@ -270,13 +269,13 @@ const get = {
     }) => {
         let vars = {
             "name": subject.name,
-            "healing": tools.getPhrase(`${intent.raw}.${false}`)
+            "healing": tools.text.getPhrase(`${intent.raw}.${false}`)
         };
 
         if (subject.heal) {
             vars.healing = `${subject.heal.amount}${subject.heal.dice}`;
             if (subject.heal.extra) {
-                vars.healing = tools.phrase({
+                vars.healing = tools.text.phrase({
                     phrase: intent.raw,
                     terminal: 'healExtra',
                     vars: {
@@ -291,7 +290,7 @@ const get = {
 
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars
             })
@@ -313,7 +312,7 @@ const get = {
             terminal = 'base';
 
             if (subject.higherLevelDamage) {
-                let damage = tools.clone(subject.damage);
+                let damage = tools.fn.clone(subject.damage);
                 if (subject.level) {
                     // calculate the extra damage
                     // eslint-disable-next-line no-plusplus
@@ -341,14 +340,14 @@ const get = {
 
                     terminal = 'cantrip';
                 }
-                vars.higherLevel = spellTools.damage(damage);
+                vars.higherLevel = tools.spell.damage(damage);
             } else if (subject.higherLevelTarget) {
                 const targetNumber = subject.higherLevelTarget.amount * levelDifference + subject.targets;
                 vars.higherLevel = `${targetNumber} ${subject.higherLevelTarget.target}`;
                 terminal = 'target';
 
                 if (subject.higherLevelTarget.separated) {
-                    vars.higherLevel += ` ${tools.phrase({
+                    vars.higherLevel += ` ${tools.text.phrase({
                         phrase: intent.raw,
                         terminal: 'targetSeparated',
                         vars: subject.higherLevelTarget
@@ -358,7 +357,7 @@ const get = {
         }
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 terminal,
                 vars

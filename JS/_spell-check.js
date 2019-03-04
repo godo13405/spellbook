@@ -1,7 +1,7 @@
 'use strict';
 
 const data = require('../data/spell.json'),
-    tools = require('./_tools.js');
+    tools = require('./tools/_tools.js');
 
 const get = {
     ritual: ({
@@ -10,7 +10,7 @@ const get = {
         subject = data[params.spell]
     }) => {
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 terminal: subject.ritual,
                 vars: {
@@ -26,7 +26,7 @@ const get = {
         subject = data[params.spell]
     }) => {
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 terminal: Boolean(subject.concentration),
                 vars: {
@@ -44,12 +44,12 @@ const get = {
         const terminal = subject.class.includes(params.class.toLowerCase());
 
         const output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 terminal,
                 vars: {
                     "name": subject.name,
-                    "class": `${tools.capitalize(params.class)}s`
+                    "class": `${tools.text.capitalize(params.class)}s`
                 }
             })
         };

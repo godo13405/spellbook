@@ -1,7 +1,7 @@
 'use strict';
 
 const data = require('../data/weapon.json'),
-    tools = require('./_tools.js');
+    tools = require('./tools/_tools.js');
 
 const get = {
     init: ({
@@ -10,7 +10,7 @@ const get = {
         subject = data[params.weapon]
     }) => {
         let vars = {
-            "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`,
+            "name": `${tools.text.preposition(subject.name).toUpperCase()} ${subject.name}`,
             "tier": subject.tier,
             "type": subject.type
         };
@@ -22,7 +22,7 @@ const get = {
                 vars.dmg.push(`${x.amount}${x.dice}`);
             });
 
-            vars.dmg = tools.listing({
+            vars.dmg = tools.text.listing({
                 str: vars.dmg,
                 connector: 'or '
             });
@@ -30,10 +30,10 @@ const get = {
             vars.dmg += ` ${subject.damage[0].type}`;
 
             if (subject.damage.length > 1) {
-                vars.twoHanded = tools.getPhrase(`${intent.raw}.twoHanded`);
+                vars.twoHanded = tools.text.getPhrase(`${intent.raw}.twoHanded`);
             }
 
-            vars.damage = tools.phrase({
+            vars.damage = tools.text.phrase({
                 phrase: intent.raw,
                 terminal: '_damage',
                 vars
@@ -41,7 +41,7 @@ const get = {
         }
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars
             })
@@ -55,7 +55,7 @@ const get = {
         subject = data[params.weapon]
     }) => {
         let vars = {
-            "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`
+            "name": `${tools.text.preposition(subject.name).toUpperCase()} ${subject.name}`
         };
 
         if (subject.damage) {
@@ -65,7 +65,7 @@ const get = {
                 dmg.push(`${x.amount}${x.dice}`);
             });
 
-            dmg = tools.listing({
+            dmg = tools.text.listing({
                 str: dmg,
                 connector: 'or '
             });
@@ -75,12 +75,12 @@ const get = {
             vars.damage = dmg;
 
             if (subject.damage.length > 1) {
-                vars.twoHanded = tools.getPhrase(`${intent.raw}.twoHanded`);
+                vars.twoHanded = tools.text.getPhrase(`${intent.raw}.twoHanded`);
             }
         }
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars
             })
@@ -94,7 +94,7 @@ const get = {
         subject = data[params.weapon]
     }) => {
         let vars = {
-            "name": `${tools.preposition(subject.name).toUpperCase()} ${subject.name}`
+            "name": `${tools.text.preposition(subject.name).toUpperCase()} ${subject.name}`
         };
 
         if (subject.cost.amount > 1) {
@@ -104,7 +104,7 @@ const get = {
         }
 
         let output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 vars
             })
