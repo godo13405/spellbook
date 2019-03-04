@@ -131,7 +131,7 @@ const get = {
             vars.componentsPhrase.push(tools.text.getPhrase(`${intent.raw}.somatic`));
         }
         if (vars.componentsPhrase.length) {
-            vars.componentsPhrase = tools.listing({
+            vars.componentsPhrase = tools.text.listing({
                 str: vars.componentsPhrase
             });
         } else {

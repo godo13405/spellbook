@@ -62,7 +62,7 @@ const get = {
         subject = data[params.spell]
     }) => {
         const output = {
-            data: tools.phrase({
+            data: tools.text.phrase({
                 phrase: intent.raw,
                 terminal: Boolean(subject.higher_levels),
                 vars: {

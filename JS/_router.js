@@ -12,6 +12,7 @@ const router = {
         // Don't listen to all events on Slack, only DMs and direct mentions
         if (!req.originalDetectIntentRequest || req.originalDetectIntentRequest.source !== 'slack' ||
             (req.originalDetectIntentRequest.payload.data.event.channel_type === 'im' ||
+                // eslint-disable-next-line no-extra-parens
                 (req.originalDetectIntentRequest.payload.data.event.channel_type !== 'im' && req.originalDetectIntentRequest.payload.data.event.text.includes(`<@${req.originalDetectIntentRequest.payload.data.authed_users[0]}>`))
             )
         ) {

@@ -12,6 +12,7 @@ server.on('request', (req, res) => {
     res.statusCode = 200;
     // API call
     if (req.method === 'POST' && req.headers.auth === ')6@9npt?Fwgp={V') {
+        // console.log(req.url);
         serve.api(req, res);
         // Demo
     } else if (req.method === 'GET') {

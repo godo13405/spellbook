@@ -7,7 +7,7 @@ const respond = ({
   data
 }) => {
   const txt = tools.text.stripSsml(data.data || data.speech),
-    speech = tools.text.sound(data.speech || data.data, data.audio);
+    speech = tools.fn.sound(data.speech || data.data, data.audio);
   let output = {
     "fulfillmentText": data.data,
     "fulfillmentMessages": [{

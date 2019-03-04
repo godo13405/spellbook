@@ -42,7 +42,7 @@ const tools = {
                 action: parts[1],
                 function: parts[2],
             };
-        intent.fn = require(`./_${intent.entity}.js`);
+        intent.fn = require(`../_${intent.entity}.js`);
 
         return intent;
     },

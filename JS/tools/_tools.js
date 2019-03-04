@@ -10,5 +10,4 @@ const tools = {
     respond: require('./_respondTools.js'),
     spell: require('./_spellTools.js'),
 };
-
 exports = module.exports = tools;

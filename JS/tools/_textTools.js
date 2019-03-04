@@ -124,7 +124,7 @@ const tools = {
         },
         find: ({
             phrase,
-            lib = require('../phrases.json'),
+            lib = require('../../data/phrases.json'),
         }) => {
             // check if the phrase exists
             let directions = phrase.split('.'),
