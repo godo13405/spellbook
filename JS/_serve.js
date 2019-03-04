@@ -1,6 +1,7 @@
 'use strict';
 
 const router = require('./_router.js'),
+    http = require('http'),
     fs = require('fs');
 let chalk;
 if (global.isDev) {
@@ -70,47 +71,36 @@ const serve = {
 
         return output;
     },
-    endpoint: ({
+    bridge: ({
         projectId = 'spellbook-7ccae',
-        sessionId = 'quickstart-session-id',
-        languageCode = 'en',
-        res,
-        dialogflow = require('dialogflow')
+        sessionId = '*',
+        body = {
+            "queryInput": {
+                "text": {
+                    "languageCode": "en",
+                    "text": "what is fireball"
+                }
+            }
+        },
+        postOptions = {
+            host: 'https://dialogflow.googleapis.com/',
+            port: '80',
+            path: `/v2beta1/projects/${projectId}/agent/sessions/${sessionId}:detectIntent`,
+            method: 'POST',
+            body,
+            headers: {
+                'auth': ')6@9npt?Fwgp={V',
+                'Authorization': 'Bearer 0d4b7dfb0d104d94abb64ce45d2054f7',
+                'Accept': 'application/json',
+                'Accept': 'application/json'
+            }
+        }
     }) => {
-
-        // Instantiate a DialogFlow client.
-        const sessionClient = new dialogflow.SessionsClient();
-
-        // Define session path
-        const sessionPath = sessionClient.sessionPath(projectId, sessionId);
-
-        // The text query request.
-        const request = {
-            session: sessionPath,
-            queryParams: {
-                payload: {
-                    source: 'web'
-                }
-            },
-            queryInput: {
-                text: {
-                    text: 'hi',
-                    languageCode: languageCode,
-                }
-            },
-        };
-
-        // Send request and log result
-        request.queryInput.text.text = request.query.input;
-
-        return sessionClient.
-        detectIntent(request).
-        then(response => {
-            return res.json(response[0].queryResult);
-        }).
-        catch(err => {
-            // eslint-disable-next-line no-console
-            console.error('ERROR:', err);
+        return http.request(postOptions, res => {
+            res.setEncoding('utf8');
+            res.on('data', chunk => {
+                console.log('Response: ', chunk);
+            });
         });
     }
 };

@@ -12,11 +12,17 @@ server.on('request', (req, res) => {
     res.statusCode = 200;
     // API call
     if (req.method === 'POST' && req.headers.auth === ')6@9npt?Fwgp={V') {
-        // console.log(req.url);
         serve.api(req, res);
-        // Demo
     } else if (req.method === 'GET') {
-        serve.static(req, res);
+        switch (req.url) {
+            case '/bridge':
+                serve.bridge(req, res);
+                break;
+            default:
+                // Demo
+                serve.static(req, res);
+                break;
+        }
     }
 }).listen(port, () => {
     // eslint-disable-next-line no-console

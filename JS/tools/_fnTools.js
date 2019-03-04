@@ -5,7 +5,7 @@
 const options = require('../_globalOptions.js');
 
 const tools = {
-    randSpell: (data = require('../data/spell.json')) => {
+    randSpell: (data = require('../../data/spell.json')) => {
         const keys = Object.keys(data);
         return data[keys[Math.floor(Math.random() * keys.length)]].name;
     },
