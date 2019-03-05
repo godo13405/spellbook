@@ -11,21 +11,16 @@ const get = {
         params,
         subject = data[params.spell]
     }) => {
-        let level;
-        if (!subject.level) {
-            level = `${tools.text.preposition(subject.school)} ${tools.text.capitalize(subject.school)} cantrip`;
-        } else {
-            level = `a level ${subject.level} ${tools.text.capitalize(subject.school)} spell`;
-        }
         let output = {
             "data": tools.text.phrase({
                 phrase: intent.raw,
                 vars: {
                     "name": subject.name,
-                    level,
+                    level: tools.spell.subtitle(subject),
                 }
             }),
             "suggestions": [],
+            "card": tools.respond.card(subject)
         };
         if (subject.audio) {
             output.audio = subject.audio;
