@@ -27,7 +27,7 @@ const serve = {
     static: (req, res) => {
         let filePath = `.${req.url}`;
         if (filePath === './') {
-            filePath = './demo/docs/index.html';
+            filePath = './docs/demo/index.html';
         }
 
         fs.readFile(filePath, (error, content) => {

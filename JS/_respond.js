@@ -11,16 +11,6 @@ const respond = ({
   let output = {
     "fulfillmentText": data.data,
     "fulfillmentMessages": [{
-      //   "platform": "ACTIONS_ON_GOOGLE",
-      //   "simpleResponses": {
-      //     "simpleResponses": [{
-      //       // "textToSpeech": speech,
-      //       "ssml": `<speak>${speech}</speak>`,
-      //       "displayText": txt
-      //     }]
-      //   }
-      // },
-      // {
       "text": {
         "text": [
           txt
@@ -64,8 +54,6 @@ const respond = ({
     output.payload.google.richResponse.items.push(data.card);
   }
 
-
-  console.log('output:', output);
   return JSON.stringify(output);
 };
 
