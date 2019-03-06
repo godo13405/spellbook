@@ -13,17 +13,15 @@
 
 <body class="markdown-body">
 
-    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.0/dist/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script defer>
-        const url = 'https://raw.githubusercontent.com/godo13405/dragon-tome/master/README.md';
-        const converter = new showdown.Converter();
-
+        const url = '../README.md';
         fetch(url)
             .then((resp) => {
                 return resp.text();
             })
             .then((data) => {
-                document.querySelector('body').innerHTML = (converter.makeHtml(data));
+                document.querySelector('body').innerHTML = marked(data);
             });
     </script>
 </body>

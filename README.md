@@ -19,7 +19,7 @@ Here are some samples of what you can ask and the responses you should get. Bear
   > Fireball does 8d6 fire damage
 - **how long does levitate last**
   > Levitate lasts for up to 10 minutes
-- describe magic missile
+- **describe magic missile**
   > You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.
 - **who can cast thaumaturgy**
   > Thaumaturgy can be cast by clerics only
