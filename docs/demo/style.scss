@@ -6,8 +6,7 @@ button:focus {
 }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'Helvetice Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
@@ -22,8 +21,7 @@ body {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -65,13 +63,8 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 @media all and (max-height: 905px) {
@@ -101,8 +94,8 @@ iframe {
   margin: 0;
   padding: .75rem 0;
   height: 2.5em;
-  background-color: rgba(239, 239, 239, 0.85);
-  border-bottom: 1px solid whitesmoke;
+  background-color: rgba(239, 239, 239, .85);
+  border-bottom: 1px solid rgb(245, 245, 245);
   text-align: center;
 }
 
@@ -122,12 +115,12 @@ iframe {
 }
 
 .footer li:not(:last-child) {
-  border-right: 1px solid rgba(50, 50, 50, 0.25);
+  border-right: 1px solid rgba(50, 50, 50, .25);
 }
 
 .footer li a {
   text-decoration: none;
-  color: rgba(50, 50, 50, 0.6);
+  color: rgba(50, 50, 50, .6);
 }
 
 .user-input-container {
@@ -141,22 +134,15 @@ iframe {
   width: 100%;
   padding: .6em 2.5rem;
   border: 0;
-  border-bottom: 1px solid rgba(50, 50, 50, 0.4);
+  border-bottom: 1px solid rgba(50, 50, 50, .4);
   font-size: 1rem;
   background: transparent;
 }
 
 .chat-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex-direction: column-reverse;
+  flex: 1;
 }
 
 .card,
@@ -168,12 +154,9 @@ iframe {
   text-align: left;
   position: relative;
   margin: .6em;
-  -webkit-box-shadow: 0 1px 2px rgba(50, 50, 50, 0.2);
-          box-shadow: 0 1px 2px rgba(50, 50, 50, 0.2);
-  -webkit-animation: bubble-in .4s ease-out;
-          animation: bubble-in .4s ease-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  box-shadow: 0 1px 2px rgba(50, 50, 50, .2);
+  animation: bubble-in .4s ease-out;
+  animation-fill-mode: forwards;
 }
 
 .speech-bubble {
@@ -184,8 +167,7 @@ iframe {
 .card {
   width: 70%;
   max-width: 450px;
-  -webkit-animation-duration: 1.2s;
-          animation-duration: 1.2s;
+  animation-duration: 1.2s;
 }
 
 .speech-bubble:after {
@@ -198,13 +180,11 @@ iframe {
   left: calc(100% - 4px);
   border: 7px solid transparent;
   border-color: transparent transparent #fff #fff;
-  -webkit-box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
-          box-shadow: 1px 1px 2px rgba(50, 50, 50, 0.2);
+  box-shadow: 1px 1px 2px rgba(50, 50, 50, .2);
 }
 
 .speech-bubble.user-said {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
 
 .speech-bubble.bot-said {
@@ -217,16 +197,14 @@ iframe {
   left: auto;
   right: calc(100% - 4px);
   border-color: transparent #a4201e #a4201e transparent;
-  -webkit-box-shadow: -1px 1px 2px rgba(50, 50, 50, 0.2);
-          box-shadow: -1px 1px 2px rgba(50, 50, 50, 0.2);
+  box-shadow: -1px 1px 2px rgba(50, 50, 50, .2);
 }
 
 .speech-bubble:empty {
   color: #666;
   background: #ddd;
   border: 1px solid #666;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .speech-bubble:empty:after {
@@ -235,15 +213,6 @@ iframe {
 
 .speech-bubble:empty:before {
   content: "Sorry, something broke :-(";
-}
-
-@-webkit-keyframes bubble-in {
-  0% {
-    opacity: 0;
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
 }
 
 @keyframes bubble-in {
@@ -303,11 +272,10 @@ iframe {
 
 .bot-mute span:after {
   background: url(./sound-waves.svg) center no-repeat transparent;
-  -webkit-transition: opacity .2s ease-out;
   transition: opacity .2s ease-out;
 }
 
-.bot-mute input:not(:checked) ~ span:after {
+.bot-mute input:not(:checked)~span:after {
   opacity: 0;
 }
 
@@ -321,11 +289,10 @@ iframe {
   background-image: url(./mic.svg), url(./pulse.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: center center, 49.6% 45%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, .7);
   background-size: 100px, 300px;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: opacity .2s ease-out;
   transition: opacity .2s ease-out;
 }
 
@@ -343,13 +310,10 @@ body.listening .listening {
 .suggestion {
   display: inline-block;
   padding: .6em 1em;
-  border: 1px solid rgba(50, 50, 50, 0.2);
+  border: 1px solid rgba(50, 50, 50, .2);
   border-radius: 1.5em;
   margin-right: 1em;
   cursor: pointer;
-  -webkit-animation: bubble-in .4s ease-out;
-          animation: bubble-in .4s ease-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation: bubble-in .4s ease-out;
+  animation-fill-mode: forwards;
 }
-/*# sourceMappingURL=style.css.map */
