@@ -320,7 +320,11 @@ body.listening .listening {
   animation-fill-mode: forwards;
 }
 
-body:not(.demo-container) {
+.markdown-body {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
   ul {
     width: 100%;
     max-width: 35em;
