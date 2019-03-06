@@ -26,8 +26,8 @@ const serve = {
     // eslint-disable-next-line max-lines-per-function
     static: (req, res) => {
         let filePath = `.${req.url}`;
-        if (filePath === './docs') {
-            filePath = './docs/demo/index.html';
+        if (filePath === './') {
+            filePath = './demo/index.html';
         }
 
         fs.readFile(filePath, (error, content) => {
