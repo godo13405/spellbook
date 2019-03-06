@@ -11,7 +11,8 @@
     "test": "botium-cli run --config ./botium.json --convos ./spec/convo",
     "botium": "botium-cli run --config ./botium.json --convos ./spec/convo",
     "emulate": "botium-cli emulator console --convos ./spec/convo --config ./botium.json",
-    "emulate-browser": "botium-cli emulator browser --convos ./spec/convo --config ./botium.json"
+    "emulate-browser": "botium-cli emulator browser --convos ./spec/convo --config ./botium.json",
+    "build": "gcloud builds submit"
   },
   "repository": {
     "type": "git",
