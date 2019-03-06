@@ -1,3 +1,5 @@
+$color-primary: #BD2624;
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -43,7 +45,7 @@ body {
 .demo-container::before {
   top: 0;
   height: 40vh;
-  background: url(./dragon-logo.svg) -4vw 2vh #BD2624 no-repeat;
+  background: url(./dragon-logo.svg) -4vw 2vh $color-primary no-repeat;
   background-size: auto 50vh;
   mask: url(./bg.svg);
   mask-position: center bottom;
@@ -316,4 +318,60 @@ body.listening .listening {
   cursor: pointer;
   animation: bubble-in .4s ease-out;
   animation-fill-mode: forwards;
+}
+
+body:not(.demo-container) {
+  ul {
+    width: 100%;
+    max-width: 35em;
+  }
+
+  li {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid rgba(#111, .1);
+    }
+
+    >* {
+      display: table;
+      position: relative;
+      margin: 0 0 .6em;
+      padding: .4em .8em;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        border-width: .3em;
+        border-style: solid;
+        width: 0;
+        height: 0;
+      }
+    }
+
+    strong {
+      background: #ddd;
+      border-radius: 1em 1em 1em 0;
+
+      &:after {
+        right: 100%;
+        border-color: transparent #ddd #ddd transparent;
+      }
+    }
+
+    blockquote {
+      background: $color-primary;
+      border-radius: 1em 1em 0 1em;
+      color: #fff;
+      margin-left: 2em;
+
+      &:after {
+        left: 100%;
+        border-color: transparent transparent $color-primary $color-primary;
+      }
+    }
+  }
 }

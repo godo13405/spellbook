@@ -352,4 +352,58 @@ body.listening .listening {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+
+body:not(.demo-container) ul {
+  width: 100%;
+  max-width: 35em;
+}
+
+body:not(.demo-container) li {
+  list-style: none;
+}
+
+body:not(.demo-container) li:not(:last-child) {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+body:not(.demo-container) li > * {
+  display: table;
+  position: relative;
+  margin: 0 0 .6em;
+  padding: .4em .8em;
+}
+
+body:not(.demo-container) li > *:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  border-width: .3em;
+  border-style: solid;
+  width: 0;
+  height: 0;
+}
+
+body:not(.demo-container) li strong {
+  background: #ddd;
+  border-radius: 1em 1em 1em 0;
+}
+
+body:not(.demo-container) li strong:after {
+  right: 100%;
+  border-color: transparent #ddd #ddd transparent;
+}
+
+body:not(.demo-container) li blockquote {
+  background: #BD2624;
+  border-radius: 1em 1em 0 1em;
+  color: #fff;
+  margin-left: 2em;
+}
+
+body:not(.demo-container) li blockquote:after {
+  left: 100%;
+  border-color: transparent transparent #BD2624 #BD2624;
+}
 /*# sourceMappingURL=style.css.map */
