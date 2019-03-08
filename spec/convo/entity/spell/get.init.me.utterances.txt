@@ -1,0 +1,380 @@
+entity.spell.get.init.me
+what is Bane
+what is Animal Friendship
+what is Blade Ward
+what is Bless
+what is Charm Person
+what is Burning Hands
+what is Alarm
+what is Chill Touch
+what is Chromatic Orb
+what is Color Spray
+what is Compelled Duel
+what is Create or Destroy Water
+what is Comprehend Languages
+what is Cure Wounds
+what is Dancing Lights
+what is Command
+what is Detect Evil and Good
+what is Detect Magic
+what is Detect Poison or Disease
+what is Dissonant Whispers
+what is Druidcraft
+what is Divine Favor
+what is Eldritch Blast
+what is Ensnaring Strike
+what is Disguise Self
+what is Expeditious Retreat
+what is False Life
+what is Feather Fall
+what is Find Familiar
+what is Faerie Fire
+what is Fire Bolt
+what is Fog Cloud
+what is Friends
+what is Goodberry
+what is Grease
+what is Entangle
+what is Guidance
+what is Guiding Bolt
+what is Hail of Thorns
+what is Healing Word
+what is Hellish Rebuke
+what is Acid Splash
+what is Heroism
+what is Hex
+what is Hunter's Mark
+what is Identify
+what is Illusory Script
+what is Inflict Wounds
+what is Light
+what is Jump
+what is Longstrider
+what is Mage Armor
+what is Mage Hand
+what is Magic Missile
+what is Mending
+what is Message
+what is Minor Illusion
+what is Poison Spray
+what is Prestidigitation
+what is Produce Flame
+what is Protection from Evil and Good
+what is Purify Food and Drink
+what is Ray of Frost
+what is Ray of Sickness
+what is Remove Curse
+what is Resistance
+what is Sacred Flame
+what is Sanctuary
+what is Shield of Faith
+what is Shield
+what is Searing Smite
+what is Sleep
+what is Spare the Dying
+what is Speak with Animals
+what is Shillelagh
+what is Shocking Grasp
+what is Silent Image
+what is Thaumaturgy
+what is Thorn Whip
+what is Thunderous Smite
+what is Thunderwave
+what is True Strike
+what is Unseen Servant
+what is Vicious Mockery
+what is Witch Bolt
+what is Wrathful Smite
+what is Aid
+what is Animal Messenger
+what is Blindness or Deafness
+what is Calm Emotions
+what is Prayer of Healing
+what is Lesser Restoration
+what is Silence
+what is Spiritual Weapon
+what is Warding Bond
+what is Animate Dead
+what is Hold Person
+what is Aura of Life
+what is Aura of Purity
+what is Aura Of Vitality
+what is Beacon of Hope
+what is Banishment
+what is Blight
+what is Blinding Smite
+what is Blink
+what is Arcane Eye
+what is Bestow Curse
+what is Call Lightning
+what is Cloud of Daggers
+what is Compulsion
+what is Conjure Animals
+what is Conjure Barrage
+what is Clairvoyance
+what is Counterspell
+what is Daylight
+what is Create Food and Water
+what is Crusader's Mantle
+what is Augury
+what is Fear
+what is Feign Death
+what is Fireball
+what is Fly
+what is Gaseous Form
+what is Haste
+what is Dispel Magic
+what is Elemental Weapon
+what is Hypnotic Pattern
+what is Lightning Arrow
+what is Mass Healing Word
+what is Alter Self
+what is Arcane Lock
+what is Barkskin
+what is Nondetection
+what is Meld Into Stone
+what is Phantom Steed
+what is Major Image
+what is Protection from Energy
+what is Plant Growth
+what is Revivify
+what is Sending
+what is Magic Circle
+what is Sleet Storm
+what is Spirit Guardians
+what is Slow
+what is Stinking Cloud
+what is Confusion
+what is Conjure Minor Elementals
+what is Speak with Plants
+what is Death Ward
+what is Conjure Woodland Beings
+what is Control Water
+what is Speak with Dead
+what is Tongues
+what is Cordon Of Arrows
+what is Beast Sense
+what is Crown of Madness
+what is Branding Smite
+what is Darkness
+what is Darkvision
+what is Animal Shapes
+what is Antimagic Field
+what is Detect Thoughts
+what is Blur
+what is Antipathy or Sympathy
+what is Demiplane
+what is Dominate Monster
+what is Astral Projection
+what is Control Weather
+what is Earthquake
+what is Feeblemind
+what is Foresight
+what is Glibness
+what is Gate
+what is Clone
+what is Holy Aura
+what is Imprisonment
+what is Maze
+what is Mass Heal
+what is Mind Blank
+what is Power Word Heal
+what is Meteor Swarm
+what is Power Word Kill
+what is Power Word Stun
+what is Incendiary Cloud
+what is Telepathy
+what is Sunburst
+what is Prismatic Wall
+what is Time Stop
+what is Storm of Vengeance
+what is True Polymorph
+what is True Resurrection
+what is Tsunami
+what is Weird
+what is Shapechange
+what is Wish
+what is Conjure Celestial
+what is Delayed Blast Fireball
+what is Etherealness
+what is Dimension Door
+what is Fire Storm
+what is Forcecage
+what is Mirage Arcane
+what is Prismatic Spray
+what is Finger of Death
+what is Regenerate
+what is Project Image
+what is Resurrection
+what is Reverse Gravity
+what is Sequester
+what is Simulacrum
+what is Symbol
+what is Plane Shift
+what is Divine Word
+what is Animate Objects
+what is Invisibility
+what is Teleport
+what is Antilife Shell
+what is Arcane Gate
+what is Awaken
+what is Banishing Smite
+what is Chain Lightning
+what is Suggestion
+what is Cloudkill
+what is Circle of Power
+what is Blade Barrier
+what is Commune with Nature
+what is Commune
+what is Cone of Cold
+what is Conjure Elemental
+what is Conjure Fey
+what is Circle of Death
+what is Conjure Volley
+what is Contingency
+what is Continual Flame
+what is Create Undead
+what is Creation
+what is Destructive Wave
+what is Divination
+what is Disintegrate
+what is Contagion
+what is Dispel Evil and Good
+what is Dominate Beast
+what is Dream
+what is Enhance Ability
+what is Dominate Person
+what is Contact Other Plane
+what is Eyebite
+what is Find Steed
+what is Fabricate
+what is Find the Path
+what is Find Traps
+what is Fire Shield
+what is Flame Blade
+what is Enlarge or Reduce
+what is Flame Strike
+what is Enthrall
+what is Flaming Sphere
+what is Flesh to Stone
+what is Geas
+what is Freedom of Movement
+what is Giant Insect
+what is Gentle Repose
+what is Globe of Invulnerability
+what is Grasping Vine
+what is Greater Invisibility
+what is Forbiddance
+what is Greater Restoration
+what is Guardian of Faith
+what is Guards and Wards
+what is Glyph of Warding
+what is Gust of Wind
+what is Hallucinatory Terrain
+what is Hallow
+what is Harm
+what is Heat Metal
+what is Heal
+what is Heroe's Feast
+what is Hold Monster
+what is Ice Storm
+what is Knock
+what is Insect Plague
+what is Legend Lore
+what is Locate Animals or Plants
+what is Lightning Bolt
+what is Locate Creature
+what is Locate Object
+what is Levitate
+what is Magic Jar
+what is Magic Weapon
+what is Magic Mouth
+what is Mass Suggestion
+what is Mislead
+what is Misty Step
+what is Mirror Image
+what is Move Earth
+what is Moonbeam
+what is Modify Memory
+what is Mass Cure Wounds
+what is Pass Without Trace
+what is Passwall
+what is Planar Binding
+what is Planar Ally
+what is Polymorph
+what is Programmed Illusion
+what is Raise Dead
+what is Protection from Poison
+what is Ray of Enfeeblement
+what is Phantasmal Killer
+what is Phantasmal Force
+what is Scrying
+what is Reincarnate
+what is Seeming
+what is Scorching Ray
+what is See Invisibility
+what is Spider Climb
+what is Shatter
+what is Spike Growth
+what is Staggering Smite
+what is Rope Trick
+what is Sunbeam
+what is Stone Shape
+what is Stoneskin
+what is Swift Quiver
+what is Telekinesis
+what is Transport via Plants
+what is Teleportation Circle
+what is Tree Stride
+what is True Seeing
+what is Vampiric Touch
+what is Wall of Force
+what is Wall of Stone
+what is Wall of Thorns
+what is Water Breathing
+what is Water Walk
+what is Wall of Ice
+what is Web
+what is Wind Walk
+what is Wind Wall
+what is Word of Recall
+what is Zone of Truth
+what is Wall of Fire
+what is Pyrotechnics
+what is Thunderclap
+what is Warding Wind
+what is Control Flames
+what is Create Bonfire
+what is Earth Tremor
+what is Frostbite
+what is Gust
+what is Skywrite
+what is Magic Stone
+what is Mold Earth
+what is Beast Bond
+what is Earthbind
+what is Ice Knife
+what is Dust Devil
+what is Catapult
+what is Absorb Elements
+what is Control Winds
+what is Bones of the Earth
+what is Erupting Earth
+what is Elemental Bane
+what is Shape Water
+what is Flame Arrows
+what is Investiture of Flame
+what is Maelstrom
+what is Primordial Ward
+what is Tidal Wave
+what is Investiture of Wind
+what is Transmute Rock
+what is Wall of Water
+what is Investiture of Ice
+what is Watery Sphere
+what is Immolation
+what is Whirlwind
+what is Investiture of Stone
+what is Wall of Sand
+what is Storm Sphere
+what is Vitriolic Sphere

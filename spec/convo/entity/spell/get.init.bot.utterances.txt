@@ -1,0 +1,380 @@
+entity.spell.get.init.bot
+Bane is a level 1 Enchantment spell
+Animal Friendship is a level 1 Enchantment spell
+Blade Ward is a Abjuration cantrip
+Bless is a level 1 Enchantment spell
+Charm Person is a level 1 Enchantment spell
+Burning Hands is a level 1 Evocation spell, which does 3d6 fire damage
+Alarm is a level 1 Abjuration spell
+Chill Touch is a Necromancy cantrip, which does 1d8 necrotic damage
+Chromatic Orb is a level 1 Evocation spell, which does 1d8 any type you chose damage
+Color Spray is a level 1 Illusion spell
+Compelled Duel is a level 1 Enchantment spell
+Create or Destroy Water is a level 1 Transmutation spell
+Comprehend Languages is a level 1 Divination spell
+Cure Wounds is a level 1 Evocation spell
+Dancing Lights is a Evocation cantrip
+Command is a level 1 Enchantment spell
+Detect Evil and Good is a level 1 Divination spell
+Detect Magic is a level 1 Divination spell
+Detect Poison or Disease is a level 1 Divination spell
+Dissonant Whispers is a level 1 Enchantment spell, which does 3d6 psychic damage
+Druidcraft is a Transmutation cantrip
+Divine Favor is a level 1 Evocation spell, which does 1d4 radiant damage
+Eldritch Blast is a Evocation cantrip, which does 1d10 force damage
+Ensnaring Strike is a level 1 Conjuration spell, which does 1d6 piercing damage
+Disguise Self is a level 1 Illusion spell
+Expeditious Retreat is a level 1 Transmutation spell
+False Life is a level 1 Necromancy spell
+Feather Fall is a level 1 Transmutation spell
+Find Familiar is a level 1 Conjuration spell
+Faerie Fire is a level 1 Evocation spell
+Fire Bolt is a Evocation cantrip, which does 1d10 fire damage
+Fog Cloud is a level 1 Conjuration spell
+Friends is a Enchantment cantrip
+Goodberry is a level 1 Transmutation spell
+Grease is a level 1 Conjuration spell
+Entangle is a level 1 Conjuration spell
+Guidance is a Divination cantrip
+Guiding Bolt is a level 1 Evocation spell, which does 4d6 radiant damage
+Hail of Thorns is a level 1 Conjuration spell, which does 1d10 piercing damage
+Healing Word is a level 1 Evocation spell
+Hellish Rebuke is a level 1 Evocation spell, which does 2d10 fire damage
+Acid Splash is a Conjuration cantrip, which does 1d6 acid damage
+Heroism is a level 1 Enchantment spell
+Hex is a level 1 Enchantment spell
+Hunter's Mark is a level 1 Divination spell, which does 1d6 extra damage
+Identify is a level 1 Divination spell
+Illusory Script is a level 1 Illusion spell
+Inflict Wounds is a level 1 Necromancy spell, which does 3d10 necrotic damage
+Light is a Evocation cantrip
+Jump is a level 1 Transmutation spell
+Longstrider is a level 1 Transmutation spell
+Mage Armor is a level 1 Abjuration spell
+Mage Hand is a Conjuration cantrip
+Magic Missile is a level 1 Evocation spell
+Mending is a Transmutation cantrip
+Message is a Transmutation cantrip
+Minor Illusion is a Illusion cantrip
+Poison Spray is a Conjuration cantrip
+Prestidigitation is a Transmutation cantrip
+Produce Flame is a Conjuration cantrip
+Protection from Evil and Good is a level 1 Abjuration spell
+Purify Food and Drink is a level 1 Transmutation spell
+Ray of Frost is a Evocation cantrip
+Ray of Sickness is a level 1 Necromancy spell
+Remove Curse is a level 3 Abjuration spell
+Resistance is a Abjuration cantrip
+Sacred Flame is a Evocation cantrip, which does 1d8 radiant damage
+Sanctuary is a level 1 Abjuration spell
+Shield of Faith is a level 1 Abjuration spell
+Shield is a level 1 Abjuration spell
+Searing Smite is a level 1 Evocation spell
+Sleep is a level 1 Enchantment spell
+Spare the Dying is a Necromancy cantrip
+Speak with Animals is a level 1 Divination spell
+Shillelagh is a Transmutation cantrip
+Shocking Grasp is a Evocation cantrip
+Silent Image is a level 1 Illusion spell
+Thaumaturgy is a Transmutation cantrip
+Thorn Whip is a Transmutation cantrip
+Thunderous Smite is a level 1 Evocation spell
+Thunderwave is a level 1 Evocation spell
+True Strike is a Divination cantrip
+Unseen Servant is a level 1 Conjuration spell
+Vicious Mockery is a Enchantment cantrip
+Witch Bolt is a level 1 Evocation spell
+Wrathful Smite is a level 1 Evocation spell
+Aid is a level 2 Abjuration spell
+Animal Messenger is a level 2 Enchantment spell
+Blindness or Deafness is a level 2 Necromancy spell
+Calm Emotions is a level 2 Enchantment spell
+Prayer of Healing is a level 2 Evocation spell
+Lesser Restoration is a level 2 Abjuration spell
+Silence is a level 2 Illusion spell
+Spiritual Weapon is a level 2 Evocation spell
+Warding Bond is a level 2 Abjuration spell
+Animate Dead is a level 3 Necromancy spell
+Hold Person is a level 2 Divination spell
+Aura of Life is a level 4 Abjuration spell
+Aura of Purity is a level 4 Abjuration spell
+Aura Of Vitality is a level 3 Evocation spell
+Beacon of Hope is a level 3 Abjuration spell
+Banishment is a level 4 Abjuration spell
+Blight is a level 4 Necromancy spell
+Blinding Smite is a level 3 Evocation spell, which does 3d8 radiant damage
+Blink is a level 3 Transmutation spell
+Arcane Eye is a level 4 Divination spell
+Bestow Curse is a level 3 Necromancy spell
+Call Lightning is a level 3 Conjuration spell
+Cloud of Daggers is a level 2 Conjuration spell
+Compulsion is a level 4 Enchantment spell
+Conjure Animals is a level 3 Conjuration spell
+Conjure Barrage is a level 3 Conjuration spell
+Clairvoyance is a level 3 Divination spell
+Counterspell is a level 3 Abjuration spell
+Daylight is a level 3 Evocation spell
+Create Food and Water is a level 3 Conjuration spell
+Crusader's Mantle is a level 3 Evocation spell, which does 1d4 radiant damage
+Augury is a level 2 Divination spell
+Fear is a level 3 Illusion spell
+Feign Death is a level 3 Necromancy spell
+Fireball is a level 3 Evocation spell, which does 8d6 fire damage
+Fly is a level 3 Transmutation spell
+Gaseous Form is a level 3 Transmutation spell
+Haste is a level 3 Transmutation spell
+Dispel Magic is a level 3 Abjuration spell
+Elemental Weapon is a level 3 Transmutation spell
+Hypnotic Pattern is a level 3 Illusion spell
+Lightning Arrow is a level 3 Transmutation spell
+Mass Healing Word is a level 3 Evocation spell
+Alter Self is a level 2 Transmutation spell
+Arcane Lock is a level 2 Abjuration spell
+Barkskin is a level 2 Transmutation spell
+Nondetection is a level 3 Abjuration spell
+Meld Into Stone is a level 3 Transmutation spell
+Phantom Steed is a level 3 Illusion spell
+Major Image is a level 3 Illusion spell
+Protection from Energy is a level 3 Abjuration spell
+Plant Growth is a level 3 Transmutation spell
+Revivify is a level 3 Conjuration spell
+Sending is a level 3 Evocation spell
+Magic Circle is a level 3 Abjuration spell
+Sleet Storm is a level 3 Conjuration spell
+Spirit Guardians is a level 3 Conjuration spell, which does 3d8 radiant or necrotic damage
+Slow is a level 3 Transmutation spell
+Stinking Cloud is a level 3 Conjuration spell
+Confusion is a level 4 Enchantment spell
+Conjure Minor Elementals is a level 4 Conjuration spell
+Speak with Plants is a level 3 Transmutation spell
+Death Ward is a level 4 Abjuration spell
+Conjure Woodland Beings is a level 4 Conjuration spell
+Control Water is a level 4 Transmutation spell, which does 2d8 bludgeoning damage
+Speak with Dead is a level 3 Necromancy spell
+Tongues is a level 3 Divination spell
+Cordon Of Arrows is a level 2 Transmutation spell, which does 1d6 piercing damage
+Beast Sense is a level 2 Divination spell
+Crown of Madness is a level 2 Enchantment spell
+Branding Smite is a level 2 Evocation spell, which does 2d6 radiant damage
+Darkness is a level 2 Evocation spell
+Darkvision is a level 2 Transmutation spell
+Animal Shapes is a level 8 Transmutation spell
+Antimagic Field is a level 8 Abjuration spell
+Detect Thoughts is a level 2 Divination spell
+Blur is a level 2 Illusion spell
+Antipathy or Sympathy is a level 8 Enchantment spell
+Demiplane is a level 8 Conjuration spell
+Dominate Monster is a level 8 Enchantment spell
+Astral Projection is a level 9 Necromancy spell
+Control Weather is a level 8 Transmutation spell
+Earthquake is a level 8 Evocation spell
+Feeblemind is a level 8 Enchantment spell
+Foresight is a level 9 Divination spell
+Glibness is a level 8 Transmutation spell
+Gate is a level 9 Conjuration spell
+Clone is a level 8 Necromancy spell
+Holy Aura is a level 8 Abjuration spell
+Imprisonment is a level 9 Abjuration spell
+Maze is a level 8 Conjuration spell
+Mass Heal is a level 9 Conjuration spell
+Mind Blank is a level 8 Abjuration spell
+Power Word Heal is a level 9 Evocation spell
+Meteor Swarm is a level 9 Evocation spell, which does 20d6 fire damage, 20d6 bludgeoning damage
+Power Word Kill is a level 9 Enchantment spell
+Power Word Stun is a level 8 Enchantment spell
+Incendiary Cloud is a level 8 Conjuration spell, which does 8d10 fire damage
+Telepathy is a level 8 Evocation spell
+Sunburst is a level 8 Evocation spell
+Prismatic Wall is a level 9 Abjuration spell
+Time Stop is a level 9 Transmutation spell
+Storm of Vengeance is a level 9 Conjuration spell, which does 2d6 thunder damage
+True Polymorph is a level 9 Transmutation spell
+True Resurrection is a level 9 Necromancy spell
+Tsunami is a level 8 Conjuration spell, which does 5d10 bludgeoning damage
+Weird is a level 9 Illusion spell, which does 4d10 psychic damage
+Shapechange is a level 9 Transmutation spell
+Wish is a level 9 Conjuration spell
+Conjure Celestial is a level 7 Conjuration spell
+Delayed Blast Fireball is a level 7 Evocation spell, which does 12d6 fire damage
+Etherealness is a level 7 Transmutation spell
+Dimension Door is a level 4 Conjuration spell, which does 4d6 force damage
+Fire Storm is a level 7 Evocation spell, which does 7d10 fire damage
+Forcecage is a level 7 Evocation spell
+Mirage Arcane is a level 7 Illusion spell
+Prismatic Spray is a level 7 Evocation spell
+Finger of Death is a level 7 Necromancy spell, which does 7d8 necrotic damage
+Regenerate is a level 7 Transmutation spell
+Project Image is a level 7 Illusion spell
+Resurrection is a level 7 Necromancy spell
+Reverse Gravity is a level 7 Transmutation spell
+Sequester is a level 7 Transmutation spell
+Simulacrum is a level 7 Illusion spell
+Symbol is a level 7 Abjuration spell
+Plane Shift is a level 7 Conjuration spell
+Divine Word is a level 7 Evocation spell
+Animate Objects is a level 5 Transmutation spell
+Invisibility is a level 2 Illusion spell
+Teleport is a level 7 Conjuration spell
+Antilife Shell is a level 5 Abjuration spell
+Arcane Gate is a level 6 Conjuration spell
+Awaken is a level 5 Transmutation spell
+Banishing Smite is a level 5 Abjuration spell, which does 5d10 force damage
+Chain Lightning is a level 6 Evocation spell, which does 10d8 lightning damage
+Suggestion is a level 2 Enchantment spell
+Cloudkill is a level 5 Conjuration spell, which does 5d8 poison damage
+Circle of Power is a level 5 Abjuration spell
+Blade Barrier is a level 6 Evocation spell, which does 6d10 slashing damage
+Commune with Nature is a level 5 Divination spell
+Commune is a level 5 Divination spell
+Cone of Cold is a level 5 Evocation spell, which does 8d8 cold damage
+Conjure Elemental is a level 5 Conjuration spell
+Conjure Fey is a level 6 Conjuration spell
+Circle of Death is a level 6 Necromancy spell, which does 8d6 necrotic damage
+Conjure Volley is a level 5 Conjuration spell, which does 8d8 any damage
+Contingency is a level 6 Evocation spell
+Continual Flame is a level 2 Evocation spell
+Create Undead is a level 6 Necromancy spell
+Creation is a level 5 Illusion spell
+Destructive Wave is a level 5 Evocation spell, which does 5d6 thunder damage, 5d6 radiant or necrotic damage
+Divination is a level 4 Divination spell
+Disintegrate is a level 6 Transmutation spell, which does 10d6 force damage
+Contagion is a level 5 Necromancy spell
+Dispel Evil and Good is a level 5 Abjuration spell
+Dominate Beast is a level 4 Enchantment spell
+Dream is a level 5 Illusion spell, which does 3d6 psychic damage
+Enhance Ability is a level 2 Transmutation spell
+Dominate Person is a level 5 Enchantment spell
+Contact Other Plane is a level 5 Divination spell, which does 6d6 psychic damage
+Eyebite is a level 6 Necromancy spell
+Find Steed is a level 2 Conjuration spell
+Fabricate is a level 4 Transmutation spell
+Find the Path is a level 6 Divination spell
+Find Traps is a level 2 Divination spell
+Fire Shield is a level 4 Evocation spell, which does 2d8 fire or cold damage
+Flame Blade is a level 2 Evocation spell, which does 3d6 fire damage
+Enlarge or Reduce is a level 2 Transmutation spell
+Flame Strike is a level 5 Evocation spell, which does 4d6 fire damage, 4d6 radiant damage
+Enthrall is a level 2 Enchantment spell
+Flaming Sphere is a level 2 Conjuration spell, which does 2d6 fire damage
+Flesh to Stone is a level 6 Transmutation spell
+Geas is a level 5 Enchantment spell, which does 5d10 psychic damage
+Freedom of Movement is a level 4 Abjuration spell
+Giant Insect is a level 4 Transmutation spell
+Gentle Repose is a level 2 Necromancy spell
+Globe of Invulnerability is a level 6 Abjuration spell
+Grasping Vine is a level 4 Conjuration spell
+Greater Invisibility is a level 4 Illusion spell
+Forbiddance is a level 6 Abjuration spell
+Greater Restoration is a level 5 Abjuration spell
+Guardian of Faith is a level 4 Conjuration spell, which does 20undefined radiant damage
+Guards and Wards is a level 6 Abjuration spell
+Glyph of Warding is a level 3 Abjuration spell
+Gust of Wind is a level 2 Evocation spell
+Hallucinatory Terrain is a level 4 Illusion spell
+Hallow is a level 5 Evocation spell
+Harm is a level 6 Necromancy spell, which does 14d6 necrotic damage
+Heat Metal is a level 2 Transmutation spell, which does 2d8 fire damage
+Heal is a level 6 Evocation spell
+Heroe's Feast is a level 6 Conjuration spell
+Hold Monster is a level 5 Enchantment spell
+Ice Storm is a level 4 Evocation spell, which does 2d8 bludgeoning damage, 4d6 cold damage
+Knock is a level 2 Transmutation spell
+Insect Plague is a level 5 Conjuration spell, which does 4d10 piercing damage
+Legend Lore is a level 5 Divination spell
+Locate Animals or Plants is a level 2 Divination spell
+Lightning Bolt is a level 3 Evocation spell, which does 8d6 lightning damage
+Locate Creature is a level 4 Divination spell
+Locate Object is a level 2 Divination spell
+Levitate is a level 2 Transmutation spell
+Magic Jar is a level 6 Necromancy spell
+Magic Weapon is a level 2 Transmutation spell
+Magic Mouth is a level 2 Illusion spell
+Mass Suggestion is a level 6 Enchantment spell
+Mislead is a level 5 Illusion spell
+Misty Step is a level 2 Conjuration spell
+Mirror Image is a level 2 Illusion spell
+Move Earth is a level 6 Transmutation spell
+Moonbeam is a level 2 Evocation spell, which does 2d10 radiant damage
+Modify Memory is a level 5 Enchantment spell
+Mass Cure Wounds is a level 5 Conjuration spell
+Pass Without Trace is a level 2 Abjuration spell
+Passwall is a level 5 Transmutation spell
+Planar Binding is a level 5 Abjuration spell
+Planar Ally is a level 6 Conjuration spell
+Polymorph is a level 4 Transmutation spell
+Programmed Illusion is a level 6 Illusion spell
+Raise Dead is a level 5 Necromancy spell
+Protection from Poison is a level 2 Abjuration spell
+Ray of Enfeeblement is a level 2 Necromancy spell
+Phantasmal Killer is a level 4 Illusion spell, which does 4d10 psychic damage
+Phantasmal Force is a level 2 Illusion spell, which does 1d6 psychic damage
+Scrying is a level 5 Divination spell
+Reincarnate is a level 5 Transmutation spell
+Seeming is a level 5 Illusion spell
+Scorching Ray is a level 2 Evocation spell, which does 2d6 fire damage
+See Invisibility is a level 2 Divination spell
+Spider Climb is a level 2 Transmutation spell
+Shatter is a level 2 Evocation spell, which does 3d10 thunder damage
+Spike Growth is a level 2 Transmutation spell, which does 2d4 piercing damage
+Staggering Smite is a level 4 Evocation spell, which does 4d6 psychic damage
+Rope Trick is a level 2 Transmutation spell
+Sunbeam is a level 6 Evocation spell, which does 6d8 radiance damage
+Stone Shape is a level 4 Transmutation spell
+Stoneskin is a level 4 Abjuration spell
+Swift Quiver is a level 5 Transmutation spell
+Telekinesis is a level 5 Transmutation spell
+Transport via Plants is a level 6 Conjuration spell
+Teleportation Circle is a level 5 Conjuration spell
+Tree Stride is a level 5 Conjuration spell
+True Seeing is a level 6 Divination spell
+Vampiric Touch is a level 3 Necromancy spell, which does 3d6 necrotic damage
+Wall of Force is a level 5 Evocation spell
+Wall of Stone is a level 5 Evocation spell
+Wall of Thorns is a level 6 Conjuration spell, which does 7d10 piercing damage
+Water Breathing is a level 3 Transmutation spell
+Water Walk is a level 3 Transmutation spell
+Wall of Ice is a level 6 Evocation spell, which does 10d6 cold damage
+Web is a level 2 Conjuration spell, which does 2d4 fire damage
+Wind Walk is a level 6 Transmutation spell
+Wind Wall is a level 3 Evocation spell, which does 3d6 bludgeoning damage
+Word of Recall is a level 6 Conjuration spell
+Zone of Truth is a level 2 Enchantment spell
+Wall of Fire is a level 4 Evocation spell, which does 5d8 fire damage
+Pyrotechnics is a level 2 Transmutation spell
+Thunderclap is a Evocation cantrip, which does 1d6 thunder damage
+Warding Wind is a level 2 Evocation spell
+Control Flames is a Transmutation cantrip
+Create Bonfire is a Conjuration cantrip, which does 1d8 fire damage
+Earth Tremor is a level 1 Evocation spell, which does 1d6 bludgeoning damage
+Frostbite is a Evocation cantrip, which does 1d6 cold damage
+Gust is a Transmutation cantrip
+Skywrite is a level 2 Transmutation spell
+Magic Stone is a Transmutation cantrip, which does 1d6 bludgeoning damage
+Mold Earth is a Transmutation cantrip
+Beast Bond is a level 1 Divination spell
+Earthbind is a level 2 Transmutation spell
+Ice Knife is a level 1 Conjuration spell, which does 2d10 piercing damage, 2d6 cold damage
+Dust Devil is a level 2 Conjuration spell, which does 1d8 bludgeoning damage
+Catapult is a level 1 Transmutation spell, which does 3d8 bludgeoning damage
+Absorb Elements is a level 1 Abjuration spell, which does 1d6 any damage
+Control Winds is a level 5 Transmutation spell
+Bones of the Earth is a level 6 Transmutation spell, which does 6d6 bludgeoning damage
+Erupting Earth is a level 3 Transmutation spell, which does 3d12 bludgeoning damage
+Elemental Bane is a level 4 Transmutation spell, which does 2d6 any damage
+Shape Water is a Transmutation cantrip
+Flame Arrows is a level 3 Transmutation spell, which does 1d6 fire damage
+Investiture of Flame is a level 6 Transmutation spell, which does 1d10 fire damage
+Maelstrom is a level 5 Evocation spell, which does 6d6 bludgeoning damage
+Primordial Ward is a level 6 Abjuration spell
+Tidal Wave is a level 3 Conjuration spell, which does 4d8 bludgeoning damage
+Investiture of Wind is a level 6 Transmutation spell, which does 2d10 bludgeoning damage
+Transmute Rock is a level 5 Transmutation spell, which does 4d8 bludgeoning damage
+Wall of Water is a level 3 Evocation spell
+Investiture of Ice is a level 6 Transmutation spell, which does 4d6 cold damage
+Watery Sphere is a level 4 Conjuration spell
+Immolation is a level 5 Evocation spell, which does 3d6 fire damage
+Whirlwind is a level 7 Evocation spell, which does 10d6 bludgeoning damage
+Investiture of Stone is a level 6 Transmutation spell
+Wall of Sand is a level 3 Evocation spell
+Storm Sphere is a level 4 Evocation spell, which does 2d6 bludgeoning damage, 4d6 lightning damage
+Vitriolic Sphere is a level 4 Evocation spell, which does 10d4 acid damage, 5d4 acid damage

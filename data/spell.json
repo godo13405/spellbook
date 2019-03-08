@@ -1493,7 +1493,7 @@
         ],
         "type": "1st-level enchantment"
     },
-    "hunter's_mark": {
+    "hunters mark": {
         "casting_time": [{
             "amount": 1,
             "description": "bonus action"
@@ -3694,7 +3694,7 @@
         ],
         "type": "3rd-level conjuration"
     },
-    "crusader's_mantle": {
+    "crusaders mantle": {
         "casting_time": [{
             "amount": 1,
             "unit": "action"
@@ -8896,7 +8896,7 @@
         ],
         "type": "6th-level evocation"
     },
-    "heroes'_feast": {
+    "heroes feast": {
         "casting_time": [{
             "amount": 10,
             "unit": "minute"
@@ -8917,7 +8917,7 @@
         },
         "duration": "instantaneous",
         "level": 6,
-        "name": "Heroes' Feast",
+        "name": "Heroe's Feast",
         "range": 30,
         "ritual": false,
         "school": "conjuration",

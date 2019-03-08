@@ -1,0 +1,38 @@
+entity.weapon.get.init.me
+what is club
+what is dagger
+what is greatclub
+what is handaxe
+what is javelin
+what is light hammer
+what is mace
+what is quarterstaff
+what is sickle
+what is spear
+what is light crossbow
+what is dart
+what is shortbow
+what is sling
+what is battleaxe
+what is flail
+what is glaive
+what is greataxe
+what is greatsword
+what is halberd
+what is lance
+what is longsword
+what is maul
+what is morningstar
+what is pike
+what is rapier
+what is scimitar
+what is shortsword
+what is trident
+what is war pick
+what is warhammer
+what is whip
+what is blowgun
+what is hand crossbow
+what is heavy crossbow
+what is longbow
+what is net

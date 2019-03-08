@@ -10,6 +10,7 @@ const options = require('./JS/_globalOptions.js'),
 
 server.on('request', (req, res) => {
     res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
     // API call
     if (req.method === 'POST' && req.headers.auth === ')6@9npt?Fwgp={V') {
         serve.api(req, res);
