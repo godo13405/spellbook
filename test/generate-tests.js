@@ -1,46 +1,45 @@
 'use strict';
 
 const fs = require('fs'),
-    spells = require('../data/spell.json'),
     router = require('../JS/_router.js');
 
 
-const generate = () => {
-    const txt = {
-            'me': 'entity.spell.get.init.me',
-            'bot': 'entity.spell.get.init.bot'
-        },
-        spellNames = Object.keys(spells);
-    for (const x of spellNames) {
-        const y = spells[x],
-            me = `what is ${y.name}`,
-            req = {
+const generate = {
+    do: entity => {
+        const txt = {
+                'me': `entity.${entity}.get.init.me`,
+                'bot': `entity.${entity}.get.init.bot`
+            },
+            subject = require(`../data/${entity}.json`),
+            subjectNames = Object.keys(subject);
+        for (const x of subjectNames) {
+            const y = subject[x],
+                me = `what is ${y.name}`;
+            let req = {
                 "queryResult": {
                     "queryText": me,
-                    "action": "spell.get.init",
-                    "parameters": {
-                        "spell": x
-                    }
+                    "action": `${entity}.get.init`,
+                    "parameters": {}
                 }
-            },
-            bot = JSON.parse(router.ready(req));
+            };
+            req.queryResult.parameters[entity] = x;
+            const bot = JSON.parse(router.ready(req));
 
-        txt.me += `\n${me}`;
-        txt.bot += `\n${bot.fulfillmentText}`;
+            txt.me += `\n${me}`;
+            txt.bot += `\n${bot.fulfillmentText}`;
+        }
+        generate.write(entity, 'get.init.me.utterances', txt.me);
+        generate.write(entity, 'get.init.bot.utterances', txt.bot);
+    },
+    write: (entity, name, content) => {
+        fs.writeFile(`spec/convo/entity/${entity}/${name}.txt`, content, err => {
+            if (!err) {
+                // eslint-disable-next-line no-console
+                console.log(`${entity}.${name}.txt created`);
+            }
+        });
     }
-    fs.writeFile(`spec/convo/entity/spell/get.init.me.utterances.txt`, txt.me, err => {
-        if (!err) {
-            // eslint-disable-next-line no-console
-            console.log(`get.init.me.utterances.txt created`);
-        }
-    });
-    fs.writeFile(`spec/convo/entity/spell/get.init.bot.utterances.txt`, txt.bot, err => {
-        if (!err) {
-            // eslint-disable-next-line no-console
-            console.log(`get.init.bot.utterances.txt created`);
-        }
-    });
-    // console.log(output);
 };
 
-generate();
+generate.do('spell');
+generate.do('weapon');

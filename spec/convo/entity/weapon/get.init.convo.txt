@@ -1,0 +1,7 @@
+entity.weapon.get.init
+
+#me
+entity.weapon.get.init.me
+
+#bot
+entity.weapon.get.init.bot

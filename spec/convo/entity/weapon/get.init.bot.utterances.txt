@@ -1,0 +1,38 @@
+entity.weapon.get.init.bot
+A club is a simple melee weapon, which causes 1d4 bludgeoning damage
+A dagger is a simple melee weapon, which causes 1d4 piercing damage
+A greatclub is a simple melee weapon, which causes 1d8 bludgeoning damage
+A handaxe is a simple melee weapon, which causes 1d6 slashing damage
+A javelin is a simple melee weapon, which causes 1d6 piercing damage
+A light hammer is a simple melee weapon, which causes 1d4 bludgeoning damage
+A mace is a simple melee weapon, which causes 1d6 bludgeoning damage
+A quarterstaff is a simple melee weapon, which causes 1d6, or 1d8 bludgeoning damage, if 2 handed
+A sickle is a simple melee weapon, which causes 1d4 slashing damage
+A spear is a simple melee weapon, which causes 1d6 piercing damage
+A light crossbow is a simple ranged weapon, which causes 1d8 piercing damage
+A dart is a simple ranged weapon, which causes 1d4 piercing damage
+A shortbow is a simple ranged weapon, which causes 1d6 piercing damage
+A sling is a simple ranged weapon, which causes 1d4 bludgeoning damage
+A battleaxe is a martial melee weapon, which causes 1d8, or 1d10 slashing damage, if 2 handed
+A flail is a martial melee weapon, which causes 1d8 bludgeoning damage
+A glaive is a martial melee weapon, which causes 1d10 slashing damage
+A greataxe is a martial melee weapon, which causes 1d12 slashing damage
+A greatsword is a martial melee weapon, which causes 2d6 slashing damage
+A halberd is a martial melee weapon, which causes 1d10 slashing damage
+A lance is a martial melee weapon, which causes 1d12 slashing damage
+A longsword is a martial melee weapon, which causes 1d8, or 1d10 slashing damage, if 2 handed
+A maul is a martial melee weapon, which causes 2d6 bludgeoning damage
+A morningstar is a martial melee weapon, which causes 1d8 piercing damage
+A pike is a martial melee weapon, which causes 1d10 piercing damage
+A rapier is a martial melee weapon, which causes 1d8 piercing damage
+A scimitar is a martial melee weapon, which causes 1d6 slashing damage
+A shortsword is a martial melee weapon, which causes 1d6 piercing damage
+A trident is a martial melee weapon, which causes 1d6, or 1d8 piercing damage, if 2 handed
+A war pick is a martial melee weapon, which causes 1d8 piercing damage
+A warhammer is a martial melee weapon, which causes 1d8, or 1d10 bludgeoning damage, if 2 handed
+A whip is a martial melee weapon, which causes 1d4 slashing damage
+A blowgun is a martial ranged weapon, which causes 1undefined piercing damage
+A hand crossbow is a martial ranged weapon, which causes 1d6 piercing damage
+A heavy crossbow is a martial ranged weapon, which causes 1d10 piercing damage
+A longbow is a martial ranged weapon, which causes 1d8 piercing damage
+A net is a martial ranged weapon
