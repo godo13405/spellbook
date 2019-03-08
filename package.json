@@ -7,12 +7,13 @@
     "start": "node index.js",
     "dev": "NODE_ENV=dev npx nodemon",
     "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net",
+    "serve-ngrok": "./ngrok http 80",
     "mocha": "mocha spec",
     "test": "botium-cli run --config ./botium.json --convos ./spec/convo",
-    "botium": "botium-cli run --config ./botium.json --convos ./spec/convo",
     "emulate": "botium-cli emulator console --convos ./spec/convo --config ./botium.json",
     "emulate-browser": "botium-cli emulator browser --convos ./spec/convo --config ./botium.json",
-    "build": "gcloud builds submit"
+    "build": "gcloud builds submit",
+    "tests-generate": "node ./test/generate-tests.js"
   },
   "repository": {
     "type": "git",

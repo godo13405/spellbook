@@ -1,0 +1,7 @@
+entity.spell.get.init
+
+#me
+entity.spell.get.init.me
+
+#bot
+entity.spell.get.init.bot

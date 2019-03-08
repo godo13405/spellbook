@@ -9,7 +9,7 @@ const get = {
     init: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let output = {
             "data": tools.text.phrase({
@@ -45,7 +45,7 @@ const get = {
     damage: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let output = {
             data: tools.text.phrase({
@@ -65,7 +65,7 @@ const get = {
     castingTime: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let cast = [];
 
@@ -88,7 +88,7 @@ const get = {
     duration: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let connector = tools.text.getPhrase(`${intent.raw}.connector.lasts`);
         // Change the phrasing for instantaneous
@@ -110,7 +110,7 @@ const get = {
     components: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let vars = {
             "name": subject.name,
@@ -144,7 +144,7 @@ const get = {
     materials: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let args = {
             phrase: intent.raw,
@@ -166,7 +166,7 @@ const get = {
     classes: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let classes = [],
             connect = `${intent.raw}.connector`;
@@ -199,7 +199,7 @@ const get = {
     school: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let output = {
             data: tools.text.phrase({
@@ -224,7 +224,7 @@ const get = {
     description: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let description = subject.description;
         description = description.charAt(0).toLowerCase() + description.substr(1, description.length);
@@ -243,7 +243,7 @@ const get = {
     level: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let output = {
             data: tools.text.phrase({
@@ -260,7 +260,7 @@ const get = {
     healing: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let vars = {
             "name": subject.name,
@@ -295,7 +295,7 @@ const get = {
     higherLevel: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let vars = {
                 "name": subject.name,
