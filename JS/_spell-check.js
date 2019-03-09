@@ -7,7 +7,7 @@ const get = {
     ritual: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let output = {
             data: tools.text.phrase({
@@ -23,7 +23,7 @@ const get = {
     concentration: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         let output = {
             data: tools.text.phrase({
@@ -39,7 +39,7 @@ const get = {
     class: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         const terminal = subject.class.includes(params.class.toLowerCase());
 
@@ -59,7 +59,7 @@ const get = {
     higherLevel: ({
         intent,
         params,
-        subject = data[params.spell]
+        subject = data[params.spell.toLowerCase()]
     }) => {
         const output = {
             data: tools.text.phrase({
