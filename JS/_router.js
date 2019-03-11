@@ -1,7 +1,9 @@
 'use strict';
 
-const respond = require('./_respond.js');
-const tools = require('./tools/_tools.js');
+const respond = require('./_respond.js'),
+    tools = require('./tools/_tools.js'),
+    options = require('../config/options.json');
+
 let chalk;
 if (global.isDev) {
     chalk = require('chalk');
@@ -41,7 +43,8 @@ const router = {
 
             return respond({
                 data: output,
-                req
+                req,
+                continuous: options.continuousConversation.includes(intent.raw)
             });
             // eslint-disable-next-line no-else-return
         } else if (global.isDev) {

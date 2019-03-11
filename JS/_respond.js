@@ -4,7 +4,8 @@ const tools = require('./tools/_tools.js');
 
 // eslint-disable-next-line max-lines-per-function
 const respond = ({
-  data
+  data,
+  continuous = false
 }) => {
   const txt = tools.text.stripSsml(data.data || data.speech),
     speech = tools.fn.sound(data.speech || data.data, data.audio);
@@ -19,7 +20,7 @@ const respond = ({
     }],
     "payload": {
       "google": {
-        "expectUserResponse": false,
+        "expectUserResponse": continuous,
         "richResponse": {
           "items": [{
             "simpleResponse": {
