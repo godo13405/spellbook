@@ -19,7 +19,10 @@ const get = {
                     level: tools.spell.subtitle(subject),
                 }
             }),
-            "suggestions": [],
+            "suggestions": [
+                'what damage does it do',
+                'who can cast it'
+            ],
             "card": tools.respond.card(subject)
         };
         if (subject.audio) {

@@ -5,6 +5,7 @@ const tools = require('./tools/_tools.js');
 // eslint-disable-next-line max-lines-per-function
 const respond = ({
   data,
+  req,
   continuous = false
 }) => {
   const txt = tools.text.stripSsml(data.data || data.speech),
@@ -33,17 +34,16 @@ const respond = ({
     }
   };
 
-  /*
-   * Contexts
-   * for (const x in req.queryResult.parameters) {
-   *   output = tools.respond.context({
-   *     output,
-   *     req,
-   *     contextName: x,
-   *     context: req.queryResult.parameters[x]
-   *   });
-   * }
-   */
+
+  // Contexts
+  for (const x in req.queryResult.parameters) {
+    output = tools.respond.context({
+      output,
+      req,
+      contextName: x,
+      context: req.queryResult.parameters[x]
+    });
+  }
 
   // Suggestions
   output = tools.respond.suggestions({
