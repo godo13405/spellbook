@@ -32,7 +32,7 @@ const respond = ({
         }
       }
     }
-  };
+  };;
 
 
   // Contexts
@@ -44,6 +44,14 @@ const respond = ({
       context: req.queryResult.parameters[x]
     });
   }
+  // Slack
+  output = tools.respond.slack.card({
+    subject: data,
+    req,
+    output,
+    txt
+  });
+  console.log(output.payload.slack);
 
   // Suggestions
   output = tools.respond.suggestions({

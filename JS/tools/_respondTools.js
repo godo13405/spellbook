@@ -96,6 +96,47 @@ const spell = require('./_spellTools.js'),
              */
 
             return output;
+        },
+        slack: {
+            card: ({
+                subject,
+                req,
+                output,
+                txt
+            }) => {
+                if (req.originalDetectIntentRequest.payload.data.event.channel) {
+                    output.payload.slack = {
+                        "channel": req.originalDetectIntentRequest.payload.data.event.channel,
+                        "text": txt,
+                        "blocks": [{
+                            "type": "section",
+                            "text": {
+                                "type": "mrkdwn",
+                                "text": txt
+                            }
+                        }]
+                    };
+
+                    if (subject.suggestions) {
+                        subject.suggestions.forEach(x => {
+                            output.payload.slack.blocks.push({
+                                "type": "actions",
+                                "elements": [{
+                                    "type": "button",
+                                    "text": {
+                                        "type": "plain_text",
+                                        "text": x,
+                                        "emoji": false
+                                    },
+                                    "value": x
+                                }]
+                            });
+                        });
+                    }
+                    return output;
+
+                }
+            }
         }
     };
 
