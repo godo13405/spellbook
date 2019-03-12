@@ -28,15 +28,15 @@
   },
   "homepage": "https://github.com/godo13405/dragon-tome#readme",
   "devDependencies": {
-    "chalk": "^2.4.2",
     "eslint": "^5.13.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "botium-cli": "0.0.45",
     "botium-bindings": "latest",
-    "botium-connector-echo": "latest"
+    "botium-cli": "0.0.45",
+    "botium-connector-echo": "latest",
+    "chalk": "^2.4.2"
   },
   "botium": {
     "convodirs": [
