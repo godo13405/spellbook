@@ -34,10 +34,10 @@
     "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "botium-cli": "0.0.45",
     "botium-bindings": "latest",
-    "botium-connector-echo": "latest"
+    "botium-cli": "0.0.45",
+    "botium-connector-echo": "latest",
+    "chalk": "^2.4.2"
   },
   "botium": {
     "convodirs": [
