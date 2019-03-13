@@ -12,8 +12,9 @@ services:
       - redis
       - prisma
     volumes:
-      - testsets:/spec
-      - botiumwork:/botiumwork
+      - testsets:/app/server/testsets
+      - botiumwork:/app/server/botiumwork
+      - botiumwork:/app/agent/botiumwork
   prisma:
     image: prismagraphql/prisma:1.25.4
     depends_on:

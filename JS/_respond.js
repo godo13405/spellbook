@@ -32,7 +32,7 @@ const respond = ({
         }
       }
     }
-  };;
+  };
 
 
   // Contexts
@@ -51,7 +51,6 @@ const respond = ({
     output,
     txt
   });
-  console.log(output.payload.slack);
 
   // Suggestions
   output = tools.respond.suggestions({
