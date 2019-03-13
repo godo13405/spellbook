@@ -9,6 +9,7 @@
     "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net",
     "serve-ngrok": "./ngrok http 80",
     "mocha": "mocha spec",
+    "box": "docker stop $(docker ps -a -q) && docker-compose -f docker-compose-all.yml up",
     "test-core": "botium-cli run --config ./botium.json --convos ./spec/convo/core",
     "test-entity": "botium-cli run --config ./botium.json --convos ./spec/convo/entity",
     "test": "botium-cli run --config ./botium.json --convos ./spec/convo/",
