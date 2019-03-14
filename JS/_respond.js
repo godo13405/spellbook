@@ -25,6 +25,7 @@ const respond = ({
         "richResponse": {
           "items": [{
             "simpleResponse": {
+              "textToSpeech": speech || txt,
               "ssml": `<speak>${speech}</speak>`,
               "displayText": txt
             }
