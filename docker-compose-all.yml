@@ -12,9 +12,9 @@ services:
       - redis
       - prisma
     volumes:
-      - testsets:/app/server/testsets
-      - botiumwork:/app/server/botiumwork
-      - botiumwork:/app/agent/botiumwork
+      - $PWD/test/botium:/app/server/testsets
+      - $PWD/botiumwork:/app/server/botiumwork
+      - $PWD/botiumwork:/app/agent/botiumwork
   prisma:
     image: prismagraphql/prisma:1.25.4
     depends_on:
@@ -47,5 +47,4 @@ services:
     - "6379:6379"
 volumes:
   mysql:
-  testsets:
   botiumwork:

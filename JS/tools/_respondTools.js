@@ -104,7 +104,11 @@ const spell = require('./_spellTools.js'),
                 output,
                 txt
             }) => {
-                if (req.originalDetectIntentRequest.payload.data.event.channel) {
+                if (req.originalDetectIntentRequest &&
+                    req.originalDetectIntentRequest.payload &&
+                    req.originalDetectIntentRequest.payload.data &&
+                    req.originalDetectIntentRequest.payload.data.event &&
+                    req.originalDetectIntentRequest.payload.data.event.channel) {
                     output.payload.slack = {
                         "channel": req.originalDetectIntentRequest.payload.data.event.channel,
                         "text": txt,
@@ -133,9 +137,8 @@ const spell = require('./_spellTools.js'),
                             });
                         });
                     }
-                    return output;
-
                 }
+                return output;
             }
         }
     };

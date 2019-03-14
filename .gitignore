@@ -75,3 +75,4 @@ docs/demo/style.css.map
 hello-world
 ngrok
 coverage
+.DS_Store

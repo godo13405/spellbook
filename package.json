@@ -10,6 +10,7 @@
     "serve-ngrok": "./ngrok http 80",
     "mocha": "mocha spec",
     "box": "docker-compose -f docker-compose-all.yml up",
+    "box-stop": "docker stop $(docker ps -a -q)",
     "box-clean": "docker stop $(docker ps -a -q)",
     "test-core": "botium-cli run --config ./botium.json --convos .test/botium/convo/core",
     "test-entity": "botium-cli run --config ./botium.json --convos .test/botium/convo/entity",
