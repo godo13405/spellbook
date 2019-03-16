@@ -8,6 +8,6 @@ const tools = {
     text: require('./_textTools.js'),
     fn: require('./_fnTools.js'),
     respond: require('./_respondTools.js'),
-    spell: require('./_spellTools.js'),
+    spell: require('./_spellTools.js')
 };
 exports = module.exports = tools;

@@ -1,7 +1,7 @@
 'use strict';
 
 const router = require('./_router.js'),
-    http = require('http'),
+    https = require('https'),
     fs = require('fs');
 let chalk;
 if (global.isDev) {
@@ -72,36 +72,44 @@ const serve = {
         return output;
     },
     bridge: ({
-        projectId = 'spellbook-7ccae',
-        sessionId = '*',
-        body = {
-            "queryInput": {
-                "text": {
-                    "languageCode": "en",
-                    "text": "what is fireball"
-                }
+        args = {
+            "method": "POST",
+            "hostname": "dialogflow.googleapis.com",
+            "path": `/v2beta1/projects/spellbook-7ccae/agent/sessions/*:detectIntent?alt=json`,
+            "headers": {
+                "Authorization": `Bearer ${process.env.TOKEN}`,
+                "auth": ")6@9npt?Fwgp={V",
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "cache-control": "no-cache"
             }
         },
-        postOptions = {
-            host: 'https://dialogflow.googleapis.com/',
-            port: '80',
-            path: `/v2beta1/projects/${projectId}/agent/sessions/${sessionId}:detectIntent`,
-            method: 'POST',
-            body,
-            headers: {
-                'auth': ')6@9npt?Fwgp={V',
-                'Authorization': 'Bearer 0d4b7dfb0d104d94abb64ce45d2054f7',
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }
+        q,
+        res
     }) => {
-        return http.request(postOptions, res => {
-            res.setEncoding('utf8');
-            res.on('data', chunk => {
-                console.log('Response: ', chunk);
+        let req = https.request(args, response => {
+            let chunks = [];
+
+            response.on("data", chunk => {
+                chunks.push(chunk);
             });
-        });
+
+            response.on("end", () => {
+                chunks = JSON.parse(Buffer.concat(chunks).toString());
+                res.end(JSON.stringify(chunks));
+            });
+        })
+
+        req.write(JSON.stringify({
+            queryInput: {
+                text: {
+                    languageCode: 'en',
+                    text: q
+                }
+            }
+        }));
+
+        req.end();
     }
 };
 

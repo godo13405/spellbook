@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "NODE_ENV=dev npx nodemon exit 0",
+    "start": "TOKEN=$(gcloud auth application-default print-access-token) node index.js",
+    "dev": "TOKEN=$(gcloud auth application-default print-access-token) NODE_ENV=dev npx nodemon exit 0",
     "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8080 serveo.net",
     "serve-ngrok": "./ngrok http 80",
     "mocha": "mocha spec",
