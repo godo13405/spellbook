@@ -40,8 +40,7 @@
   "dependencies": {
     "botium-bindings": "latest",
     "botium-cli": "0.0.45",
-    "botium-connector-echo": "latest",
-    "curl-request": "^1.1.1"
+    "botium-connector-echo": "latest"
   },
   "botium": {
     "convodirs": [
