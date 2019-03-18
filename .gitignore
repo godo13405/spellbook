@@ -77,3 +77,4 @@ ngrok
 coverage
 .DS_Store
 auth
+setup-auth

@@ -28,6 +28,8 @@ const serve = {
         let filePath = `.${req.url}`;
         if (filePath === './') {
             filePath = './docs/demo/index.html';
+        } else if (filePath === './favicon.ico') {
+            filePath = './docs/demo/fav/favicon.ico';
         }
 
         fs.readFile(filePath, (error, content) => {
@@ -42,33 +44,18 @@ const serve = {
     getContentType: input => {
         input = input.split('.');
         input = input[input.length - 1];
-        let output = 'text/html';
-        switch (input) {
-            case 'js':
-                output = 'text/javascript';
-                break;
-            case 'css':
-                output = 'text/css';
-                break;
-            case 'json':
-                output = 'application/json';
-                break;
-            case 'svg':
-                output = 'image/svg+xml';
-                break;
-            case 'png':
-                output = 'image/png';
-                break;
-            case 'jpg':
-                output = 'image/jpg';
-                break;
-            case 'wav':
-                output = 'audio/wav';
-                break;
-            default:
-                break;
-        }
-
+        let output = 'text/html',
+            types = {
+                'js': 'text/javascript',
+                'css': 'text/css',
+                'json': 'application/json',
+                'svg': 'image/svg+xml',
+                'png': 'image/png',
+                'jpg': 'image/jpg',
+                'wav': 'audio/wav',
+                'ico': 'image/x-icon'
+            };
+        if (types[input]) output = types[input];
         return output;
     },
     bridge: ({
@@ -80,7 +67,7 @@ const serve = {
                 "Authorization": `Bearer ${process.env.TOKEN}`,
                 "auth": ")6@9npt?Fwgp={V",
                 "Accept": "application/json",
-                // "cache-control": "no-cache",
+                "cache-control": "no-cache",
                 "Content-Type": "application/json"
             }
         },
@@ -93,6 +80,7 @@ const serve = {
             req,
             url
         });
+        console.log('process.env.TOKEN: ', process.env.TOKEN);
         let request = https.request(args, response => {
             let chunks = [];
 
