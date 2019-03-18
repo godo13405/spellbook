@@ -80,14 +80,20 @@ const serve = {
                 "Authorization": `Bearer ${process.env.TOKEN}`,
                 "auth": ")6@9npt?Fwgp={V",
                 "Accept": "application/json",
-                "Content-Type": "application/json",
-                "cache-control": "no-cache"
+                // "cache-control": "no-cache",
+                "Content-Type": "application/json"
             }
         },
         q,
-        res
+        res,
+        req,
+        url
     }) => {
-        let req = https.request(args, response => {
+        q = serve.getText({
+            req,
+            url
+        });
+        let request = https.request(args, response => {
             let chunks = [];
 
             response.on("data", chunk => {
@@ -100,7 +106,7 @@ const serve = {
             });
         })
 
-        req.write(JSON.stringify({
+        request.write(JSON.stringify({
             queryInput: {
                 text: {
                     languageCode: 'en',
@@ -109,7 +115,16 @@ const serve = {
             }
         }));
 
-        req.end();
+        request.end();
+    },
+    getText: ({
+        q,
+        url
+    }) => {
+        if (url.query) {
+            q = decodeURI(url.query.substr(2));
+        }
+        return q;
     }
 };
 

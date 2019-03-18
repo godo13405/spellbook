@@ -10,18 +10,21 @@ const options = require('./JS/_globalOptions.js'),
     server = http.createServer();
 
 server.on('request', (req, res) => {
+    console.log('req:', Object.keys(req));
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
     // API call
     if (req.method === 'POST' && req.headers.auth === ')6@9npt?Fwgp={V') {
         serve.api(req, res);
-    } else if (req.method === 'GET') {
+    } else {
         const url = urlParser.parse(req.url);
+        console.log('url:', url);
         switch (url.pathname) {
             case '/bridge':
                 serve.bridge({
-                    q: decodeURI(url.query.substr(2)),
-                    res
+                    req,
+                    res,
+                    url
                 });
                 break;
             default:
