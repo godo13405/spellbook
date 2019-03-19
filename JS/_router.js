@@ -48,7 +48,7 @@ const router = {
                 if (output.suggestions) console.log(output.suggestions);
             }
 
-            return respond({
+            return respond.default({
                 data: output,
                 req,
                 continuous: options.continuousConversation.includes(intent.raw)

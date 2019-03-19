@@ -10,28 +10,45 @@ const options = require('./JS/_globalOptions.js'),
     server = http.createServer();
 
 server.on('request', (req, res) => {
-    console.log('req:', Object.keys(req));
+    // console.log('req:', Object.keys(req), req);
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    // API call
-    if (req.method === 'POST' && req.headers.auth === ')6@9npt?Fwgp={V') {
-        serve.api(req, res);
+    const url = urlParser.parse(req.url);
+    if (req.method === 'GET' && url.pathname === '/') {
+        // Demo
+        serve.static(req, res);
     } else {
-        const url = urlParser.parse(req.url);
-        console.log('url:', url);
-        switch (url.pathname) {
-            case '/bridge':
-                serve.bridge({
-                    req,
-                    res,
+        // process the request
+        res.setHeader('Content-Type', 'application/json');
+        let body = [];
+        req.on('error', err => {
+            // eslint-disable-next-line no-console
+            if (global.isDev) console.error(err);
+        }).on('data', chunk => {
+            body.push(chunk);
+        }).
+        on('end', () => {
+            if (body.length) {
+                body = JSON.parse(Buffer.concat(body).toString());
+                // console.log('body:', body);
+            }
+            let output;
+            if (req.method === 'POST' && req.headers.auth === ')6@9npt?Fwgp={V') {
+                // API call
+                output = serve.api(body);
+                res.end(JSON.stringify(output));
+            } else if (url.pathname === '/bridge') {
+                // Bridge for apps to consume (Alexa, etc)
+                output = serve.bridge({
+                    body,
                     url
+                }).
+                then(x => {
+                    res.end(x);
                 });
-                break;
-            default:
-                // Demo
-                serve.static(req, res);
-                break;
-        }
+            }
+        });
+
     }
 }).listen(port, () => {
     // eslint-disable-next-line no-console

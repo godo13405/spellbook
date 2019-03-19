@@ -1,6 +1,7 @@
 'use strict';
 
 const router = require('./_router.js'),
+    respond = require('./_respond.js'),
     https = require('https'),
     fs = require('fs');
 let chalk;
@@ -9,19 +10,8 @@ if (global.isDev) {
 }
 
 const serve = {
-    api: (req, res) => {
-        res.setHeader('Content-Type', 'application/json');
-        let body = [];
-        req.on('error', err => {
-            // eslint-disable-next-line no-console
-            if (global.isDev) console.error(chalk.red(err));
-        }).on('data', chunk => {
-            body.push(chunk);
-        }).
-        on('end', () => {
-            body = JSON.parse(Buffer.concat(body).toString());
-            res.end(router.ready(body));
-        });
+    api: body => {
+        router.ready(body);
     },
     // eslint-disable-next-line max-lines-per-function
     static: (req, res) => {
@@ -71,39 +61,66 @@ const serve = {
                 "Content-Type": "application/json"
             }
         },
-        q,
-        res,
-        req,
-        url
-    }) => {
+        url,
         q = serve.getText({
-            req,
             url
-        });
-        console.log('process.env.TOKEN: ', process.env.TOKEN);
-        let request = https.request(args, response => {
-            let chunks = [];
+        }),
+        body
+    }) => {
+        // identify the client
+        let client = {
+            name: 'bridge'
+        };
+        if (body.session && body.session.sessionId.includes('amzn1.echo-api.session')) {
+            // TO DO expand with capabilities
+            client.name = 'alexa';
 
-            response.on("data", chunk => {
-                chunks.push(chunk);
-            });
-
-            response.on("end", () => {
-                chunks = JSON.parse(Buffer.concat(chunks).toString());
-                res.end(JSON.stringify(chunks));
-            });
-        })
-
-        request.write(JSON.stringify({
-            queryInput: {
-                text: {
-                    languageCode: 'en',
-                    text: q
-                }
+            // translate requests into dialigflow
+            if (body.request.type === 'LaunchRequest') {
+                q = 'hi';
+            } else if (body.request.type === 'SessionEndedRequest') {
+                q = 'stop';
             }
-        }));
+        }
 
-        request.end();
+
+        let output = new Promise(resolve => {
+            let request = https.request(args, response => {
+                let chunks = [];
+
+                response.on("data", chunk => {
+                    chunks.push(chunk);
+                });
+
+                response.on("end", () => {
+                    chunks = Buffer.concat(chunks).toString();
+                    console.log('response: ', JSON.parse(chunks));
+                    if (!respond[client.name]) {
+                        // eslint-disable-next-line no-console
+                        console.log(`I don't know how to build a response for ${client.name}`);
+                    } else {
+                        resolve(respond[client.name]({
+                            data: chunks,
+                            req: request
+                        }));
+                    }
+                });
+            })
+
+            request.write(JSON.stringify({
+                queryInput: {
+                    text: {
+                        languageCode: 'en',
+                        text: q
+                    }
+                },
+                client: client
+            }));
+
+            request.end();
+        });
+
+        return output;
     },
     getText: ({
         q,

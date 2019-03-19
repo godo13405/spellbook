@@ -11,7 +11,7 @@ const get = {
     }) => {
         let vars = {
             "name": `${subject.name}`,
-            "target": tools.text.targetRespond(params),
+            "target": tools.text.targetRespond.default(params),
         };
 
         vars.cant = tools.text.getAll({
@@ -49,7 +49,7 @@ const get = {
     }) => {
         let vars = {
             "name": `${subject.name}`,
-            "target": tools.text.targetRespond(params),
+            "target": tools.text.targetRespond.default(params),
         };
 
         vars.cant = tools.text.getAll({
