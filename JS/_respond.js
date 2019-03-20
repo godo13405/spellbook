@@ -16,8 +16,8 @@ const respond = {
   }) => {
     let txt = "",
       speech = txt;
-    console.log('data:', data);
-    console.log('req:', Object.keys(req));
+    // console.log('data:', data);
+    // console.log('req:', Object.keys(req));
     if (data) {
       txt = tools.text.stripSsml(data.data || data.speech || txt);
       speech = tools.fn.sound(data.speech || data.data, data.audio || speech);
@@ -47,6 +47,8 @@ const respond = {
         }
       }
     }
+
+    console.log('output: ', output);
     // Contexts
     if (req.queryResult) {
       for (const x in req.queryResult.parameters) {
@@ -58,6 +60,7 @@ const respond = {
         });
       }
     }
+
     // Slack
     output = tools.respond.slack.card({
       subject: data,
@@ -71,11 +74,9 @@ const respond = {
       suggestions: data.suggestions,
       output
     });
-
     if (data.card) {
       output.payload.google.richResponse.items.push(data.card);
     }
-
     return output;
   },
   alexa: ({

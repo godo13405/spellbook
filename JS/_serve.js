@@ -11,7 +11,7 @@ if (global.isDev) {
 
 const serve = {
     api: body => {
-        router.ready(body);
+        return router.ready(body);
     },
     // eslint-disable-next-line max-lines-per-function
     static: (req, res) => {

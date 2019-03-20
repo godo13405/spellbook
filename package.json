@@ -19,7 +19,8 @@
     "emulate-browser": "botium-cli emulator browser --convos .test/botium/convo --config ./botium.json",
     "build": "gcloud builds submit",
     "test-gen": "node ./test/generate-tests.js",
-    "bridge": "clear && TOKEN=$(gcloud auth application-default print-access-token) nodemon JS/_bridge.js"
+    "bridge": "clear && TOKEN=$(gcloud auth application-default print-access-token) nodemon JS/_bridge.js",
+    "deploy-cloud-function": "gcloud functions deploy dragonBook --runtime nodejs8 --service-account=bridge@spellbook-7ccae.iam.gserviceaccount.com --region=europe-west1 --trigger-http"
   },
   "repository": {
     "type": "git",
@@ -32,9 +33,9 @@
   },
   "homepage": "https://github.com/godo13405/dragon-tome#readme",
   "devDependencies": {
+    "chalk": "^2.4.2",
     "eslint": "^5.13.0",
     "mocha": "^5.2.0",
-    "chalk": "^2.4.2",
     "nodemon": "^1.18.10"
   },
   "dependencies": {
