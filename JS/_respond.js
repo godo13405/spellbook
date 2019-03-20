@@ -16,8 +16,6 @@ const respond = {
   }) => {
     let txt = "",
       speech = txt;
-    // console.log('data:', data);
-    // console.log('req:', Object.keys(req));
     if (data) {
       txt = tools.text.stripSsml(data.data || data.speech || txt);
       speech = tools.fn.sound(data.speech || data.data, data.audio || speech);

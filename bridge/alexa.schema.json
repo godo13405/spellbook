@@ -1,0 +1,4369 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "dragon book",
+            "intents": [{
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "spell_get_higherLevel",
+                    "slots": [{
+                            "name": "spellslot",
+                            "type": "SPELL"
+                        },
+                        {
+                            "name": "levelslot",
+                            "type": "LEVEL"
+                        }
+                    ],
+                    "samples": [
+                        "{spellslot} at level {levelslot}",
+                        "level {levelslot} {spellslot}",
+                        "what damage does {spellslot} do at level {levelslot}"
+                    ]
+                },
+                {
+                    "name": "spell_get_init",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "{spellslot}",
+                        "what is {spellslot}"
+                    ]
+                },
+                {
+                    "name": "spell_get_duration",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "how long does {spellslot} last",
+                        "whats the duration of {spellslot}"
+                    ]
+                },
+                {
+                    "name": "spell_get_level",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "what level is {spellslot}",
+                        "what s {spellslot} s level"
+                    ]
+                },
+                {
+                    "name": "spell_check_concentration",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "do i need to focus on {spellslot}",
+                        "does {spellslot} need concentration",
+                        "does {spellslot} take concentration",
+                        "must i concentrate on {spellslot}"
+                    ]
+                },
+                {
+                    "name": "weapon_get_damage",
+                    "slots": [{
+                        "name": "weaponslot",
+                        "type": "WEAPON"
+                    }],
+                    "samples": [
+                        "what damage does a {weaponslot} cause",
+                        "what damage does a {weaponslot} do"
+                    ]
+                },
+                {
+                    "name": "condition_get_mods",
+                    "slots": [{
+                        "name": "conditionslot",
+                        "type": "CONDITION"
+                    }],
+                    "samples": [
+                        "what advantages and disadvantages does {conditionslot} do"
+                    ]
+                },
+                {
+                    "name": "spell_get_description",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "describe {spellslot}",
+                        "what does {spellslot} do",
+                        "what is {spellslot} s description"
+                    ]
+                },
+                {
+                    "name": "weapon_get_init",
+                    "slots": [{
+                        "name": "weaponslot",
+                        "type": "WEAPON"
+                    }],
+                    "samples": [
+                        "tell me about {weaponslot}",
+                        "what is a {weaponslot}",
+                        "what is {weaponslot}",
+                        "what s a {weaponslot}"
+                    ]
+                },
+                {
+                    "name": "spell_get_castingtime",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "how long does {spellslot} take to cast",
+                        "how long to cast {spellslot}"
+                    ]
+                },
+                {
+                    "name": "spell_get_damage",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "what damage does {spellslot} do",
+                        "what s {spellslot} s damage"
+                    ]
+                },
+                {
+                    "name": "spell_get_school",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "what school does {spellslot} belong to",
+                        "what school is {spellslot}"
+                    ]
+                },
+                {
+                    "name": "base_input_welcome",
+                    "slots": [],
+                    "samples": [
+                        "a good day",
+                        "greetings",
+                        "hello",
+                        "hello again",
+                        "hello hi",
+                        "hello there",
+                        "hey",
+                        "hey there",
+                        "heya",
+                        "hi",
+                        "hi there",
+                        "howdy",
+                        "i greet you",
+                        "just going to say hi",
+                        "long time no see",
+                        "lovely day isn't it"
+                    ]
+                },
+                {
+                    "name": "spell_get_materials",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "what materials do i need for {spellslot}"
+                    ]
+                },
+                {
+                    "name": "condition_get_init",
+                    "slots": [{
+                            "name": "conditionslot",
+                            "type": "CONDITION"
+                        },
+                        {
+                            "name": "monsterslot",
+                            "type": "MONSTER"
+                        },
+                        {
+                            "name": "targetslot",
+                            "type": "TARGET"
+                        }
+                    ],
+                    "samples": [
+                        "what does {conditionslot} mean",
+                        "what happens when {targetslot} m {conditionslot}",
+                        "what is a {conditionslot} {monsterslot}",
+                        "what is a {conditionslot} {targetslot}",
+                        "what is {conditionslot}"
+                    ]
+                },
+                {
+                    "name": "spell_check_ritual",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "can i cast {spellslot} as a ritual",
+                        "can {spellslot} be cast as a ritual",
+                        "is {spellslot} a ritual"
+                    ]
+                },
+                {
+                    "name": "spell_check_higherlevel",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "can i cast {spellslot} at a higher level",
+                        "can {spellslot} be cast at higher levels"
+                    ]
+                },
+                {
+                    "name": "spell_get_components",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "what are the components for {spellslot}",
+                        "what do i need to cast {spellslot}",
+                        "what does {spellslot} require",
+                        "what does {spellslot} require to cast"
+                    ]
+                },
+                {
+                    "name": "spell_get_healing",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "how many hit points do i get with {spellslot}",
+                        "how much can i heal with {spellslot}",
+                        "how much does {spellslot} heal"
+                    ]
+                },
+                {
+                    "name": "spell_get_classes",
+                    "slots": [{
+                        "name": "spellslot",
+                        "type": "SPELL"
+                    }],
+                    "samples": [
+                        "{spellslot} can be cast by which classes",
+                        "which classes can cast {spellslot}",
+                        "who can cast {spellslot}"
+                    ]
+                },
+                {
+                    "name": "spell_check_class",
+                    "slots": [{
+                            "name": "classslot",
+                            "type": "CLASS"
+                        },
+                        {
+                            "name": "spellslot",
+                            "type": "SPELL"
+                        }
+                    ],
+                    "samples": [
+                        "can a {classslot} cast {spellslot}",
+                        "can {classslot} cast {spellslot}",
+                        "can {spellslot} be cast by a {classslot}"
+                    ]
+                },
+                {
+                    "name": "weapon_get_price",
+                    "slots": [{
+                        "name": "weaponslot",
+                        "type": "WEAPON"
+                    }],
+                    "samples": [
+                        "how much does a {weaponslot} cost",
+                        "how much for a {weaponslot}",
+                        "what s a {weaponslot} s price",
+                        "what s the price for a {weaponslot}"
+                    ]
+                }
+            ],
+            "types": [{
+                    "name": "SPELL",
+                    "values": [{
+                            "name": {
+                                "value": "bane"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animal friendship"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blade ward"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bless"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "charm person"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "burning hands"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "alarm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chill touch"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chromatic orb"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "color spray"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "compelled duel"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "create or destroy water"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "comprehend languages"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cure wounds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dancing lights"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "command"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "detect evil and good"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "detect magic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "detect poison or disease"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dissonant whispers"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "druidcraft"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "divine favor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eldritch blast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ensnaring strike"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "disguise self"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "expeditious retreat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "false life"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "feather fall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "find familiar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "faerie fire"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fire bolt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fog cloud"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "friends"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "goodberry"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grease"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "entangle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guidance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guiding bolt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hail of thorns"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "healing word"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hellish rebuke"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "acid splash"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "heroism"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hex"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hunters mark"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "identify"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "illusory script"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "inflict wounds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "light"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "jump"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "longstrider"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mage armor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mage hand"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magic missile"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mending"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "message"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "minor illusion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "poison spray"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prestidigitation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "produce flame"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "protection from evil and good"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "purify food and drink"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ray of frost"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ray of sickness"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "remove curse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "resistance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sacred flame"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sanctuary"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shield of faith"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shield"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "searing smite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sleep"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spare the dying"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "speak with animals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shillelagh"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shocking grasp"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "silent image"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thaumaturgy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thorn whip"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thunderous smite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thunderwave"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "true strike"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "unseen servant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vicious mockery"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "witch bolt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wrathful smite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animal messenger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blindness or deafness"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "calm emotions"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prayer of healing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lesser restoration"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "silence"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spiritual weapon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "warding bond"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animate dead"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hold person"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aura of life"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aura of purity"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aura of vitality"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beacon of hope"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "banishment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blinding smite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blink"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "arcane eye"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bestow curse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "call lightning"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cloud of daggers"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "compulsion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure animals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure barrage"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "clairvoyance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "counterspell"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "daylight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "create food and water"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "crusaders mantle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "augury"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "feign death"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fireball"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fly"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gaseous form"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "haste"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dispel magic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "elemental weapon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hypnotic pattern"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lightning arrow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mass healing word"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "alter self"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "arcane lock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "barkskin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nondetection"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meld into stone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "phantom steed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "major image"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "protection from energy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "plant growth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "revivify"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sending"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magic circle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sleet storm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spirit guardians"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "slow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stinking cloud"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "confusion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure minor elementals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "speak with plants"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "death ward"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure woodland beings"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "control water"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "speak with dead"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tongues"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cordon of arrows"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beast sense"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "crown of madness"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "branding smite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "darkness"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "darkvision"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animal shapes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "antimagic field"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "detect thoughts"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blur"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "antipathy or sympathy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "demiplane"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dominate monster"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "astral projection"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "control weather"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "earthquake"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "feeblemind"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "foresight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "glibness"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "clone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "holy aura"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "imprisonment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "maze"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mass heal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mind blank"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "power word heal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "meteor swarm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "power word kill"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "power word stun"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "incendiary cloud"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "telepathy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sunburst"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prismatic wall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "time stop"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "storm of vengeance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "true polymorph"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "true resurrection"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tsunami"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weird"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shapechange"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wish"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure celestial"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "delayed blast fireball"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "etherealness"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dimension door"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fire storm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forcecage"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mirage arcane"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prismatic spray"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "finger of death"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "regenerate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "project image"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "resurrection"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "reverse gravity"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sequester"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "simulacrum"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "symbol"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "plane shift"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "divine word"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animate objects"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "invisibility"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "teleport"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "antilife shell"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "arcane gate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "awaken"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "banishing smite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chain lightning"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "suggestion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cloudkill"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "circle of power"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blade barrier"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "commune with nature"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "commune"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cone of cold"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure elemental"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure fey"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "circle of death"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conjure volley"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "contingency"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "continual flame"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "create undead"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "creation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "destructive wave"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "divination"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "disintegrate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "contagion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dispel evil and good"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dominate beast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dream"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "enhance ability"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dominate person"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "contact other plane"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eyebite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "find steed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fabricate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "find the path"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "find traps"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fire shield"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flame blade"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "enlarge or reduce"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flame strike"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "enthrall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flaming sphere"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flesh to stone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "geas"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "freedom of movement"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant insect"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gentle repose"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "globe of invulnerability"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grasping vine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "greater invisibility"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "forbiddance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "greater restoration"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guardian of faith"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guards and wards"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "glyph of warding"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gust of wind"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hallucinatory terrain"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hallow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "harm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "heat metal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "heal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "heroes feast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hold monster"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ice storm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "knock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "insect plague"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "legend lore"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "locate animals or plants"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lightning bolt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "locate creature"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "locate object"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "levitate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magic jar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magic weapon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magic mouth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mass suggestion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mislead"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "misty step"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mirror image"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "move earth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "moonbeam"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "modify memory"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mass cure wounds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pass without trace"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "passwall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "planar binding"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "planar ally"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "polymorph"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "programmed illusion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "raise dead"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "protection from poison"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ray of enfeeblement"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "phantasmal killer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "phantasmal force"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "scrying"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "reincarnate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seeming"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "scorching ray"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "see invisibility"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spider climb"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shatter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spike growth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "staggering smite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rope trick"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sunbeam"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stone shape"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stoneskin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "swift quiver"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "telekinesis"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "transport via plants"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "teleportation circle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tree stride"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "true seeing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vampiric touch"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wall of force"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wall of stone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wall of thorns"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "water breathing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "water walk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wall of ice"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "web"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wind walk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wind wall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "word of recall"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zone of truth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wall of fire"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pyrotechnics"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thunderclap"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "warding wind"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "control flames"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "create bonfire"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "earth tremor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "frostbite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gust"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "skywrite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magic stone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mold earth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "beast bond"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "earthbind"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ice knife"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dust devil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "catapult"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "absorb elements"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "control winds"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bones of the earth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "erupting earth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "elemental bane"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shape water"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flame arrows"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "investiture of flame"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "maelstrom"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "primordial ward"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tidal wave"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "investiture of wind"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "transmute rock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wall of water"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "investiture of ice"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "watery sphere"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "immolation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "whirlwind"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "investiture of stone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wall of sand"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "storm sphere"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vitriolic sphere"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hunter's mark"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "crusader's mantle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "desintegrate"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "LEVEL",
+                    "values": [{
+                            "name": {
+                                "value": "one"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "two"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "three"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "six"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nine"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ten"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eleven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twelve"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thirteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fourteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sixteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seventeen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eighteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nineteen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twenty"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "five"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "WEAPON",
+                    "values": [{
+                            "name": {
+                                "value": "club"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dagger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "greatclub"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "handaxe"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "javelin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "light hammer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mace"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quarterstaff"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sickle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "light crossbow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dart"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shortbow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "battleaxe"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flail"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "glaive"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "greataxe"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "greatsword"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "halberd"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "longsword"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "maul"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "morningstar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pike"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rapier"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "scimitar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shortsword"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "trident"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "war pick"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "warhammer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "whip"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blowgun"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hand crossbow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "heavy crossbow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "longbow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "net"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CONDITION",
+                    "values": [{
+                            "name": {
+                                "value": "blinded"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "charmed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deafened"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "incapacitated"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "frightened"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grappled"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "paralyzed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "exhaustion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "invisible"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "petrified"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "poisoned"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stunned"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "restrained"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "unconscious"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blind"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blindness"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deaf"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "exhausted"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "knocked down"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "on the ground"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lying"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "MONSTER",
+                    "values": [{
+                            "name": {
+                                "value": "aboleth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "acolyte"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult black dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult blue dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult brass dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult bronze dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult copper dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult gold dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult green dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult red dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult silver dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "adult white dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "air elemental"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "allosaurus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient black dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient blue dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient brass dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient bronze dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient copper dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient gold dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient green dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient red dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient silver dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ancient white dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "androsphinx"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "animated armor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ankheg"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ankylosaurus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ape"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "archmage"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "assassin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "awakened shrub"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "awakened tree"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "axe beak"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "azer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "baboon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "badger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "balor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bandit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bandit captain"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "banshee"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "barbed devil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "basilisk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bearded devil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "behir"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "berserker"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "black bear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "black dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "black pudding"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blink dog"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blood hawk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blue dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "boar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bone devil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "brass dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bronze dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "brown bear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bugbear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bulette"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "camel"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "centaur"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chain devil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chimera"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chuul"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "clay golem"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cloaker"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cloud giant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cockatrice"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "commoner"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "constrictor snake"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "copper dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "couatl"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "crab"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "crocodile"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cult fanatic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cultist"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cyclops"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "darkmantle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "death dog"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deep gnome (svirfneblin)"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deva"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dire wolf"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "djinni"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "doppelganger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "draft horse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dragon turtle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dretch"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "drider"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "drow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "druid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dryad"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "duergar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dust mephit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "eagle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "earth elemental"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "efreeti"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "elephant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "elk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "erinyes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ettercap"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ettin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fire elemental"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fire giant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flameskull"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flesh golem"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flying snake"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flying sword"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "frog"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "frost giant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gargoyle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gelatinous cube"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ghast"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ghost"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ghoul"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant ape"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant badger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant bat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant boar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant centipede"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant constrictor snake"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant crab"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant crocodile"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant eagle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant elk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant fire beetle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant frog"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant goat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant hyena"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant lizard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant octopus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant owl"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant poisonous snake"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant rat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant scorpion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant sea horse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant shark"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant spider"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant toad"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant vulture"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant wasp"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant weasel"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "giant wolf spider"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gibbering mouther"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "glabrezu"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gladiator"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gnoll"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "goat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "goblin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gold dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gorgon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gray ooze"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "green hag"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grick"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "griffon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grimlock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "guardian naga"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gynosphinx"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "half-red dragon veteran"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "harpy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hawk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hell hound"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hezrou"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hill giant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hippogriff"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hobgoblin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "homunculus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "horned devil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hunter shark"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hydra"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hyena"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ice devil"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ice mephit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "imp"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "invisible stalker"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "iron golem"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "jackal"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "killer whale"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "knight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kobold"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kraken"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lamia"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lemure"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lich"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lizard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lizardfolk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mage"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magma mephit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "magmin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mammoth"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "manticore"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "marilith"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mastiff"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medusa"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "merfolk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "merrow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mimic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "minotaur"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "minotaur skeleton"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mule"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mummy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mummy lord"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nalfeshnee"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "night hag"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nightmare"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "noble"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nothic"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ochre jelly"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "octopus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ogre"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ogre zombie"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "oni"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "orc"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "otyugh"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "owl"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "owlbear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "panther"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pegasus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "phase spider"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pit fiend"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "planetar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "plesiosaurus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "poisonous snake"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "polar bear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pony"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "priest"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pseudodragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pteranodon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "purple worm"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quasit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quipper"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rakshasa"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "raven"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "red dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "reef shark"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "remorhaz"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rhinoceros"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "riding horse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "roc"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "roper"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rug of smothering"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rust monster"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "saber-toothed tiger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sahuagin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "salamander"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "satyr"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "scorpion"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "scout"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sea hag"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sea horse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shadow"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shambling mound"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shield guardian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shrieker"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "silver dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "skeleton"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "solar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spectator"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "specter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spider"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spirit naga"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sprite"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "steam mephit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stirge"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stone giant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stone golem"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "storm giant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "succubus/incubus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "swarm of bats"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "swarm of insects"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "swarm of poisonous snakes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "swarm of quippers"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "swarm of rats"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "swarm of ravens"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tarrasque"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "thug"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tiger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "treant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tribal warrior"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "triceratops"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "troll"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "twig blight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tyrannosaurus rex"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "unicorn"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vampire"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vampire spawn"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "veteran"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "violet fungus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vrock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "vulture"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "warhorse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "warhorse skeleton"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "water elemental"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weasel"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "werebear"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wereboar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wererat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weretiger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "werewolf"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "white dragon wyrmling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wight"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "will-o'-wisp"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "winter wolf"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wolf"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "worg"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wraith"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wyvern"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "xorn"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "yeti"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young black dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young blue dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young brass dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young bronze dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young copper dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young gold dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young green dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young red dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young silver dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "young white dragon"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "zombie"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "TARGET",
+                    "values": [{
+                            "name": {
+                                "value": "me"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "you"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "creature"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "target"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "i"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "monster"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CLASS",
+                    "values": [{
+                            "name": {
+                                "value": "barbarian"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cleric"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "druid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fighter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "monk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "paladin"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ranger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rogue"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sorcerer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "warlock"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wizard"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

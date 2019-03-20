@@ -35,7 +35,7 @@ const tools = {
         return params;
     },
     intent: action => {
-        let parts = action.split('.'),
+        let parts = action.split('_'),
             intent = {
                 raw: action,
                 entity: parts[0],

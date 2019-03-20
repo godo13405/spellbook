@@ -104,7 +104,7 @@ const tools = {
             vars
         }) => {
             let str = tools.phrasing.find({
-                phrase: `${phrase}.${terminal}`
+                phrase: `${phrase.replace(/_/g, '.')}.${terminal}`
             });
             if (str) {
                 str = tools.phrasing.rand(str);

@@ -20,7 +20,8 @@
     "build": "gcloud builds submit",
     "test-gen": "node ./test/generate-tests.js",
     "bridge": "clear && TOKEN=$(gcloud auth application-default print-access-token) nodemon JS/_bridge.js",
-    "deploy-cloud-function": "gcloud functions deploy dragonBook --runtime nodejs8 --service-account=bridge@spellbook-7ccae.iam.gserviceaccount.com --region=europe-west1 --trigger-http"
+    "deploy-cloud-function": "gcloud functions deploy dragonBook --runtime nodejs8 --service-account=bridge@spellbook-7ccae.iam.gserviceaccount.com --region=europe-west1 --trigger-http",
+    "cloud-emulate": "functions deploy dragonBook --trigger-http -- --region=europe-west1"
   },
   "repository": {
     "type": "git",
