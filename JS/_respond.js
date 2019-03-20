@@ -4,11 +4,6 @@ const tools = require('./tools/_tools.js');
 
 // eslint-disable-next-line max-lines-per-function
 const respond = {
-  bridge: ({
-    data
-  }) => {
-    return data;
-  },
   default: ({
     data,
     req,
@@ -46,7 +41,6 @@ const respond = {
       }
     }
 
-    console.log('output: ', output);
     // Contexts
     if (req.queryResult) {
       for (const x in req.queryResult.parameters) {
@@ -85,8 +79,7 @@ const respond = {
       "response": {
         "outputSpeech": {
           "type": "SSML",
-          "text": tools.fn.sound(data.speech || data.data, data.audio),
-          "playBehavior": "REPLACE_ENQUEUED"
+          "ssml": tools.fn.sound(data.speech || data.data, data.audio)
         },
         "shouldEndSession": !continuous
       }

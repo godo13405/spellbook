@@ -11,6 +11,15 @@ if (global.isDev) {
 
 const router = {
     ready: req => {
+        // What client is this?
+        let client = {
+            name: 'default'
+        };
+
+        if (req.context && req.context.System && req.context.System.apiEndpoint.includes('amazonalexa.com')) {
+            client.name = 'alexa';
+        }
+
         // Don't listen to all events on Slack, only DMs and direct mentions
         if (!req.originalDetectIntentRequest || req.originalDetectIntentRequest.source !== 'slack' ||
             (req.originalDetectIntentRequest.payload.data.event.channel_type === 'im' ||
@@ -18,11 +27,19 @@ const router = {
                 (req.originalDetectIntentRequest.payload.data.event.channel_type !== 'im' && req.originalDetectIntentRequest.payload.data.event.text.includes(`<@${req.originalDetectIntentRequest.payload.data.authed_users[0]}>`))
             )
         ) {
-            let output = 'Sorry, something went wrong';
-            const params = tools.fn.checkContext({
+            let output = 'Sorry, something went wrong',
+                args = {};
+            if (client.name === 'alexa') {
+                if (req.intents && req.intents.slots) {
+                    args.params = req.intents.slots;
+                }
+            } else {
+                args = {
                     params: req.queryResult.parameters,
                     contexts: req.queryResult.outputContexts
-                }),
+                };
+            }
+            const params = tools.fn.checkContext(args),
                 intent = tools.fn.intent(req.queryResult.action);
 
             output = intent.fn[intent.action][intent.function]({
@@ -48,7 +65,7 @@ const router = {
                 if (output.suggestions) console.log(output.suggestions);
             }
 
-            return respond.default({
+            return respond[client.name]({
                 data: output,
                 req,
                 continuous: options.continuousConversation.includes(intent.raw)

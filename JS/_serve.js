@@ -1,8 +1,6 @@
 'use strict';
 
 const router = require('./_router.js'),
-    respond = require('./_respond.js'),
-    https = require('https'),
     fs = require('fs');
 let chalk;
 if (global.isDev) {
