@@ -113,8 +113,7 @@ const serve = {
                         languageCode: 'en',
                         text: q
                     }
-                },
-                client: client
+                }
             }));
 
             request.end();
