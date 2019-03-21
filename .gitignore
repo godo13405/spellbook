@@ -36,6 +36,4 @@ node_modules
 .DS_Store
 .tmp
 .nyc_output
-bridge/configuration.cnf
-bridge/certificate.pem
-bridge/private-key.pem
+.vscode

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "TOKEN=$(gcloud auth application-default print-access-token) node index.js",
     "dev": "./auth/setup-auth && TOKEN=$(gcloud auth application-default print-access-token) NODE_ENV=dev npx nodemon exit 0",
-    "serve": "ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8010 serveo.net",
+    "serve": "npm run cloud-emulate && ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8010 serveo.net",
     "mocha": "mocha spec",
     "test-core": "botium-cli run --config ./botium.json --convos .test/botium/convo/core",
     "test-entity": "botium-cli run --config ./botium.json --convos .test/botium/convo/entity",

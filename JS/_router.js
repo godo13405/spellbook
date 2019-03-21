@@ -5,20 +5,16 @@ const respond = require('./_respond.js'),
     options = require('../config/options.json');
 
 let chalk;
-if (global.isDev) {
-    chalk = require('chalk');
-}
+// if (global.isDev) {
+chalk = require('chalk');
+// }
 
 const router = {
     ready: req => {
         // What client is this?
-        let client = {
-            name: 'default'
-        };
-
-        if (req.context && req.context.System && req.context.System.apiEndpoint.includes('amazonalexa.com')) {
-            client.name = 'alexa';
-        }
+        const client = router.client({
+            req
+        });
 
         // Don't listen to all events on Slack, only DMs and direct mentions
         if (!req.originalDetectIntentRequest || req.originalDetectIntentRequest.source !== 'slack' ||
@@ -28,42 +24,39 @@ const router = {
             )
         ) {
             let output = 'Sorry, something went wrong',
-                args = {};
+                args = {},
+                rawIntent;
+
             if (client.name === 'alexa') {
-                if (req.intents && req.intents.slots) {
-                    args.params = req.intents.slots;
+                rawIntent = req.request.intent.name;
+                if (req.request.intent.slots) {
+                    // convert slots for processing
+                    args.params = {};
+                    for (const x in req.request.intent.slots) {
+                        args.params[x.replace(/slot$/g, '')] = req.request.intent.slots[x].value;
+                    }
                 }
             } else {
                 args = {
                     params: req.queryResult.parameters,
-                    contexts: req.queryResult.outputContexts
+                    intent: req.queryResult.outputContexts
                 };
+                rawIntent = req.queryResult.action;
             }
+
             const params = tools.fn.checkContext(args),
-                intent = tools.fn.intent(req.queryResult.action);
+                intent = tools.fn.intent(rawIntent);
 
             output = intent.fn[intent.action][intent.function]({
                 intent,
                 params
             });
 
-            if (global.isDev) {
-                // eslint-disable-next-line no-console
-                console.log(chalk.gray(req.queryResult.action));
-                // eslint-disable-next-line no-console
-                console.log(chalk.blue('\u{1F914} ', req.queryResult.queryText));
-                // eslint-disable-next-line no-console
-                console.log('\u{1F916} ', chalk.green(output.data));
-                // eslint-disable-next-line no-console
-                if (output.suggestions) console.log(chalk.inverse(output.suggestions));
-            } else {
-                // eslint-disable-next-line no-console
-                console.log('\u{1F914} ', req.queryResult.queryText);
-                // eslint-disable-next-line no-console
-                console.log('\u{1F916} ', output.data);
-                // eslint-disable-next-line no-console
-                if (output.suggestions) console.log(output.suggestions);
-            }
+            router.log({
+                req,
+                output,
+                rawIntent
+            });
 
             return respond[client.name]({
                 data: output,
@@ -75,6 +68,47 @@ const router = {
             // eslint-disable-next-line no-console
             console.log(chalk.red('not listening for this'), req.originalDetectIntentRequest.payload.data.authed_users[0]);
         }
+    },
+    client: ({
+        client = {
+            name: 'default'
+        },
+        req
+    }) => {
+        if (req.context && req.context.System && req.context.System.apiEndpoint.includes('amazonalexa.com')) {
+            client.name = 'alexa';
+        } else if (req.originalDetectIntentRequest && req.originalDetectIntentRequest.source === 'slack') {
+            client.name = 'slack';
+        }
+        console.log('client.name:', client.name);
+
+        return client;
+    },
+    log: ({
+        req,
+        output,
+        rawIntent
+    }) => {
+        // if (isDev) {
+        // eslint-disable-next-line no-console
+        console.log(chalk.gray(rawIntent));
+        // eslint-disable-next-line no-console
+        if (req.queryResult && req.queryResult.queryText) console.log(chalk.blue('\u{1F914} ', req.queryResult.queryText));
+        // eslint-disable-next-line no-console
+        console.log('\u{1F916} ', chalk.green(output.data));
+        // eslint-disable-next-line no-console
+        if (output.suggestions) console.log(chalk.inverse(output.suggestions));
+
+        /*
+         * } else {
+         *     // eslint-disable-next-line no-console
+         *     console.log('\u{1F914} ', req.queryResult.queryText);
+         *     // eslint-disable-next-line no-console
+         *     console.log('\u{1F916} ', output.data);
+         *     // eslint-disable-next-line no-console
+         *     if (output.suggestions) console.log(output.suggestions);
+         * }
+         */
     }
 };
 

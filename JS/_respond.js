@@ -7,7 +7,7 @@ const respond = {
   default: ({
     data,
     req,
-    continuous = false
+    continuous = true
   }) => {
     let txt = "",
       speech = txt;
@@ -73,7 +73,7 @@ const respond = {
   },
   alexa: ({
     data,
-    continuous = false,
+    continuous = true,
     output = {
       "version": "1.0",
       "response": {
