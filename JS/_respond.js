@@ -9,6 +9,47 @@ const respond = {
     req,
     continuous = true
   }) => {
+    let txt = "";
+    if (data) {
+      txt = tools.text.strip(data.data || data.speech || txt);
+    }
+
+    let output = {
+      "fulfillmentText": txt,
+      "fulfillmentMessages": [{
+        "text": {
+          "text": [
+            txt
+          ]
+        }
+      }]
+    };
+
+    // Contexts
+    if (req.queryResult) {
+      for (const x in req.queryResult.parameters) {
+        output = tools.respond.context({
+          output,
+          req,
+          contextName: x,
+          context: req.queryResult.parameters[x]
+        });
+      }
+    }
+
+    // Slack
+    output = tools.respond.slack.card({
+      subject: data,
+      req,
+      output,
+      txt
+    });
+    return output;
+  },
+  google: ({
+    data,
+    continuous = true
+  }) => {
     let txt = "",
       speech = txt;
     if (data) {
@@ -39,36 +80,18 @@ const respond = {
           }
         }
       }
-    }
-
-    // Contexts
-    if (req.queryResult) {
-      for (const x in req.queryResult.parameters) {
-        output = tools.respond.context({
-          output,
-          req,
-          contextName: x,
-          context: req.queryResult.parameters[x]
-        });
-      }
-    }
-
-    // Slack
-    output = tools.respond.slack.card({
-      subject: data,
-      req,
-      output,
-      txt
-    });
+    };
 
     // Suggestions
     output = tools.respond.suggestions({
       suggestions: data.suggestions,
       output
     });
+
     if (data.card) {
       output.payload.google.richResponse.items.push(data.card);
     }
+
     return output;
   },
   alexa: ({

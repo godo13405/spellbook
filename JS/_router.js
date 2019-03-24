@@ -12,7 +12,7 @@ chalk = require('chalk');
 const router = {
     ready: req => {
         // What client is this?
-        const client = router.client({
+        global.client = router.client({
             req
         });
         // Don't listen to all events on Slack, only DMs and direct mentions
@@ -84,8 +84,13 @@ const router = {
     }) => {
         if (req.context && req.context.System && req.context.System.apiEndpoint.includes('amazonalexa.com')) {
             client.name = 'alexa';
-        } else if (req.originalDetectIntentRequest && req.originalDetectIntentRequest.source === 'slack') {
-            client.name = 'slack';
+        } else if (req.originalDetectIntentRequest) {
+            if (req.originalDetectIntentRequest.source === 'google') {
+                client.name = 'google';
+                client.capabilities = tools.respond.capabilities(req.originalDetectIntentRequest);
+            } else if (req.originalDetectIntentRequest.source === 'slack') {
+                client.name = 'slack';
+            }
         }
 
         return client;

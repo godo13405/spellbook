@@ -37,21 +37,18 @@ const spell = require('./_spellTools.js'),
         },
         suggestions: ({
             suggestions,
-            output
+            output,
+            client = global.client
         }) => {
             if (suggestions) {
-                let sugg = {
-                    "platform": "ACTIONS_ON_GOOGLE",
-                    "suggestions": {
-                        "suggestions": []
-                    }
-                };
-                suggestions.forEach(x => {
-                    sugg.suggestions.suggestions.push({
-                        "title": x
+                if (client.name === 'google' && client.capabilities.includes('screen')) {
+                    output.payload.google.richResponse.suggestions = [];
+                    suggestions.forEach(x => {
+                        output.payload.google.richResponse.suggestions.push({
+                            "title": x
+                        });
                     });
-                });
-                output.fulfillmentMessages.push(sugg);
+                }
             }
             return output;
         },
@@ -140,6 +137,23 @@ const spell = require('./_spellTools.js'),
                 }
                 return output;
             }
+        },
+        capabilities: raw => {
+            let output = [];
+            const capabilities = {
+                "actions.capability.WEB_BROWSER": "web",
+                "actions.capability.AUDIO_OUTPUT": "audio",
+                "actions.capability.MEDIA_RESPONSE_AUDIO": "audio",
+                "actions.capability.SCREEN_OUTPUT": "screen",
+            }
+            if (raw.source === 'google') {
+                raw.payload.surface.capabilities.forEach(x => {
+                    if (capabilities[x.name] && !output[capabilities[x.name]]) {
+                        output.push(capabilities[x.name]);
+                    }
+                });
+            }
+            return output;
         }
     };
 
