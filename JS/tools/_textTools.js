@@ -35,6 +35,15 @@ const tools = {
 
         return output;
     },
+    strip: txt => {
+        txt = tools.stripSsml(txt);
+        txt = tools.stripMd(txt);
+        return txt;
+    },
+    stripMd: txt => {
+        txt = txt.replace(/\*\*/g, '');
+        return txt;
+    },
     stripSsml: txt => {
         return txt.replace(/<[a-zA-Z0-9s='"\s/]*>/g, '');
     },
@@ -44,7 +53,6 @@ const tools = {
         vars = {},
         implicitConfirm = global.implicitConfirmation
     }) => {
-        console.log('phrase:', phrase);
         if (implicitConfirm) {
             let confirm = tools.phrasing.build({
                 phrase,
@@ -68,6 +76,7 @@ const tools = {
             terminal,
             vars
         };
+
         const output = tools.phrasing.build(args);
 
         return output.trim();
@@ -104,6 +113,7 @@ const tools = {
             terminal,
             vars
         }) => {
+            console.log('phrase.terminal:', `${phrase.replace(/_/g, '.')}.${terminal}`);
             let str = tools.phrasing.find({
                 phrase: `${phrase.replace(/_/g, '.')}.${terminal}`
             });
@@ -128,7 +138,7 @@ const tools = {
             lib = require('../../config/phrases.json'),
         }) => {
             // check if the phrase exists
-            let directions = phrase.split('.'),
+            let directions = phrase.replace(/_/g, '.').split('.'),
                 str;
 
             directions.forEach(x => {

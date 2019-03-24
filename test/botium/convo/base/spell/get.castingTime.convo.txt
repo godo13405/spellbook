@@ -1,0 +1,7 @@
+spell.get.castingTime
+
+#me
+who can cast thaumaturgy
+
+#bot
+Thaumaturgy can only be cast by Clerics

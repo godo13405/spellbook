@@ -1,0 +1,7 @@
+spell.get.materials
+
+#me
+what materials does fireball need
+
+#bot
+Fireball requires a tiny ball of bat guano and sulfur

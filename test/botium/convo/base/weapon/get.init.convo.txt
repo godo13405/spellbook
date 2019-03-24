@@ -1,0 +1,7 @@
+weapon.get.init
+
+#me
+what is a shortsword
+
+#bot
+A shortsword is a martial melee weapon, which causes 1d6 piercing damage

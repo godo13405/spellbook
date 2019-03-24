@@ -28,7 +28,6 @@ const router = {
 
             if (client.name === 'alexa') {
                 rawIntent = req.request.type;
-                console.log('\n\n________________________________________________________\nclient.name:', client.name, rawIntent);
                 if (rawIntent === 'SessionEndedRequest') {
                     rawIntent = 'base_session_end';
                 } else {
@@ -66,7 +65,6 @@ const router = {
                 rawIntent
             });
 
-            console.log('intent.raw:', intent.raw, options.continuousConversation.includes(intent.raw));
             return respond[client.name]({
                 data: output,
                 req,

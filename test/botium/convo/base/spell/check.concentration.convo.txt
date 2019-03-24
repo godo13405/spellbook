@@ -1,0 +1,7 @@
+spell.check.concentration
+
+#me
+does burning hands need me to concentrate on it
+
+#bot
+No, Burning Hands doesn't need concentration

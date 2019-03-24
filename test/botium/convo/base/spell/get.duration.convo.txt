@@ -1,0 +1,7 @@
+spell.get.duration
+
+#me
+how long does levitate last
+
+#bot
+Levitate lasts for up to 10 minutes

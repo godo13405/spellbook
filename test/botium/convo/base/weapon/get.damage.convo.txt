@@ -1,0 +1,7 @@
+weapon.get.damage
+
+#me
+how much damage does a longbow do
+
+#bot
+A longbow causes 1d8 piercing damage

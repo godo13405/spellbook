@@ -12,7 +12,7 @@ const respond = {
     let txt = "",
       speech = txt;
     if (data) {
-      txt = tools.text.stripSsml(data.data || data.speech || txt);
+      txt = tools.text.strip(data.data || data.speech || txt);
       speech = tools.fn.sound(data.speech || data.data, data.audio || speech);
     }
 

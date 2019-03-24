@@ -10,7 +10,6 @@ exports.dragonBook = (req, res) => {
     if (req.method === 'POST') {
         // API call
         output = serve.api(req.body);
-        console.log('JSON.stringify(output):', JSON.stringify(output));
         res.end(JSON.stringify(output));
     }
 }

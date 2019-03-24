@@ -155,10 +155,10 @@
             },
             "concentration": {
                 "true": [
-                    "<confirm> needs you fo concentrate on it"
+                    "Yes, <confirm> needs you to concentrate on it"
                 ],
                 "false": [
-                    "<confirm> doesn't need concentration"
+                    "No, <confirm> doesn't need concentration"
                 ]
             },
             "class": {
@@ -207,7 +207,7 @@
                 "base": [
                     "<confirm> a <tier> <type> weapon<damage><twoHanded>"
                 ],
-                "_damage": [
+                "damage": [
                     ", which causes <dmg> damage"
                 ],
                 "twoHanded": [

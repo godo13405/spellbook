@@ -1,0 +1,7 @@
+spell.get.components
+
+#me
+what components does bless need
+
+#bot
+Bless needs some materials, an incantation, and gesturing

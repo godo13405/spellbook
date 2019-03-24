@@ -1,0 +1,7 @@
+spell.get.init
+
+#me
+what is fireball
+
+#bot
+Fireball is a level 3 evocation spell, which does 8d6 fire damage

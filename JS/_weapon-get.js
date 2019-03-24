@@ -30,16 +30,15 @@ const get = {
             vars.dmg += ` ${subject.damage[0].type}`;
 
             if (subject.damage.length > 1) {
-                vars.twoHanded = tools.text.getPhrase(`${intent.raw}.twoHanded`);
+                vars.twoHanded = tools.text.getPhrase(`${intent.raw.replace(/_/g, '.')}.twoHanded`);
             }
 
             vars.damage = tools.text.phrase({
                 phrase: intent.raw,
-                terminal: '_damage',
+                terminal: 'damage',
                 vars
-            })
+            });
         }
-
         let output = {
             data: tools.text.phrase({
                 phrase: intent.raw,

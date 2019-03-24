@@ -95,9 +95,8 @@ const get = {
     }) => {
         let connector = tools.text.getPhrase(`${intent.raw}.connector.lasts`);
         // Change the phrasing for instantaneous
-        if (subject.duration === 'instantaneous') {
-            connector = tools.text.getPhrase(`${intent.raw}.connector.instant`);
-        }
+        if (subject.duration === 'instantaneous') connector = tools.text.getPhrase(`${intent.raw}.connector.instant`);
+
         let output = {
             data: tools.text.phrase({
                 phrase: intent.raw,

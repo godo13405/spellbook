@@ -1,0 +1,7 @@
+weapon.get.price
+
+#me
+how much for a whip
+
+#bot
+A whip costs 2 gold coins
