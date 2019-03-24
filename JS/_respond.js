@@ -75,13 +75,16 @@ const respond = {
     data,
     continuous = true,
     output = {
-      "version": "1.0",
-      "response": {
-        "outputSpeech": {
-          "type": "SSML",
-          "ssml": tools.fn.sound(data.speech || data.data, data.audio)
+      "body": {
+        "version": "1.0",
+        "response": {
+          "outputSpeech": {
+            "type": "SSML",
+            "ssml": `<speech>${tools.fn.sound(data.speech || data.data, data.audio)}</speech>`
+          },
+          "shouldEndSession": continuous,
+          "type": "_DEFAULT_RESPONSE"
         },
-        "shouldEndSession": !continuous
       }
     }
   }) => {

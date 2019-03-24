@@ -109,7 +109,7 @@ module.exports = {
         "lines-around-directive": "error",
         "lines-between-class-members": "error",
         "max-classes-per-file": "error",
-        "max-depth": "error",
+        // "max-depth": "error",
         "max-len": "off",
         "max-lines": "error",
         // "max-lines-per-function": "error",

@@ -15,7 +15,6 @@ const router = {
         const client = router.client({
             req
         });
-
         // Don't listen to all events on Slack, only DMs and direct mentions
         if (!req.originalDetectIntentRequest || req.originalDetectIntentRequest.source !== 'slack' ||
             (req.originalDetectIntentRequest.payload.data.event.channel_type === 'im' ||
@@ -28,12 +27,21 @@ const router = {
                 rawIntent;
 
             if (client.name === 'alexa') {
-                rawIntent = req.request.intent.name;
-                if (req.request.intent.slots) {
-                    // convert slots for processing
-                    args.params = {};
-                    for (const x in req.request.intent.slots) {
-                        args.params[x.replace(/slot$/g, '')] = req.request.intent.slots[x].value;
+                rawIntent = req.request.type;
+                console.log('\n\n________________________________________________________\nclient.name:', client.name, rawIntent);
+                if (rawIntent === 'SessionEndedRequest') {
+                    rawIntent = 'base_session_end';
+                } else {
+                    rawIntent = 'base_input_welcome';
+                    if (req.request.intent) {
+                        rawIntent = req.request.intent.name;
+                        if (req.request.intent.slots) {
+                            // convert slots for processing
+                            args.params = {};
+                            for (const x in req.request.intent.slots) {
+                                args.params[x.replace(/slot$/g, '')] = req.request.intent.slots[x].value;
+                            }
+                        }
                     }
                 }
             } else {
@@ -80,7 +88,6 @@ const router = {
         } else if (req.originalDetectIntentRequest && req.originalDetectIntentRequest.source === 'slack') {
             client.name = 'slack';
         }
-        console.log('client.name:', client.name);
 
         return client;
     },
@@ -98,17 +105,6 @@ const router = {
         console.log('\u{1F916} ', chalk.green(output.data));
         // eslint-disable-next-line no-console
         if (output.suggestions) console.log(chalk.inverse(output.suggestions));
-
-        /*
-         * } else {
-         *     // eslint-disable-next-line no-console
-         *     console.log('\u{1F914} ', req.queryResult.queryText);
-         *     // eslint-disable-next-line no-console
-         *     console.log('\u{1F916} ', output.data);
-         *     // eslint-disable-next-line no-console
-         *     if (output.suggestions) console.log(output.suggestions);
-         * }
-         */
     }
 };
 

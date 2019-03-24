@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "TOKEN=$(gcloud auth application-default print-access-token) node index.js",
-    "dev": "./auth/setup-auth && TOKEN=$(gcloud auth application-default print-access-token) NODE_ENV=dev npx nodemon exit 0",
-    "serve": "npm run cloud-emulate && ssh -o ServerAliveInterval=60 -R spellbook:80:localhost:8010 serveo.net",
+    "dev": "NODE_ENV=dev npx nodemon exit 0",
+    "serve": "clear && ssh -o ServerAliveInterval=60 -R spellbook:443:localhost:443 serveo.net",
+    "kite": "clear && ./pagekite.py 443 spellbook.pagekite.me",
     "mocha": "mocha spec",
     "test-core": "botium-cli run --config ./botium.json --convos .test/botium/convo/core",
     "test-entity": "botium-cli run --config ./botium.json --convos .test/botium/convo/entity",
@@ -15,7 +16,7 @@
     "emulate-browser": "botium-cli emulator browser --convos .test/botium/convo --config ./botium.json",
     "test-gen": "node ./test/generate-tests.js",
     "deploy-cloud-function": "gcloud functions deploy dragonBook --runtime nodejs8 --service-account=bridge@spellbook-7ccae.iam.gserviceaccount.com --region=europe-west1 --trigger-http",
-    "cloud-emulate": "functions deploy dragonBook --trigger-http -- --region=europe-west1"
+    "cloud-emulate": "functions deploy dragonBook --trigger-http --region=europe-west1"
   },
   "repository": {
     "type": "git",

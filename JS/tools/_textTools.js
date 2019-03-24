@@ -44,6 +44,7 @@ const tools = {
         vars = {},
         implicitConfirm = global.implicitConfirmation
     }) => {
+        console.log('phrase:', phrase);
         if (implicitConfirm) {
             let confirm = tools.phrasing.build({
                 phrase,

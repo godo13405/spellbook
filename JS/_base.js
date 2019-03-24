@@ -38,6 +38,18 @@ const base = {
             output.data = output.data[Math.floor(Math.random() * output.data.length)];
             return output;
         }
+    },
+    session: {
+        end: ({
+            intent
+        }) => {
+            // return {
+            //     data: ''
+            // };
+            return base.input.welcome({
+                intent
+            });
+        }
     }
 };
 

@@ -189,6 +189,13 @@
                     "Greetings! How can I assist?"
                 ]
             }
+        },
+        "session": {
+            "end": {
+                "base": [
+                    "bye"
+                ]
+            }
         }
     },
     "weapon": {
