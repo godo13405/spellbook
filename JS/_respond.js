@@ -74,18 +74,17 @@ const respond = {
   alexa: ({
     data,
     continuous = true,
+    req,
     output = {
-      "body": {
-        "version": "1.0",
-        "response": {
-          "outputSpeech": {
-            "type": "SSML",
-            "ssml": `<speech>${tools.fn.sound(data.speech || data.data, data.audio)}</speech>`
-          },
-          "shouldEndSession": continuous,
-          "type": "_DEFAULT_RESPONSE"
+      "version": "1.0",
+      "session": req.session,
+      "response": {
+        "outputSpeech": {
+          "type": "PlainText",
+          "text": tools.fn.sound(data.speech || data.data, data.audio)
         },
-      }
+        "shouldEndSession": !continuous
+      },
     }
   }) => {
     return output;

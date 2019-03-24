@@ -1,5 +1,6 @@
 {
     "continuousConversation": [
-        "spell.get.init"
+        "spell_get_init",
+        "base_input_welcome"
     ]
 }

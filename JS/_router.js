@@ -66,6 +66,7 @@ const router = {
                 rawIntent
             });
 
+            console.log('intent.raw:', intent.raw, options.continuousConversation.includes(intent.raw));
             return respond[client.name]({
                 data: output,
                 req,
