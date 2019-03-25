@@ -48,6 +48,7 @@ const respond = {
   },
   google: ({
     data,
+    req,
     continuous = true
   }) => {
     let txt = "",
@@ -81,6 +82,18 @@ const respond = {
         }
       }
     };
+
+    // Contexts
+    if (req.queryResult) {
+      for (const x in req.queryResult.parameters) {
+        output = tools.respond.context({
+          output,
+          req,
+          contextName: x,
+          context: req.queryResult.parameters[x]
+        });
+      }
+    }
 
     // Suggestions
     output = tools.respond.suggestions({

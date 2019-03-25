@@ -1,5 +1,7 @@
 'use strict';
 
+/* globals client */
+
 const respond = require('./_respond.js'),
     tools = require('./tools/_tools.js'),
     options = require('../config/options.json');
@@ -46,7 +48,7 @@ const router = {
             } else {
                 args = {
                     params: req.queryResult.parameters,
-                    intent: req.queryResult.outputContexts
+                    contexts: req.queryResult.outputContexts
                 };
                 rawIntent = req.queryResult.action;
             }

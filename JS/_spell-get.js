@@ -50,6 +50,7 @@ const get = {
         params,
         subject = data[params.spell.toLowerCase()]
     }) => {
+        console.log('intent:', intent);
         let output = {
             data: tools.text.phrase({
                 phrase: intent.raw,

@@ -53,6 +53,7 @@ const tools = {
         vars = {},
         implicitConfirm = global.implicitConfirmation
     }) => {
+        console.log('phrase:', phrase);
         if (implicitConfirm) {
             let confirm = tools.phrasing.build({
                 phrase,
@@ -113,7 +114,6 @@ const tools = {
             terminal,
             vars
         }) => {
-            console.log('phrase.terminal:', `${phrase.replace(/_/g, '.')}.${terminal}`);
             let str = tools.phrasing.find({
                 phrase: `${phrase.replace(/_/g, '.')}.${terminal}`
             });
