@@ -5,18 +5,20 @@
   "main": "index.js",
   "scripts": {
     "start": "TOKEN=$(gcloud auth application-default print-access-token) node index.js",
-    "dev": "NODE_ENV=dev npx nodemon exit 0",
+    "dev": "concurrently --kill-others \"node serve.js\" \"NODE_ENV=dev npx nodemon exit 0\" \"npm run serve\"",
     "serve": "clear && ssh -o ServerAliveInterval=60 -R spellbook:443:localhost:443 serveo.net",
     "kite": "clear && ./pagekite.py 443 spellbook.pagekite.me",
     "mocha": "mocha spec",
     "test-core": "botium-cli run --config ./botium.json --convos ./test/botium/convo/core",
+    "test-context": "botium-cli run --config ./botium.json --convos ./test/botium/convo/context",
     "test-entity": "botium-cli run --config ./botium.json --convos ./test/botium/convo/entity",
     "test": "botium-cli run --config ./botium.json --convos ./test/botium/convo/base",
-    "emulate": "botium-cli emulator console --convos ./test/botium/convo --config ./botium.json",
+    "emulate": "botium-cli emulator console --config ./botium.json --convos ./test/botium/convo",
     "emulate-browser": "botium-cli emulator browser --convos .test/botium/convo --config ./botium.json",
     "test-gen": "node ./test/generate-tests.js",
     "deploy-cloud-function": "gcloud functions deploy dragonBook --runtime nodejs8 --service-account=bridge@spellbook-7ccae.iam.gserviceaccount.com --region=europe-west1 --trigger-http",
-    "cloud-emulate": "functions deploy dragonBook --trigger-http --region=europe-west1"
+    "cloud-emulate": "functions deploy dragonBook --trigger-http --restPort=443 && functions list",
+    "clear-port-443": "kill $(lsof -t -i :443)"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "homepage": "https://github.com/godo13405/dragon-tome#readme",
   "devDependencies": {
     "chalk": "^2.4.2",
+    "concurrently": "^4.1.0",
     "eslint": "^5.13.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10"
@@ -37,7 +40,8 @@
   "dependencies": {
     "botium-bindings": "latest",
     "botium-cli": "0.0.45",
-    "botium-connector-echo": "latest"
+    "botium-connector-echo": "latest",
+    "serverless-offline": "^4.9.3"
   },
   "botium": {
     "convodirs": [
