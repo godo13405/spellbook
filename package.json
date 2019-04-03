@@ -15,7 +15,7 @@
     "emulate": "botium-cli emulator console --config ./botium.json --convos ./test/botium/convo",
     "emulate-browser": "botium-cli emulator browser --convos .test/botium/convo --config ./botium.json",
     "test-gen": "node ./test/generate-tests.js",
-    "deploy-cloud-function": "gcloud functions deploy dragonBook --runtime nodejs8 --service-account=bridge@spellbook-7ccae.iam.gserviceaccount.com --region=europe-west1 --trigger-http",
+    "cloud-deploy": "gcloud functions deploy dragonBook --runtime nodejs8 --service-account=bridge@spellbook-7ccae.iam.gserviceaccount.com --region=europe-west1 --trigger-http",
     "cloud-emulate": "functions deploy dragonBook --trigger-http --restPort=443 && functions list",
     "clear-port-443": "kill $(lsof -t -i :443)"
   },
