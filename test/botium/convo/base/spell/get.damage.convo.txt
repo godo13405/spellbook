@@ -1,7 +1,7 @@
 spell.get.damage
 
 #me
-what damage does fireball it do
+what damage does fireball do
 
 #bot
 Fireball does 8d6 fire damage

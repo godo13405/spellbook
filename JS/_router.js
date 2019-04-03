@@ -4,7 +4,7 @@
 
 const respond = require('./_respond.js'),
     tools = require('./tools/_tools.js'),
-    options = require('../config/options.json');
+    options = require('./_globalOptions.js');
 
 let chalk;
 // if (global.isDev) {
@@ -47,12 +47,12 @@ const router = {
                 }
             } else {
                 args = {
+                    contexts: req.queryResult.outputContexts,
                     params: req.queryResult.parameters,
-                    contexts: req.queryResult.outputContexts
+                    intent: req.queryResult.action
                 };
                 rawIntent = req.queryResult.action;
             }
-
             const params = tools.fn.checkContext(args),
                 intent = tools.fn.intent(rawIntent);
 

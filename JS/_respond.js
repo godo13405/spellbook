@@ -27,14 +27,11 @@ const respond = {
 
     // Contexts
     if (req.queryResult) {
-      for (const x in req.queryResult.parameters) {
-        output = tools.respond.context({
-          output,
-          req,
-          contextName: x,
-          context: req.queryResult.parameters[x]
-        });
-      }
+      output = tools.respond.context({
+        output,
+        req,
+        context: req.queryResult.parameters
+      });
     }
 
     // Slack
@@ -85,14 +82,10 @@ const respond = {
 
     // Contexts
     if (req.queryResult) {
-      for (const x in req.queryResult.parameters) {
-        output = tools.respond.context({
-          output,
-          req,
-          contextName: x,
-          context: req.queryResult.parameters[x]
-        });
-      }
+      output = tools.respond.context({
+        output,
+        req
+      });
     }
 
     // Suggestions

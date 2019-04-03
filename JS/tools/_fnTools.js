@@ -1,8 +1,8 @@
 'use strict';
 
 // Options
-// eslint-disable-next-line no-unused-vars
-const options = require('../_globalOptions.js');
+const options = require('../_globalOptions.js'),
+    respondTools = require('../tools/_respondTools.js');
 
 const tools = {
     randSpell: (data = require('../../data/spell.json')) => {
@@ -10,28 +10,21 @@ const tools = {
         return data[keys[Math.floor(Math.random() * keys.length)]].name;
     },
     checkContext: ({
+        contexts,
         params,
-        contexts
+        intent
     }) => {
-        const contextsMap = [
-            "spell",
-            "weapon"
-        ];
         if (contexts) {
+            const action = intent.split('_')[0];
             for (const x of contexts) {
-                let name = x.name.split('/');
-                name = name[name.length - 1];
-                name = name.substring(0, name.indexOf('_'));
-                if (contextsMap.includes(name)) {
-                    if (!params[name] || params[name] !== '') {
-                        params[name] = x.parameters[`${name}_internal`];
-
-                        // If we're relying on a context, assume it's a follow up
-                        global.followUp = true;
-                    }
+                const name = respondTools.contextNameGet(x.name);
+                if (!params[name] && options.contextsClear[name] && !options.contextsClear[name].includes(action)) {
+                    params[name] = x.parameters[`${name}_internal`];
                 }
             }
         }
+
+        console.log('params:', params);
         return params;
     },
     intent: action => {

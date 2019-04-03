@@ -1,0 +1,25 @@
+spell-weapon
+
+#me
+what is fireball
+
+#bot
+Fireball is a level 3 evocation spell, which does 8d6 fire damage
+
+#me
+what damage does it do
+
+#bot
+Fireball does 8d6 fire damage
+
+#me
+what is a sword
+
+#bot
+A shortsword is a martial melee weapon, which causes 1d6 piercing damage
+
+#me
+how much damage does it do
+
+#bot
+A shortsword causes 1d6 piercing damage

@@ -7,6 +7,7 @@ const tools = require('./tools/_tools.js'),
                 intent,
                 params
             }) => {
+                console.log('follow-up params:', params);
                 let fn;
                 if (params.spell) {
                     intent = tools.fn.intent('spell_get_damage');

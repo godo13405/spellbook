@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "TOKEN=$(gcloud auth application-default print-access-token) node index.js",
-    "dev": "concurrently --kill-others \"node serve.js\" \"NODE_ENV=dev npx nodemon exit 0\" \"npm run serve\"",
+    "start": "node index.js",
+    "dev": "concurrently --kill-others \"nodemon serve.js\" \"NODE_ENV=dev npx nodemon exit 0\" \"npm run serve\"",
     "serve": "clear && ssh -o ServerAliveInterval=60 -R spellbook:443:localhost:443 serveo.net",
-    "kite": "clear && ./pagekite.py 443 spellbook.pagekite.me",
     "mocha": "mocha spec",
     "test-core": "botium-cli run --config ./botium.json --convos ./test/botium/convo/core",
     "test-context": "botium-cli run --config ./botium.json --convos ./test/botium/convo/context",

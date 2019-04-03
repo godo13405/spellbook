@@ -1,39 +1,69 @@
 'use strict';
 
+const options = require('../_globalOptions.js');
+
 const spell = require('./_spellTools.js'),
     tools = {
         context: ({
             output,
-            req,
-            contextName = 'spell',
-            context = ''
+            req
         }) => {
-            // Things to remember for this session
+            output.outputContexts = req.queryResult.outputContexts || [];
+            // output.outputContexts = [];
+            // let pars = {};
+            // if (req.queryResult.parameters) {
+            //     for (const x in req.queryResult.parameters) {
+            //         if (options.contextsClear[x]) {
+            //             // is this a context we want to clear?
+            //             if (req.queryResult.outputContexts) {
+            //                 req.queryResult.outputContexts.forEach(y => {
+            //                     const name = tools.contextNameGet(y.name);
+            //                     if (options.contextsClear[x] && !options.contextsClear[x].includes(name)) {
+            //                         console.log(options.contextsClear[x], `${x} means keeping ${name} context`);
+            //                         if (y.parameters[`${name}_internal`]) pars[name] = y.parameters[`${name}_internal`];
+            //                     }
+            //                 });
+            //             }
 
-            const contextFullName = `${req.session}/contexts/${contextName}_internal`;
+            //             if (req.queryResult.parameters[x]) pars[x] = req.queryResult.parameters[x];
+            //         }
+            //     }
+            // }
 
-            // Are there any contexts we should keep?
-            if (!req.outputContexts) {
-                output.outputContexts = [];
-            } else {
-                output.outputContexts = req.outputContexts;
+            // console.log('pars:', pars);
+            for (const x in req.queryResult.parameters) {
+                const contextName = tools.contextNameSet({
+                    session: req.session,
+                    name: x
+                });
+
+                // prepare new context entry
+                let data = {
+                    "name": contextName,
+                    lifespanCount: 1,
+                    "parameters": {}
+                };
+                data.parameters[`${x}_internal`] = req.queryResult.parameters[x];
+
+                output.outputContexts.push(data);
             }
 
-            // Is this context there already?
-            output.outputContexts.filter(x => {
-                return x.name !== contextFullName;
-            });
-
-            let data = {
-                "name": contextFullName,
-                "lifespanCount": 5,
-                "parameters": {}
-            };
-
-            data.parameters[`${contextName}_internal`] = context;
-            output.outputContexts.push(data);
-
+            console.log('output:', output);
             return output;
+        },
+        contextNameSet: ({
+            session,
+            name
+        }) => {
+            return `${session}/contexts/${name}_internal`;
+        },
+        contextNameGet: name => {
+            if (name.includes('/')) {
+                name = name.split('/');
+                name = name[name.length - 1];
+                name = name.substring(0, name.indexOf('_'));
+            }
+            return name;
         },
         suggestions: ({
             suggestions,
